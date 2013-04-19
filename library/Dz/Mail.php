@@ -6,7 +6,7 @@
  * @category   Dz
  * @package    Dz_Mail
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
- * @version    $Id: Mail.php 16 2013-04-04 19:33:04Z lf $
+ * @version    $Id$
  */
 
 /**

@@ -5,7 +5,7 @@
  * @category   Dz
  * @package    Dz_Version
  * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
- * @version    $Id: Version.php 15 2013-04-04 19:29:48Z lf $
+ * @version    $Id$
  */
 
 /**
