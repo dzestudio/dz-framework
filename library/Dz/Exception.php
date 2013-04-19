@@ -6,6 +6,7 @@
  * @category   Dz
  * @package    Dz
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @version    $Id$
  */
 
 /**
