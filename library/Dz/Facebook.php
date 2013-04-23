@@ -456,7 +456,8 @@ class Dz_Facebook extends Facebook
     /**
      * Sends free-form messages to users.
      *
-     * @param integer $uid User who will receive the notification UID.
+     * @param integer|string $uid User who will receive the
+     *                            notification UID or username.
      * @param string $template
      * @param string $href
      * @return mixed The decoded response object.
