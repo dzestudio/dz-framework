@@ -12,33 +12,25 @@ class Dz_Application_Resource_Facebook
     extends \Zend_Application_Resource_ResourceAbstract
 {
     /**
-     * @var \Dz_Service_Facebook
+     * @var \Dz_Facebook
      */
     protected $_service;
 
     /**
      * Initializes Facebook service.
      *
-     * @return \Dz_Service_Facebook
+     * @return \Dz_Facebook
      */
     public function init()
     {
         $config = $this->getOptions();
 
         /**
-         * @see \Dz_Service_Facebook
+         * @see \Dz_Facebook
          */
         require_once 'Dz/Service/Facebook.php';
 
-        $this->_service = new \Dz_Service_Facebook($config);
-
-        /**
-         * @see \Zend_Registry
-         */
-        require_once 'Zend/Registry.php';
-
-        // Add to Zend Registry
-        \Zend_Registry::set('facebook', $this->_service);
+        $this->_service = new \Dz_Facebook($config);
 
         return $this->_service;
     }
@@ -46,7 +38,7 @@ class Dz_Application_Resource_Facebook
     /**
      * Retrieve Facebook service.
      *
-     * @return \Dz_Service_Facebook
+     * @return \Dz_Facebook
      */
     public function getService()
     {

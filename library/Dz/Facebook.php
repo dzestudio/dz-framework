@@ -3,7 +3,7 @@
  * DZ Framework
  *
  * @category   Dz
- * @package    Dz_Service
+ * @package    Dz_Facebook
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
@@ -24,10 +24,10 @@ require_once 'facebook.php';
  * Provides methods for simplify Facebook Graph API calls.
  *
  * @category   Dz
- * @package    Dz_Service
+ * @package    Dz_Facebook
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
  */
-class Dz_Service_Facebook extends Facebook
+class Dz_Facebook extends Facebook
 {
     const APP_DATA_SEPARATOR = '|';
 
@@ -451,6 +451,47 @@ class Dz_Service_Facebook extends Facebook
     public function isAuthenticated()
     {
         return is_array($this->_userProfile);
+    }
+
+    /**
+     * Sends free-form messages to users.
+     *
+     * @param integer $uid User who will receive the notification UID.
+     * @param string $template
+     * @param string $href
+     * @return mixed The decoded response object.
+     */
+    public function notificate($uid, $template, $href)
+    {
+        $path = '/' . $uid . '/notifications';
+        $params = array(
+            'template' => $template,
+            'href' => $href,
+        );
+
+        return $this->_graph($path, self::METHOD_POST, $params);
+    }
+
+    /**
+     * Publish directly to a profile's timeline without interaction
+     * on the part of someone using the app.
+     *
+     * @param string $link
+     * @param string $picture
+     * @param string $title
+     * @param string $description
+     * @return mixed The decoded response object.
+     */
+    public function postToFeed($link, $picture, $title, $description)
+    {
+        $params = array(
+            'link'        => $link,
+            'picture'     => $picture,
+            'name'        => $title,
+            'description' => $description,
+        );
+
+        return $this->_graph('/me/feed', self::METHOD_POST, $params);
     }
 
     /**
