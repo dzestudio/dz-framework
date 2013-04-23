@@ -465,8 +465,9 @@ class Dz_Facebook extends Facebook
     {
         $path = '/' . $uid . '/notifications';
         $params = array(
-            'template' => $template,
-            'href' => $href,
+            'template'     => $template,
+            'href'         => $href,
+            'access_token' => $this->getAppId() . '|' . $this->getAppSecret(),
         );
 
         return $this->_graph($path, self::METHOD_POST, $params);
