@@ -28,7 +28,7 @@ class Dz_Application_Resource_Facebook
         /**
          * @see \Dz_Facebook
          */
-        require_once 'Dz/Service/Facebook.php';
+        require_once 'Dz/Facebook.php';
 
         $this->_service = new \Dz_Facebook($config);
 
