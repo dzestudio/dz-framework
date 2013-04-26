@@ -33,7 +33,9 @@ class Dz_Controller_Plugin_WwwCheck
             $redirector =
                 \Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
 
-            $redirector->gotoUrl($url);
+            $options = array('code' => 301, 'exit' => true);
+
+            $redirector->gotoUrl($url, $options);
         }
     }
 }
