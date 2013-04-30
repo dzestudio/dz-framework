@@ -6,6 +6,7 @@
  * @category   Dz
  * @package    Dz_Image
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @version    $Id$
  */
 
 /**
@@ -54,10 +55,12 @@ class Dz_Image_Imagick extends Imagick
         if (file_exists($imageUri)) {
             $this->readImage($imageUri);
         } else {
+            /**
+             * @see \Dz_Http_Client
+             */
             require_once 'Dz/Http/Client.php';
 
-            $httpClient = new Dz_Http_Client();
-            $imageData = $httpClient->getData($imageUri);
+            $imageData = \Dz_Http_Client::getData($imageUri);
 
             $this->readImageBlob($imageData);
         }

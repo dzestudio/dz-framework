@@ -5,6 +5,7 @@
  * @category   Dz
  * @package    Dz_Facebook
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @version    $Id$
  */
 
 /**
@@ -569,10 +570,12 @@ class Dz_Facebook extends Facebook
         $url = sprintf($urlFormat, $imageId, $userToTag,
                        $this->getAccessToken(), $x, $y);
 
+        /**
+         * @see \Dz_Http_Client
+         */
         require_once 'Dz/Http/Client.php';
 
-        $httpClient = new Dz_Http_Client();
-        $data = $httpClient->getData($url);
+        $data = \Dz_Http_Client::getData($url);
 
         return $data === 'true';
     }

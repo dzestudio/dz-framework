@@ -6,6 +6,7 @@
  * @category   Dz
  * @package    Dz_Http
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @version    $Id$
  */
 
 /**
@@ -23,7 +24,7 @@ class Dz_Http_Client
      * @param string $url
      * @return NULL | string
      */
-    function getData($uri)
+    public static function getData($uri)
     {
         $data = null;
 
