@@ -28,7 +28,7 @@ require_once 'facebook.php';
  * <code>
  *
  * $address = 'Rua Vinte e Quatro de Outubro, 353';
- * $latLng = \Geocode::getLatLng($address);
+ * $latLng = \Dz_Geocode::getLatLng($address);
  *
  * echo 'Latitude: ', $latLng->lat, PHP_EOL;
  * echo 'Longitude: ', $latLng->lng, PHP_EOL;
