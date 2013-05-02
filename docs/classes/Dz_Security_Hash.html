@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>phpDocumentor » \Dz_Security_Hash</title>
+<title>DZ Framework » \Dz_Security_Hash</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">DZ Framework</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
@@ -31,9 +31,11 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">129</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
+                <ul><li>todo 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
 </ul>
@@ -56,34 +58,22 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
-<li class="method public "><a href="#method___construct" title="__construct :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_check" title="check :: "><span class="description">check()
-        </span><pre>check()</pre></a></li>
-<li class="method public "><a href="#method_crypt" title="crypt :: "><span class="description">crypt()
-        </span><pre>crypt()</pre></a></li>
-<li class="method public "><a href="#method_getCost" title="getCost :: "><span class="description">getCost()
-        </span><pre>getCost()</pre></a></li>
-<li class="method public "><a href="#method_getCryptType" title="getCryptType :: "><span class="description">getCryptType()
-        </span><pre>getCryptType()</pre></a></li>
-<li class="method public "><a href="#method_getSaltBase" title="getSaltBase :: "><span class="description">getSaltBase()
-        </span><pre>getSaltBase()</pre></a></li>
-<li class="method public "><a href="#method_setCost" title="setCost :: "><span class="description">setCost()
-        </span><pre>setCost()</pre></a></li>
-<li class="method public "><a href="#method_setCryptType" title="setCryptType :: "><span class="description">setCryptType()
-        </span><pre>setCryptType()</pre></a></li>
-<li class="method public "><a href="#method_setSaltBase" title="setSaltBase :: "><span class="description">setSaltBase()
-        </span><pre>setSaltBase()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct :: Public constructor."><span class="description">Public constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_check" title="check :: Compares a value against its hash."><span class="description">Compares a value against its hash.</span><pre>check()</pre></a></li>
+<li class="method public "><a href="#method_crypt" title="crypt :: Crypts a value."><span class="description">Crypts a value.</span><pre>crypt()</pre></a></li>
+<li class="method public "><a href="#method_getCost" title="getCost :: Gets cost."><span class="description">Gets cost.</span><pre>getCost()</pre></a></li>
+<li class="method public "><a href="#method_getCryptType" title="getCryptType :: Gets current hash type."><span class="description">Gets current hash type.</span><pre>getCryptType()</pre></a></li>
+<li class="method public "><a href="#method_getSaltBase" title="getSaltBase :: Gets salt base."><span class="description">Gets salt base.</span><pre>getSaltBase()</pre></a></li>
+<li class="method public "><a href="#method_setCost" title="setCost :: Sets cost."><span class="description">Sets cost.</span><pre>setCost()</pre></a></li>
+<li class="method public "><a href="#method_setCryptType" title="setCryptType :: Sets hash type."><span class="description">Sets hash type.</span><pre>setCryptType()</pre></a></li>
+<li class="method public "><a href="#method_setSaltBase" title="setSaltBase :: Sets salt base."><span class="description">Sets salt base.</span><pre>setSaltBase()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
                     <ul>
-<li class="method protected "><a href="#method__generateSaltBase" title="_generateSaltBase :: "><span class="description">_generateSaltBase()
-        </span><pre>_generateSaltBase()</pre></a></li>
-<li class="method protected "><a href="#method__getSalt" title="_getSalt :: "><span class="description">_getSalt()
-        </span><pre>_getSalt()</pre></a></li>
-<li class="method protected "><a href="#method__padRight" title="_padRight :: "><span class="description">_padRight()
-        </span><pre>_padRight()</pre></a></li>
+<li class="method protected "><a href="#method__generateSaltBase" title="_generateSaltBase :: Generates random salt base based on choosen hash type."><span class="description">Generates random salt base based on choosen hash type.</span><pre>_generateSaltBase()</pre></a></li>
+<li class="method protected "><a href="#method__getSalt" title="_getSalt :: Gets a salt string to base the hashing on."><span class="description">Gets a salt string to base the hashing on.</span><pre>_getSalt()</pre></a></li>
+<li class="method protected "><a href="#method__padRight" title="_padRight :: Cuts a value properly to use as salt base."><span class="description">Cuts a value properly to use as salt base.</span><pre>_padRight()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -92,21 +82,22 @@
 </li>
 <li class="nav-header protected">» Protected
                     <ul>
-<li class="property protected "><a href="#property__cost" title="$_cost :: "><span class="description"></span><pre>$_cost</pre></a></li>
-<li class="property protected "><a href="#property__cryptType" title="$_cryptType :: "><span class="description"></span><pre>$_cryptType</pre></a></li>
-<li class="property protected "><a href="#property__saltBase" title="$_saltBase :: "><span class="description"></span><pre>$_saltBase</pre></a></li>
-<li class="property protected "><a href="#property__saltLengths" title="$_saltLengths :: "><span class="description"></span><pre>$_saltLengths</pre></a></li>
+<li class="property protected "><a href="#property__cost" title="$_cost :: Base-2 logarithm of how many iterations it will run
+(10 =&gt; 2^10 = 1024 iterations) for CRYPT_BLOWFISH hashes."><span class="description"></span><pre>$_cost</pre></a></li>
+<li class="property protected "><a href="#property__cryptType" title="$_cryptType :: Current hash type."><span class="description"></span><pre>$_cryptType</pre></a></li>
+<li class="property protected "><a href="#property__saltBase" title="$_saltBase :: Bunch of random characters to prevent exploits."><span class="description"></span><pre>$_saltBase</pre></a></li>
+<li class="property protected "><a href="#property__saltLengths" title="$_saltLengths :: Salt lengths by hash type."><span class="description"></span><pre>$_saltLengths</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants
                     <ul>
-<li class="constant  "><a href="#constant_CRYPT_BLOWFISH" title="CRYPT_BLOWFISH :: "><span class="description">CRYPT_BLOWFISH</span><pre>CRYPT_BLOWFISH</pre></a></li>
-<li class="constant  "><a href="#constant_CRYPT_EXT_DES" title="CRYPT_EXT_DES :: "><span class="description">CRYPT_EXT_DES</span><pre>CRYPT_EXT_DES</pre></a></li>
-<li class="constant  "><a href="#constant_CRYPT_MD5" title="CRYPT_MD5 :: "><span class="description">CRYPT_MD5</span><pre>CRYPT_MD5</pre></a></li>
-<li class="constant  "><a href="#constant_CRYPT_SHA256" title="CRYPT_SHA256 :: "><span class="description">CRYPT_SHA256</span><pre>CRYPT_SHA256</pre></a></li>
-<li class="constant  "><a href="#constant_CRYPT_SHA512" title="CRYPT_SHA512 :: "><span class="description">CRYPT_SHA512</span><pre>CRYPT_SHA512</pre></a></li>
-<li class="constant  "><a href="#constant_CRYPT_STD_DES" title="CRYPT_STD_DES :: "><span class="description">CRYPT_STD_DES</span><pre>CRYPT_STD_DES</pre></a></li>
+<li class="constant  "><a href="#constant_CRYPT_BLOWFISH" title="CRYPT_BLOWFISH :: Blowfish hashing constant representation."><span class="description">Blowfish hashing constant representation.</span><pre>CRYPT_BLOWFISH</pre></a></li>
+<li class="constant  "><a href="#constant_CRYPT_EXT_DES" title="CRYPT_EXT_DES :: Extended DES-based hash constant representation."><span class="description">Extended DES-based hash constant representation.</span><pre>CRYPT_EXT_DES</pre></a></li>
+<li class="constant  "><a href="#constant_CRYPT_MD5" title="CRYPT_MD5 :: MD5 hashing constant representation."><span class="description">MD5 hashing constant representation.</span><pre>CRYPT_MD5</pre></a></li>
+<li class="constant  "><a href="#constant_CRYPT_SHA256" title="CRYPT_SHA256 :: SHA-256 hash constant representation."><span class="description">SHA-256 hash constant representation.</span><pre>CRYPT_SHA256</pre></a></li>
+<li class="constant  "><a href="#constant_CRYPT_SHA512" title="CRYPT_SHA512 :: SHA-512 constant representation."><span class="description">SHA-512 constant representation.</span><pre>CRYPT_SHA512</pre></a></li>
+<li class="constant  "><a href="#constant_CRYPT_STD_DES" title="CRYPT_STD_DES :: Standard DES-based hash constant representation."><span class="description">Standard DES-based hash constant representation.</span><pre>CRYPT_STD_DES</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -122,14 +113,10 @@
 </li>
 </ul>
 <div class="element class">
-<p class="short_description"></p>
+<p class="short_description">Hash generator class.</p>
 <div class="details">
-<div class="long_description"></div>
+<div class="long_description"><p>Highly based on <a href="http://net.tutsplus.com/tutorials/php/understanding-hash-functions-and-keeping-passwords-safe/">http://net.tutsplus.com/tutorials/php/understanding-hash-functions-and-keeping-passwords-safe/</a>.</p></div>
 <table class="table table-bordered">
-<tr>
-<th>TODO</th>
-<td>Document.</td>
-</tr>
 <tr>
 <th>category</th>
 <td>Dz</td>
@@ -140,7 +127,7 @@
 </tr>
 <tr>
 <th>copyright</th>
-<td>Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)</td>
+<td>Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)</td>
 </tr>
 <tr>
 <th>author</th>
@@ -150,182 +137,236 @@
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-<h2>__construct()
-        </h2>
-<pre>__construct($cryptType, $saltBase, $cost) </pre>
+<h2>Public constructor.</h2>
+<pre>__construct(string $cryptType, string $saltBase, integer $cost) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$cryptType</h4></div>
-<div class="subelement argument"><h4>$saltBase</h4></div>
-<div class="subelement argument"><h4>$cost</h4></div>
+<div class="subelement argument">
+<h4>$cryptType</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$saltBase</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$cost</h4>
+<code>integer</code>
+</div>
 </div></div>
 </div>
 <a id="method_check"></a><div class="element clickable method public method_check" data-toggle="collapse" data-target=".method_check .collapse">
-<h2>check()
-        </h2>
-<pre>check($hashValue, $value) </pre>
+<h2>Compares a value against its hash.</h2>
+<pre>check(string $hashValue, string $value) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$hashValue</h4></div>
-<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument">
+<h4>$hashValue</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True of value equals hash, false otherwise.</div>
 </div></div>
 </div>
 <a id="method_crypt"></a><div class="element clickable method public method_crypt" data-toggle="collapse" data-target=".method_crypt .collapse">
-<h2>crypt()
-        </h2>
-<pre>crypt($value) </pre>
+<h2>Crypts a value.</h2>
+<pre>crypt(string $value) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The hashed string.</div>
 </div></div>
 </div>
 <a id="method_getCost"></a><div class="element clickable method public method_getCost" data-toggle="collapse" data-target=".method_getCost .collapse">
-<h2>getCost()
-        </h2>
-<pre>getCost() </pre>
+<h2>Gets cost.</h2>
+<pre>getCost() : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
 </div>
 <a id="method_getCryptType"></a><div class="element clickable method public method_getCryptType" data-toggle="collapse" data-target=".method_getCryptType .collapse">
-<h2>getCryptType()
-        </h2>
-<pre>getCryptType() </pre>
+<h2>Gets current hash type.</h2>
+<pre>getCryptType() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
 </div>
 <a id="method_getSaltBase"></a><div class="element clickable method public method_getSaltBase" data-toggle="collapse" data-target=".method_getSaltBase .collapse">
-<h2>getSaltBase()
-        </h2>
-<pre>getSaltBase() </pre>
+<h2>Gets salt base.</h2>
+<pre>getSaltBase() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
 </div>
 <a id="method_setCost"></a><div class="element clickable method public method_setCost" data-toggle="collapse" data-target=".method_setCost .collapse">
-<h2>setCost()
-        </h2>
-<pre>setCost($cost) </pre>
+<h2>Sets cost.</h2>
+<pre>setCost(integer $cost) : <a href="../classes/Dz_Security_Hash.html">\Dz_Security_Hash</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$cost</h4></div>
+<div class="subelement argument">
+<h4>$cost</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Dz_Security_Hash.html">\Dz_Security_Hash</a></code>Provides fluent interface.</div>
 </div></div>
 </div>
 <a id="method_setCryptType"></a><div class="element clickable method public method_setCryptType" data-toggle="collapse" data-target=".method_setCryptType .collapse">
-<h2>setCryptType()
-        </h2>
-<pre>setCryptType($cryptType) </pre>
+<h2>Sets hash type.</h2>
+<pre>setCryptType(string $cryptType) : <a href="../classes/Dz_Security_Hash.html">\Dz_Security_Hash</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$cryptType</h4></div>
+<div class="subelement argument">
+<h4>$cryptType</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Dz_Security_Hash.html">\Dz_Security_Hash</a></code>Provides fluent interface.</div>
 </div></div>
 </div>
 <a id="method_setSaltBase"></a><div class="element clickable method public method_setSaltBase" data-toggle="collapse" data-target=".method_setSaltBase .collapse">
-<h2>setSaltBase()
-        </h2>
-<pre>setSaltBase($saltBase) </pre>
+<h2>Sets salt base.</h2>
+<pre>setSaltBase(string | null $saltBase) : <a href="../classes/Dz_Security_Hash.html">\Dz_Security_Hash</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$saltBase</h4></div>
+<div class="subelement argument">
+<h4>$saltBase</h4>
+<code>string</code><code>null</code><p>If null, it will be automatically generated.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/Dz_Security_Hash.html">\Dz_Security_Hash</a></code>Provides fluent interface.</div>
 </div></div>
 </div>
 <a id="method__generateSaltBase"></a><div class="element clickable method protected method__generateSaltBase" data-toggle="collapse" data-target=".method__generateSaltBase .collapse">
-<h2>_generateSaltBase()
-        </h2>
+<h2>Generates random salt base based on choosen hash type.</h2>
 <pre>_generateSaltBase() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="method__getSalt"></a><div class="element clickable method protected method__getSalt" data-toggle="collapse" data-target=".method__getSalt .collapse">
-<h2>_getSalt()
-        </h2>
-<pre>_getSalt() </pre>
+<h2>Gets a salt string to base the hashing on.</h2>
+<pre>_getSalt() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
 </div>
 <a id="method__padRight"></a><div class="element clickable method protected method__padRight" data-toggle="collapse" data-target=".method__padRight .collapse">
-<h2>_padRight()
-        </h2>
-<pre>_padRight($value, $length) </pre>
+<h2>Cuts a value properly to use as salt base.</h2>
+<pre>_padRight(string $value, integer $length) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$value</h4></div>
-<div class="subelement argument"><h4>$length</h4></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted value.</div>
 </div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property__cost"> </a><div class="element clickable property protected property__cost" data-toggle="collapse" data-target=".property__cost .collapse">
 <h2></h2>
-<pre>$_cost </pre>
+<pre>$_cost : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This number can range between 04 and 31.</p></div></div></div>
 </div>
 <a id="property__cryptType"> </a><div class="element clickable property protected property__cryptType" data-toggle="collapse" data-target=".property__cryptType .collapse">
 <h2></h2>
-<pre>$_cryptType </pre>
+<pre>$_cryptType : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property__saltBase"> </a><div class="element clickable property protected property__saltBase" data-toggle="collapse" data-target=".property__saltBase .collapse">
 <h2></h2>
-<pre>$_saltBase </pre>
+<pre>$_saltBase : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property__saltLengths"> </a><div class="element clickable property protected property__saltLengths" data-toggle="collapse" data-target=".property__saltLengths .collapse">
 <h2></h2>
-<pre>$_saltLengths </pre>
+<pre>$_saltLengths : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
 <a id="constant_CRYPT_BLOWFISH"> </a><div class="element clickable constant  constant_CRYPT_BLOWFISH" data-toggle="collapse" data-target=".constant_CRYPT_BLOWFISH .collapse">
-<h2>CRYPT_BLOWFISH</h2>
-<pre>CRYPT_BLOWFISH </pre>
+<h2>Blowfish hashing constant representation.</h2>
+<pre>CRYPT_BLOWFISH : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_CRYPT_EXT_DES"> </a><div class="element clickable constant  constant_CRYPT_EXT_DES" data-toggle="collapse" data-target=".constant_CRYPT_EXT_DES .collapse">
-<h2>CRYPT_EXT_DES</h2>
-<pre>CRYPT_EXT_DES </pre>
+<h2>Extended DES-based hash constant representation.</h2>
+<pre>CRYPT_EXT_DES : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_CRYPT_MD5"> </a><div class="element clickable constant  constant_CRYPT_MD5" data-toggle="collapse" data-target=".constant_CRYPT_MD5 .collapse">
-<h2>CRYPT_MD5</h2>
-<pre>CRYPT_MD5 </pre>
+<h2>MD5 hashing constant representation.</h2>
+<pre>CRYPT_MD5 : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_CRYPT_SHA256"> </a><div class="element clickable constant  constant_CRYPT_SHA256" data-toggle="collapse" data-target=".constant_CRYPT_SHA256 .collapse">
-<h2>CRYPT_SHA256</h2>
-<pre>CRYPT_SHA256 </pre>
+<h2>SHA-256 hash constant representation.</h2>
+<pre>CRYPT_SHA256 : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_CRYPT_SHA512"> </a><div class="element clickable constant  constant_CRYPT_SHA512" data-toggle="collapse" data-target=".constant_CRYPT_SHA512 .collapse">
-<h2>CRYPT_SHA512</h2>
-<pre>CRYPT_SHA512 </pre>
+<h2>SHA-512 constant representation.</h2>
+<pre>CRYPT_SHA512 : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_CRYPT_STD_DES"> </a><div class="element clickable constant  constant_CRYPT_STD_DES" data-toggle="collapse" data-target=".constant_CRYPT_STD_DES .collapse">
-<h2>CRYPT_STD_DES</h2>
-<pre>CRYPT_STD_DES </pre>
+<h2>Standard DES-based hash constant representation.</h2>
+<pre>CRYPT_STD_DES : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -336,7 +377,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-05-01T23:05:10-03:00.<br></footer></div>
+            generated on 2013-05-02T14:26:43-03:00.<br></footer></div>
 </div>
 </body>
 </html>

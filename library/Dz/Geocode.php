@@ -4,7 +4,7 @@
  *
  * @category   Dz
  * @package    Dz_Geocode
- * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @version    $Id$
  */
 
@@ -15,7 +15,7 @@
  * (like "1600 Amphitheatre Parkway, Mountain View, CA")
  * into geographic coordinates (like latitude 37.423021 and
  * longitude -122.083739), which you can use to
- * place markers or position the map.
+ * place markers or position a map.
  *
  * Usage:
  *
@@ -29,7 +29,7 @@
  *
  * @category   Dz
  * @package    Dz_Geocode
- * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Geocode
@@ -37,8 +37,9 @@ class Dz_Geocode
     /**
      * Converts address in latitude/longitude coordinates.
      *
-     * @param string $address The address, as complete as possible.
-     * @return \stdClass Object containing "lat" and "lng" properties.
+     * @uses   \Dz_Http_Client::getData()
+     * @param  string $address The address, as complete as possible.
+     * @return object Object containing "lat" and "lng" properties.
      */
     public static function getLatLng($address)
     {

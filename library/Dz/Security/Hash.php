@@ -4,29 +4,91 @@
  *
  * @category   Dz
  * @package    Dz_Security
- * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
 /**
- * @TODO Document.
+ * Hash generator class.
+ *
+ * Highly based on {@link http://net.tutsplus.com/tutorials/php/understanding-hash-functions-and-keeping-passwords-safe/}.
  *
  * @category   Dz
  * @package    Dz_Security
- * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Security_Hash
 {
+    /**
+     * Standard DES-based hash constant representation.
+     *
+     * @var string
+     */
     const CRYPT_STD_DES  = 'CRYPT_STD_DES';
+
+    /**
+     * Extended DES-based hash constant representation.
+     *
+     * @var string
+     */
     const CRYPT_EXT_DES  = 'CRYPT_EXT_DES';
+
+    /**
+     * MD5 hashing constant representation.
+     *
+     * @var string
+     */
     const CRYPT_MD5      = 'CRYPT_MD5';
+
+    /**
+     * Blowfish hashing constant representation.
+     *
+     * @var string
+     */
     const CRYPT_BLOWFISH = 'CRYPT_BLOWFISH';
+
+    /**
+     * SHA-256 hash constant representation.
+     *
+     * @var string
+     */
     const CRYPT_SHA256   = 'CRYPT_SHA256';
+
+    /**
+     * SHA-512 constant representation.
+     *
+     * @var string
+     */
     const CRYPT_SHA512   = 'CRYPT_SHA512';
 
+    /**
+     * Base-2 logarithm of how many iterations it will run
+     * (10 => 2^10 = 1024 iterations) for CRYPT_BLOWFISH hashes.
+     * This number can range between 04 and 31.
+     *
+     * @var integer
+     */
     protected $_cost = 10;
-    protected $_cryptType = CRYPT_STD_DES;
+
+    /**
+     * Current hash type.
+     *
+     * @var string
+     */
+    protected $_cryptType = self::CRYPT_STD_DES;
+
+    /**
+     * Bunch of random characters to prevent exploits.
+     *
+     * @var string
+     */
     protected $_saltBase = 'eeb95e4c295e0d9e77f523bab5ff81733fe222e74a5a10f8';
+
+    /**
+     * Salt lengths by hash type.
+     *
+     * @var array
+     */
     protected $_saltLengths = array(
         self::CRYPT_STD_DES  => 2,
         self::CRYPT_EXT_DES  => 9,
@@ -36,6 +98,13 @@ class Dz_Security_Hash
         self::CRYPT_SHA512   => 48,
     );
 
+    /**
+     * Public constructor.
+     *
+     * @param string $cryptType
+     * @param string $saltBase
+     * @param integer $cost
+     */
     public function __construct($cryptType = self::CRYPT_STD_DES,
         $saltBase = null, $cost = 10)
     {
@@ -44,6 +113,9 @@ class Dz_Security_Hash
              ->setCost($cost);
     }
 
+    /**
+     * Generates random salt base based on choosen hash type.
+     */
     protected function _generateSaltBase()
     {
         $saltLength = $this->_saltLengths[$this->_cryptType];
@@ -56,6 +128,11 @@ class Dz_Security_Hash
         $this->_saltBase = substr($salt, 0, $saltLength);
     }
 
+    /**
+     * Gets a salt string to base the hashing on.
+     *
+     * @return string
+     */
     protected function _getSalt()
     {
         switch ($this->_cryptType) {
@@ -92,6 +169,13 @@ class Dz_Security_Hash
         }
     }
 
+    /**
+     * Cuts a value properly to use as salt base.
+     *
+     * @param string $value
+     * @param integer $length
+     * @return string The formatted value.
+     */
     protected function _padRight($value, $length)
     {
         $length = abs(intval($length));
@@ -100,11 +184,22 @@ class Dz_Security_Hash
         return sprintf($format, $value);
     }
 
+    /**
+     * Gets cost.
+     *
+     * @return integer
+     */
     public function getCost()
     {
         return $this->_cost;
     }
 
+    /**
+     * Sets cost.
+     *
+     * @param  integer $cost
+     * @return \Dz_Security_Hash Provides fluent interface.
+     */
     public function setCost($cost)
     {
         if ($cost >= 4 && $cost <= 31) {
@@ -114,11 +209,22 @@ class Dz_Security_Hash
         return $this;
     }
 
+    /**
+     * Gets current hash type.
+     *
+     * @return string
+     */
     public function getCryptType()
     {
         return $this->_cryptType;
     }
 
+    /**
+     * Sets hash type.
+     *
+     * @param  string $cryptType
+     * @return \Dz_Security_Hash Provides fluent interface.
+     */
     public function setCryptType($cryptType)
     {
         if (($cryptType === self::CRYPT_STD_DES
@@ -136,11 +242,22 @@ class Dz_Security_Hash
         return $this;
     }
 
+    /**
+     * Gets salt base.
+     *
+     * @return string
+     */
     public function getSaltBase()
     {
         return $this->_saltBase;
     }
 
+    /**
+     * Sets salt base.
+     *
+     * @param string|null $saltBase If null, it will be automatically generated.
+     * @return \Dz_Security_Hash Provides fluent interface.
+     */
     public function setSaltBase($saltBase = null)
     {
         if (!empty($saltBase) && strlen($saltBase) >= 2) {
@@ -152,11 +269,24 @@ class Dz_Security_Hash
         return $this;
     }
 
+    /**
+     * Compares a value against its hash.
+     *
+     * @param  string $hashValue
+     * @param  string $value
+     * @return boolean True of value equals hash, false otherwise.
+     */
     public function check($hashValue, $value)
     {
-        return $hashValue ===  $this->crypt($value);
+        return $hashValue === $this->crypt($value);
     }
 
+    /**
+     * Crypts a value.
+     *
+     * @param  string $value
+     * @return string The hashed string.
+     */
     public function crypt($value)
     {
         return crypt($value, $this->_getSalt());

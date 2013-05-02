@@ -4,7 +4,7 @@
  *
  * @category   Dz
  * @package    Dz_Http
- * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @version    $Id$
  */
 
@@ -13,16 +13,16 @@
  *
  * @category   Dz
  * @package    Dz_Http
- * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Http_Client
 {
     /**
-     * Downloads with the specified URI as a string.
+     * Downloads the contents of the $uri.
      *
-     * @param string $url
-     * @return NULL | string
+     * @param   string $uri
+     * @return  string|null
      */
     public static function getData($uri)
     {
