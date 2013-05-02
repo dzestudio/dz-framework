@@ -1,4 +1,12 @@
 <?php
+/**
+ * DZ Framework
+ *
+ * @category   Dz
+ * @package    Dz_Controller
+ * @subpackage Plugin
+ * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ */
 
 /**
  * @see \Zend_Controller_Plugin_Abstract
@@ -10,6 +18,15 @@ require_once 'Zend/Controller/Plugin/Abstract.php';
  */
 require_once 'Zend/Controller/Request/Abstract.php';
 
+/**
+ * @TODO Document.
+ *
+ * @category   Dz
+ * @package    Dz_Controller
+ * @subpackage Plugin
+ * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
+ */
 class Dz_Controller_Plugin_WwwCheck
     extends \Zend_Controller_Plugin_Abstract
 {

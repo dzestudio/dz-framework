@@ -8,7 +8,7 @@
  */
 
 /**
- * @see Zend_Paginator_Adapter_Interface
+ * @see \Zend_Paginator_Adapter_Interface
  */
 require_once 'Zend/Paginator/Adapter/Interface.php';
 
@@ -18,8 +18,9 @@ require_once 'Zend/Paginator/Adapter/Interface.php';
  * @category   Dz
  * @package    Dz_Paginator
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Paginator_Adapter_Doctrine implements Zend_Paginator_Adapter_Interface
+class Dz_Paginator_Adapter_Doctrine implements \Zend_Paginator_Adapter_Interface
 {
     /**
      * Query builder to paginate on.
@@ -69,7 +70,7 @@ class Dz_Paginator_Adapter_Doctrine implements Zend_Paginator_Adapter_Interface
     /**
      * Gets the overall number of rows in the result set.
      *
-     * @see Countable::count()
+     * @see \Countable::count()
      * @return integer
      */
     public function count()

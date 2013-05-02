@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DZ Framework
  *
@@ -10,7 +9,7 @@
  */
 
 /**
- * @see Zend_View_Helper_Partial
+ * @see \Zend_View_Helper_Partial
  */
 require_once 'Zend/View/Helper/Partial.php';
 
@@ -21,8 +20,9 @@ require_once 'Zend/View/Helper/Partial.php';
  * @package    Dz_View
  * @subpackage Helper
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_View_Helper_RandomPartial extends Zend_View_Helper_Partial
+class Dz_View_Helper_RandomPartial extends \Zend_View_Helper_Partial
 {
     /**
      * Renders a template fragment within a variable scope distinct from the

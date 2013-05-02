@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DZ Framework
  *
@@ -8,11 +7,6 @@
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
  * @version    $Id$
  */
-
-/**
- * @see Facebook
- */
-require_once 'facebook.php';
 
 /**
  * Address to coordinates conversion class.
@@ -26,18 +20,17 @@ require_once 'facebook.php';
  * Usage:
  *
  * <code>
- *
  * $address = 'Rua Vinte e Quatro de Outubro, 353';
  * $latLng = \Dz_Geocode::getLatLng($address);
  *
  * echo 'Latitude: ', $latLng->lat, PHP_EOL;
  * echo 'Longitude: ', $latLng->lng, PHP_EOL;
- *
  * </code>
  *
  * @category   Dz
  * @package    Dz_Geocode
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Geocode
 {

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DZ Framework
  *
@@ -10,7 +9,7 @@
  */
 
 /**
- * Zend_View_Helper_Url
+ * @see \Zend_View_Helper_Url
  */
 require_once 'Zend/View/Helper/Url.php';
 
@@ -21,8 +20,9 @@ require_once 'Zend/View/Helper/Url.php';
  * @package    Dz_View
  * @subpackage Helper
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_View_Helper_AbsoluteUrl extends Zend_View_Helper_Url
+class Dz_View_Helper_AbsoluteUrl extends \Zend_View_Helper_Url
 {
     /**
      * Generates an absolute url given the name of a route.

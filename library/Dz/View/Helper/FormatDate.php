@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DZ Framework
  *
@@ -10,7 +9,7 @@
  */
 
 /**
- * @see Zend_View_Helper_Abstract
+ * @see \Zend_View_Helper_Abstract
  */
 require_once 'Zend/View/Helper/Abstract.php';
 
@@ -21,8 +20,9 @@ require_once 'Zend/View/Helper/Abstract.php';
  * @package    Dz_View
  * @subpackage Helper
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_View_Helper_FormatDate extends Zend_View_Helper_Abstract
+class Dz_View_Helper_FormatDate extends \Zend_View_Helper_Abstract
 {
     /**
      * Formats a $date given a $format.
@@ -50,11 +50,11 @@ class Dz_View_Helper_FormatDate extends Zend_View_Helper_Abstract
         }
 
         /**
-         * @see Zend_Date
+         * @see \Zend_Date
          */
         require_once 'Zend/Date.php';
 
-        $zendDate = new Zend_Date($date);
+        $zendDate = new \Zend_Date($date);
         $escapedChars = array();
 
         while (($position = stripos($format, '\\')) !== false) {

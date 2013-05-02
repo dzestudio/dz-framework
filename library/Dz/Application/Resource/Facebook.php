@@ -1,4 +1,12 @@
 <?php
+/**
+ * DZ Framework
+ *
+ * @category   Dz
+ * @package    Dz_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ */
 
 /**
  * @see \Zend_Application_Resource_ResourceAbstract
@@ -7,6 +15,12 @@ require_once 'Zend/Application/Resource/ResourceAbstract.php';
 
 /**
  * DZ Application Resource Facebook class
+ *
+ * @category   Dz
+ * @package    Dz_Application
+ * @subpackage Resource
+ * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Application_Resource_Facebook
     extends \Zend_Application_Resource_ResourceAbstract

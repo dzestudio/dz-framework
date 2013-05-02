@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DZ Framework
  *
@@ -9,7 +8,7 @@
  */
 
 /**
- * @see Zend_Validate_Abstract
+ * @see \Zend_Validate_Abstract
  */
 require_once 'Zend/Validate/Abstract.php';
 
@@ -17,8 +16,9 @@ require_once 'Zend/Validate/Abstract.php';
  * @category   Dz
  * @package    Dz_Validate
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Validate_Cnpj extends Zend_Validate_Abstract
+class Dz_Validate_Cnpj extends \Zend_Validate_Abstract
 {
     const MSG_LENGTH = 'msgLength';
     const MSG_ZEROS = 'msgZeros';

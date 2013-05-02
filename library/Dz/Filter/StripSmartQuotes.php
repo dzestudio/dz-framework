@@ -8,7 +8,7 @@
  */
 
 /**
- * @see Zend_Filter_Interface
+ * @see \Zend_Filter_Interface
  */
 require_once 'Zend/Filter/Interface.php';
 
@@ -18,8 +18,9 @@ require_once 'Zend/Filter/Interface.php';
  * @category   Dz
  * @package    Dz_Filter
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Filter_StripSmartQuotes implements Zend_Filter_Interface
+class Dz_Filter_StripSmartQuotes implements \Zend_Filter_Interface
 {
     /**
      * Defined by Zend_Filter_Interface

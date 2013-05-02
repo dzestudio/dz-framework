@@ -20,9 +20,10 @@ require_once 'Zend/View/Helper/Abstract.php';
  * @package    Dz_Controller
  * @subpackage Plugin
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Controller_Plugin_ModuleSetup
-    extends Zend_Controller_Plugin_Abstract
+    extends \Zend_Controller_Plugin_Abstract
 {
     /**
      * Switches layout according module name.

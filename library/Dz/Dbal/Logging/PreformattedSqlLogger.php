@@ -8,10 +8,8 @@
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
-use Doctrine\DBAL\Logging\SQLLogger;
-
 /**
- * @see Doctrine\DBAL\Logging\SQLLogger
+ * @see \Doctrine\DBAL\Logging\SQLLogger
  */
 require_once 'Doctrine/DBAL/Logging/SQLLogger.php';
 
@@ -23,8 +21,10 @@ require_once 'Doctrine/DBAL/Logging/SQLLogger.php';
  * @package    Dz_Dbal
  * @subpackage Logging
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Dbal_Logging_PreformattedSqlLogger implements SQLLogger
+class Dz_Dbal_Logging_PreformattedSqlLogger
+    implements \Doctrine\DBAL\Logging\SQLLogger
 {
     /**
      * Dumps a SQL statement.

@@ -1,0 +1,3701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="Application\Resource\Facebook.php" hash="d0d5eb151a15c4292c42e415d2865624" package="Dz\Application\Resource">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Application"/>
+      <tag line="2" name="subpackage" description="Resource"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/Application/Resource/ResourceAbstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_Application_Resource_ResourceAbstract" refers="\Zend_Application_Resource_ResourceAbstract"/>
+      </docblock>
+    </include>
+    <include line="45" type="Require Once" package="Default">
+      <name>Dz/Facebook.php</name>
+      <docblock line="42">
+        <description></description>
+        <long-description></long-description>
+        <tag line="42" name="see" description="\Dz_Facebook" refers="\Dz_Facebook"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\Application\Resource">
+      <extends>\Zend_Application_Resource_ResourceAbstract</extends>
+      <name>Dz_Application_Resource_Facebook</name>
+      <full_name>\Dz_Application_Resource_Facebook</full_name>
+      <docblock line="16">
+        <description>DZ Application Resource Facebook class</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_Application"/>
+        <tag line="16" name="subpackage" description="Resource"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="31" namespace="global" package="Default">
+        <name>$_service</name>
+        <default></default>
+        <docblock line="28">
+          <description></description>
+          <long-description></long-description>
+          <tag line="28" name="var" description="" type="\Dz_Facebook">
+            <type by_reference="false">\Dz_Facebook</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="Dz\Application\Resource">
+        <name>init</name>
+        <full_name>init</full_name>
+        <docblock line="33">
+          <description>Initializes Facebook service.</description>
+          <long-description></long-description>
+          <tag line="33" name="return" description="" type="\Dz_Facebook">
+            <type by_reference="false">\Dz_Facebook</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="57" package="Dz\Application\Resource">
+        <name>getService</name>
+        <full_name>getService</full_name>
+        <docblock line="52">
+          <description>Retrieve Facebook service.</description>
+          <long-description></long-description>
+          <tag line="52" name="return" description="" type="\Dz_Facebook">
+            <type by_reference="false">\Dz_Facebook</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="28" code="50019">No short description for property $_service</critical>
+    </parse_markers>
+  </file>
+  <file path="Controller\Action.php" hash="2b539dc4f3a8b7e530f361c6d967ab60" package="Dz\Controller">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Controller"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name>Zend/Controller/Action.php</name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="see" description="\Zend_Controller_Action" refers="\Zend_Controller_Action"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="23" package="Dz\Controller">
+      <extends>\Zend_Controller_Action</extends>
+      <name>Dz_Controller_Action</name>
+      <full_name>\Dz_Controller_Action</full_name>
+      <docblock line="15">
+        <description>Provides extra funcionality to Zend_Controller_Action.</description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Dz"/>
+        <tag line="15" name="package" description="Dz_Controller"/>
+        <tag line="15" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="15" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="31" namespace="global" package="Default">
+        <name>$_isDirectAccess</name>
+        <default></default>
+        <docblock line="25">
+          <description>Caches _isDirectAccess() result.</description>
+          <long-description></long-description>
+          <tag line="25" name="see" description="\Dz_Controller_Action::_isDirectAccess()" refers="\Dz_Controller_Action::_isDirectAccess()"/>
+          <tag line="25" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="40" package="Dz\Controller">
+        <name>_isDirectAccess</name>
+        <full_name>_isDirectAccess</full_name>
+        <docblock line="33">
+          <description>Checks if current request is not called by action view helper.</description>
+          <long-description>&lt;p&gt;Depends on Dz_Controller_Plugin_ViewSetup.&lt;/p&gt;</long-description>
+          <tag line="33" name="see" description="\Dz_Controller_Plugin_ViewSetup" refers="\Dz_Controller_Plugin_ViewSetup"/>
+          <tag line="33" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Controller\Plugin\ModuleSetup.php" hash="c6e259b10065245d5f359b15601e90f1" package="Dz\Controller\Plugin">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Controller"/>
+      <tag line="2" name="subpackage" description="Plugin"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Abstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Abstract" refers="\Zend_View_Helper_Abstract"/>
+      </docblock>
+    </include>
+    <include line="39" type="Require Once" package="Default">
+      <name>Zend/Layout.php</name>
+      <docblock line="36">
+        <description></description>
+        <long-description></long-description>
+        <tag line="36" name="see" description="\Zend_Layout" refers="\Zend_Layout"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\Controller\Plugin">
+      <extends>\Zend_Controller_Plugin_Abstract</extends>
+      <name>Dz_Controller_Plugin_ModuleSetup</name>
+      <full_name>\Dz_Controller_Plugin_ModuleSetup</full_name>
+      <docblock line="16">
+        <description>Module aware layout switcher.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_Controller"/>
+        <tag line="16" name="subpackage" description="Plugin"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="34" package="Dz\Controller\Plugin">
+        <name>preDispatch</name>
+        <full_name>preDispatch</full_name>
+        <docblock line="28">
+          <description>Switches layout according module name.</description>
+          <long-description></long-description>
+          <tag line="28" name="link" description="http://returnsuccess.com/post/18-Zend-framework-Different-layout-for-every-module" link="http://returnsuccess.com/post/18-Zend-framework-Different-layout-for-every-module"/>
+          <tag line="28" name="param" description="" type="\Zend_Controller_Request_Abstract" variable="$request">
+            <type by_reference="false">\Zend_Controller_Request_Abstract</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$request</name>
+          <default></default>
+          <type>\Zend_Controller_Request_Abstract</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Controller\Plugin\WwwCheck.php" hash="c995cda2161b2b93725a56f553ddd62a" package="Dz\Controller\Plugin">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Controller"/>
+      <tag line="2" name="subpackage" description="Plugin"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/Controller/Plugin/Abstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_Controller_Plugin_Abstract" refers="\Zend_Controller_Plugin_Abstract"/>
+      </docblock>
+    </include>
+    <include line="19" type="Require Once" package="Default">
+      <name>Zend/Controller/Request/Abstract.php</name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="see" description="\Zend_Controller_Request_Abstract" refers="\Zend_Controller_Request_Abstract"/>
+      </docblock>
+    </include>
+    <include line="48" type="Require Once" package="Default">
+      <name>Zend/Controller/Action/HelperBroker.php</name>
+      <docblock line="45">
+        <description></description>
+        <long-description></long-description>
+        <tag line="45" name="see" description="\Zend_Controller_Action_HelperBroker" refers="\Zend_Controller_Action_HelperBroker"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="30" package="Dz\Controller\Plugin">
+      <extends>\Zend_Controller_Plugin_Abstract</extends>
+      <name>Dz_Controller_Plugin_WwwCheck</name>
+      <full_name>\Dz_Controller_Plugin_WwwCheck</full_name>
+      <docblock line="21">
+        <description></description>
+        <long-description></long-description>
+        <tag line="21" name="TODO" description="Document."/>
+        <tag line="21" name="category" description="Dz"/>
+        <tag line="21" name="package" description="Dz_Controller"/>
+        <tag line="21" name="subpackage" description="Plugin"/>
+        <tag line="21" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="21" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="Dz\Controller\Plugin">
+        <name>preDispatch</name>
+        <full_name>preDispatch</full_name>
+        <argument line="34">
+          <name>$request</name>
+          <default></default>
+          <type>\Zend_Controller_Request_Abstract</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="21" code="50005">No short description for class \Dz_Controller_Plugin_WwwCheck</critical>
+      <error line="33" code="50010">No DocBlock was found for method preDispatch()</error>
+    </parse_markers>
+  </file>
+  <file path="Dbal\Exception.php" hash="84bec6a74afc8a389bbadd9294d0aab5" package="Dz\Dbal">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Dbal"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name>Dz/Exception.php</name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="see" description="\Dz_Exception" refers="\Dz_Exception"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="23" package="Dz\Dbal">
+      <extends>\Dz_Exception</extends>
+      <name>Dz_Dbal_Exception</name>
+      <full_name>\Dz_Dbal_Exception</full_name>
+      <docblock line="15">
+        <description>DBAL exception.</description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Dz"/>
+        <tag line="15" name="package" description="Dz_Dbal"/>
+        <tag line="15" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="15" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Dbal\Logging\Exception.php" hash="cab5f9fe81b19f5974106d3d0e9266d1" package="Dz\Dbal\Logging">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Dbal"/>
+      <tag line="2" name="subpackage" description="Logging"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Dz/Dbal/Exception.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Dz_Dbal_Exception" refers="\Dz_Dbal_Exception"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\Dbal\Logging">
+      <extends>\Dz_Dbal_Exception</extends>
+      <name>Dz_Dbal_Logging_Exception</name>
+      <full_name>\Dz_Dbal_Logging_Exception</full_name>
+      <docblock line="16">
+        <description>DBAL logging exception.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_Dbal"/>
+        <tag line="16" name="subpackage" description="Logging"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Dbal\Logging\FileSqlLogger\Exception.php" hash="c0d4bd66edd0772a56cf6319c4fa6f82" package="Dz\Dbal\Logging">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Dbal"/>
+      <tag line="2" name="subpackage" description="Logging"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Dz/Dbal/Logging/Exception.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Dz_Dbal_Logging_Exception" refers="\Dz_Dbal_Logging_Exception"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\Dbal\Logging">
+      <extends>\Dz_Dbal_Logging_Exception</extends>
+      <name>Dz_Dbal_Logging_FileSqlLogger_Exception</name>
+      <full_name>\Dz_Dbal_Logging_FileSqlLogger_Exception</full_name>
+      <docblock line="16">
+        <description>DBAL file SQL logger exception.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_Dbal"/>
+        <tag line="16" name="subpackage" description="Logging"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Dbal\Logging\FileSqlLogger.php" hash="43227fd9133ee1d8e791af52e1d03fa7" package="Dz\Dbal\Logging">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Dbal"/>
+      <tag line="2" name="subpackage" description="Logging"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Doctrine/DBAL/Logging/SQLLogger.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Doctrine\DBAL\Logging\SQLLogger" refers="\Doctrine\DBAL\Logging\SQLLogger"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="26" package="Dz\Dbal\Logging">
+      <extends/>
+      <implements>\Doctrine\DBAL\Logging\SQLLogger</implements>
+      <name>Dz_Dbal_Logging_FileSqlLogger</name>
+      <full_name>\Dz_Dbal_Logging_FileSqlLogger</full_name>
+      <docblock line="16">
+        <description>A SQL logger that logs to files in the same directory of error_log.</description>
+        <long-description></long-description>
+        <tag line="16" name="see" description="\Dz_Dbal_Logging_FileSqlLogger::LONG_QUERY_TIME" refers="\Dz_Dbal_Logging_FileSqlLogger::LONG_QUERY_TIME"/>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_Dbal"/>
+        <tag line="16" name="subpackage" description="Logging"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <constant namespace="global" line="34" package="Dz\Dbal\Logging">
+        <name>LONG_QUERY_TIME</name>
+        <full_name>LONG_QUERY_TIME</full_name>
+        <value>1</value>
+        <docblock line="28">
+          <description>If the query takes longer than LONG_QUERY_TIME seconds,
+logger writes to queries-slow.log.</description>
+          <long-description>&lt;p&gt;Else, writes to queries-all.log.&lt;/p&gt;</long-description>
+          <tag line="28" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="41" namespace="global" package="Default">
+        <name>$_buffer</name>
+        <default>''</default>
+        <docblock line="36">
+          <description>Dump buffer.</description>
+          <long-description></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48" namespace="global" package="Default">
+        <name>$_logDirectory</name>
+        <default></default>
+        <docblock line="43">
+          <description>Log directory (usually specified in php.ini's error_log property).</description>
+          <long-description></long-description>
+          <tag line="43" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="55" namespace="global" package="Default">
+        <name>$_startTime</name>
+        <default>0</default>
+        <docblock line="50">
+          <description>Unix timestamp when query starts.</description>
+          <long-description></long-description>
+          <tag line="50" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="63" package="Dz\Dbal\Logging">
+        <name>_bufferize</name>
+        <full_name>_bufferize</full_name>
+        <docblock line="57">
+          <description>Just appends $value to the buffer.</description>
+          <long-description></long-description>
+          <tag line="57" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="57" name="return" description="Fluent interface." type="\Dz_Dbal_Logging_FileSqlLogger">
+            <type by_reference="false">\Dz_Dbal_Logging_FileSqlLogger</type>
+          </tag>
+        </docblock>
+        <argument line="63">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="79" package="Dz\Dbal\Logging">
+        <name>_getLogDirectory</name>
+        <full_name>_getLogDirectory</full_name>
+        <docblock line="72">
+          <description>Tries setting log directory.</description>
+          <long-description></long-description>
+          <tag line="72" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="72" name="throws" description="If error_log property&#13;&#10;                                                cannot be read." type="\Dz_Dbal_Logging_FileSqlLogger_Exception">
+            <type by_reference="false">\Dz_Dbal_Logging_FileSqlLogger_Exception</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="102" package="Dz\Dbal\Logging">
+        <name>_getString</name>
+        <full_name>_getString</full_name>
+        <docblock line="96">
+          <description>Returns the $value representation according its PHP type.</description>
+          <long-description></long-description>
+          <tag line="96" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="96" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="102">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="122" package="Dz\Dbal\Logging">
+        <name>_write</name>
+        <full_name>_write</full_name>
+        <docblock line="115">
+          <description>Writes buffer in log file.</description>
+          <long-description></long-description>
+          <tag line="115" name="param" description="" type="string" variable="$logFile">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="115" name="param" description="If true, sets buffer to an empty string." type="bool" variable="$cleanBuffer">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="115" name="return" description="Fluent interface." type="\Dz_Dbal_Logging_FileSqlLogger">
+            <type by_reference="false">\Dz_Dbal_Logging_FileSqlLogger</type>
+          </tag>
+        </docblock>
+        <argument line="122">
+          <name>$logFile</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="122">
+          <name>$cleanBuffer</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="144" package="Dz\Dbal\Logging">
+        <name>startQuery</name>
+        <full_name>startQuery</full_name>
+        <docblock line="136">
+          <description>Bufferizes a SQL statement.</description>
+          <long-description></long-description>
+          <tag line="136" name="param" description="The SQL to be executed." type="string" variable="$sql">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="136" name="param" description="The SQL parameters." type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="136" name="param" description="The SQL parameter types." type="array" variable="$types">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="136" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="144">
+          <name>$sql</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="144">
+          <name>$params</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+        <argument line="144">
+          <name>$types</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="163" package="Dz\Dbal\Logging">
+        <name>stopQuery</name>
+        <full_name>stopQuery</full_name>
+        <docblock line="158">
+          <description>Marks the last started query as stopped, times query and writes log.</description>
+          <long-description></long-description>
+          <tag line="158" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Dbal\Logging\PreformattedSqlLogger.php" hash="18d8864c173841136465c3c8274fb576" package="Dz\Dbal\Logging">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Dbal"/>
+      <tag line="2" name="subpackage" description="Logging"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Doctrine/DBAL/Logging/SQLLogger.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Doctrine\DBAL\Logging\SQLLogger" refers="\Doctrine\DBAL\Logging\SQLLogger"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="26" package="Dz\Dbal\Logging">
+      <extends/>
+      <implements>\Doctrine\DBAL\Logging\SQLLogger</implements>
+      <name>Dz_Dbal_Logging_PreformattedSqlLogger</name>
+      <full_name>\Dz_Dbal_Logging_PreformattedSqlLogger</full_name>
+      <docblock line="16">
+        <description>A SQL logger that logs to the standard output
+using var_dump inside &amp;lt;pre&amp;gt; tags.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_Dbal"/>
+        <tag line="16" name="subpackage" description="Logging"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="37" package="Dz\Dbal\Logging">
+        <name>startQuery</name>
+        <full_name>startQuery</full_name>
+        <docblock line="29">
+          <description>Dumps a SQL statement.</description>
+          <long-description></long-description>
+          <tag line="29" name="param" description="The SQL to be executed." type="string" variable="$sql">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="29" name="param" description="The SQL parameters." type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="29" name="param" description="The SQL parameter types." type="array" variable="$types">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="29" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="37">
+          <name>$sql</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$params</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+        <argument line="37">
+          <name>$types</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="59" package="Dz\Dbal\Logging">
+        <name>stopQuery</name>
+        <full_name>stopQuery</full_name>
+        <docblock line="54">
+          <description>Mark the last started query as stopped.</description>
+          <long-description></long-description>
+          <tag line="54" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Entity\Argument.php" hash="0375defeda99f34922bcc7e4e26795d1" package="Dz\Entity">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Entity"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="18" package="Dz\Entity">
+      <extends/>
+      <name>Dz_Entity_Argument</name>
+      <full_name>\Dz_Entity_Argument</full_name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="TODO" description="Document."/>
+        <tag line="10" name="category" description="Dz"/>
+        <tag line="10" name="package" description="Dz_Entity"/>
+        <tag line="10" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="10" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="20" namespace="global" package="Default">
+        <name>$_name</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="21" namespace="global" package="Default">
+        <name>$_operator</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="22" namespace="global" package="Default">
+        <name>$_value</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Dz\Entity">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="24">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$operator</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$value</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="34" package="Dz\Entity">
+        <name>__toString</name>
+        <full_name>__toString</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="39" package="Dz\Entity">
+        <name>equals</name>
+        <full_name>equals</full_name>
+        <argument line="39">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="44" package="Dz\Entity">
+        <name>getName</name>
+        <full_name>getName</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="49" package="Dz\Entity">
+        <name>setName</name>
+        <full_name>setName</full_name>
+        <argument line="49">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="56" package="Dz\Entity">
+        <name>getOperator</name>
+        <full_name>getOperator</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="61" package="Dz\Entity">
+        <name>setOperator</name>
+        <full_name>setOperator</full_name>
+        <argument line="61">
+          <name>$operator</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="Dz\Entity">
+        <name>getValue</name>
+        <full_name>getValue</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="73" package="Dz\Entity">
+        <name>setValue</name>
+        <full_name>setValue</full_name>
+        <argument line="73">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="Dz\Entity">
+        <name>hasValue</name>
+        <full_name>hasValue</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="10" code="50005">No short description for class \Dz_Entity_Argument</critical>
+      <error line="20" code="50018">No DocBlock was found for property $_name</error>
+      <error line="21" code="50018">No DocBlock was found for property $_operator</error>
+      <error line="22" code="50018">No DocBlock was found for property $_value</error>
+      <error line="24" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="34" code="50010">No DocBlock was found for method __toString()</error>
+      <error line="39" code="50010">No DocBlock was found for method equals()</error>
+      <error line="44" code="50010">No DocBlock was found for method getName()</error>
+      <error line="49" code="50010">No DocBlock was found for method setName()</error>
+      <error line="56" code="50010">No DocBlock was found for method getOperator()</error>
+      <error line="61" code="50010">No DocBlock was found for method setOperator()</error>
+      <error line="68" code="50010">No DocBlock was found for method getValue()</error>
+      <error line="73" code="50010">No DocBlock was found for method setValue()</error>
+      <error line="80" code="50010">No DocBlock was found for method hasValue()</error>
+    </parse_markers>
+  </file>
+  <file path="Entity\ArgumentCollection.php" hash="37079d232b52b2ac870e68ae525f3e44" package="Dz\Entity">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Entity"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="18" package="Dz\Entity">
+      <extends/>
+      <implements>\ArrayAccess</implements>
+      <implements>\IteratorAggregate</implements>
+      <name>Dz_Entity_ArgumentCollection</name>
+      <full_name>\Dz_Entity_ArgumentCollection</full_name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="TODO" description="Document."/>
+        <tag line="10" name="category" description="Dz"/>
+        <tag line="10" name="package" description="Dz_Entity"/>
+        <tag line="10" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="10" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="23" namespace="global" package="Default">
+        <name>$_arguments</name>
+        <default>array()</default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+          <tag line="20" name="var" description="of Dz_Entity_Argument" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="Dz\Entity">
+        <name>__clone</name>
+        <full_name>__clone</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="Dz\Entity">
+        <name>applyTo</name>
+        <full_name>applyTo</full_name>
+        <argument line="33">
+          <name>$queryBuilder</name>
+          <default></default>
+          <type>\Doctrine\ORM\QueryBuilder</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="49" package="Dz\Entity">
+        <name>offsetExists</name>
+        <full_name>offsetExists</full_name>
+        <argument line="49">
+          <name>$offset</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="54" package="Dz\Entity">
+        <name>offsetGet</name>
+        <full_name>offsetGet</full_name>
+        <argument line="54">
+          <name>$offset</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="63" package="Dz\Entity">
+        <name>offsetSet</name>
+        <full_name>offsetSet</full_name>
+        <argument line="63">
+          <name>$offset</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="63">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="70" package="Dz\Entity">
+        <name>offsetUnset</name>
+        <full_name>offsetUnset</full_name>
+        <argument line="70">
+          <name>$offset</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="77" package="Dz\Entity">
+        <name>getIterator</name>
+        <full_name>getIterator</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="10" code="50005">No short description for class \Dz_Entity_ArgumentCollection</critical>
+      <error line="25" code="50010">No DocBlock was found for method __clone()</error>
+      <error line="33" code="50010">No DocBlock was found for method applyTo()</error>
+      <error line="49" code="50010">No DocBlock was found for method offsetExists()</error>
+      <error line="54" code="50010">No DocBlock was found for method offsetGet()</error>
+      <error line="63" code="50010">No DocBlock was found for method offsetSet()</error>
+      <error line="70" code="50010">No DocBlock was found for method offsetUnset()</error>
+      <error line="77" code="50010">No DocBlock was found for method getIterator()</error>
+    </parse_markers>
+  </file>
+  <file path="Exception.php" hash="228d9fa37422ced18d2df56014047fbd" package="Dz">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+      <tag line="2" name="version" description="$Id: Exception.php 3 2013-04-19 15:54:08Z lf $"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Dz">
+      <extends>\Exception</extends>
+      <name>Dz_Exception</name>
+      <full_name>\Dz_Exception</full_name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="category" description="Dz"/>
+        <tag line="11" name="package" description="Dz"/>
+        <tag line="11" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="11" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <critical line="11" code="50005">No short description for class \Dz_Exception</critical>
+    </parse_markers>
+  </file>
+  <file path="Facebook.php" hash="033c356f8898dc5ae0214394e02bb1b1" package="Dz\Facebook">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Facebook"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+      <tag line="2" name="version" description="$Id: Facebook.php 11 2013-04-30 20:56:49Z lf $"/>
+    </docblock>
+    <include line="22" type="Require Once" package="Default">
+      <name>facebook.php</name>
+      <docblock line="19">
+        <description></description>
+        <long-description></long-description>
+        <tag line="19" name="see" description="\Facebook" refers="\Facebook"/>
+      </docblock>
+    </include>
+    <include line="577" type="Require Once" package="Default">
+      <name>Dz/Http/Client.php</name>
+      <docblock line="574">
+        <description></description>
+        <long-description></long-description>
+        <tag line="574" name="see" description="\Dz_Http_Client" refers="\Dz_Http_Client"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="32" package="Dz\Facebook">
+      <extends>\Facebook</extends>
+      <name>Dz_Facebook</name>
+      <full_name>\Dz_Facebook</full_name>
+      <docblock line="24">
+        <description>Provides methods for simplify Facebook Graph API calls.</description>
+        <long-description></long-description>
+        <tag line="24" name="category" description="Dz"/>
+        <tag line="24" name="package" description="Dz_Facebook"/>
+        <tag line="24" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="24" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <constant namespace="global" line="34" package="Dz\Facebook">
+        <name>APP_DATA_SEPARATOR</name>
+        <full_name>APP_DATA_SEPARATOR</full_name>
+        <value>'|'</value>
+      </constant>
+      <constant namespace="global" line="36" package="Dz\Facebook">
+        <name>COVER_TYPE_ALBUM</name>
+        <full_name>COVER_TYPE_ALBUM</full_name>
+        <value>'album'</value>
+      </constant>
+      <constant namespace="global" line="37" package="Dz\Facebook">
+        <name>COVER_TYPE_SMALL</name>
+        <full_name>COVER_TYPE_SMALL</full_name>
+        <value>'small'</value>
+      </constant>
+      <constant namespace="global" line="38" package="Dz\Facebook">
+        <name>COVER_TYPE_THUMBNAIL</name>
+        <full_name>COVER_TYPE_THUMBNAIL</full_name>
+        <value>'thumbnail'</value>
+      </constant>
+      <constant namespace="global" line="40" package="Dz\Facebook">
+        <name>METHOD_GET</name>
+        <full_name>METHOD_GET</full_name>
+        <value>'GET'</value>
+      </constant>
+      <constant namespace="global" line="41" package="Dz\Facebook">
+        <name>METHOD_POST</name>
+        <full_name>METHOD_POST</full_name>
+        <value>'POST'</value>
+      </constant>
+      <constant namespace="global" line="43" package="Dz\Facebook">
+        <name>PHOTO_TYPE_UPLOADED</name>
+        <full_name>PHOTO_TYPE_UPLOADED</full_name>
+        <value>'uploaded'</value>
+      </constant>
+      <constant namespace="global" line="44" package="Dz\Facebook">
+        <name>PHOTO_TYPE_TAGGED</name>
+        <full_name>PHOTO_TYPE_TAGGED</full_name>
+        <value>'tagged'</value>
+      </constant>
+      <constant namespace="global" line="45" package="Dz\Facebook">
+        <name>PHOTO_TYPE_HIGHLIGHTED</name>
+        <full_name>PHOTO_TYPE_HIGHLIGHTED</full_name>
+        <value>'highlighted'</value>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="52" namespace="global" package="Default">
+        <name>$_appUrl</name>
+        <default></default>
+        <docblock line="47">
+          <description>Application's URL on Facebook.</description>
+          <long-description></long-description>
+          <tag line="47" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="59" namespace="global" package="Default">
+        <name>$_redirectUrl</name>
+        <default></default>
+        <docblock line="54">
+          <description>Post-authentication URL (workaround for Safari).</description>
+          <long-description></long-description>
+          <tag line="54" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="67" namespace="global" package="Default">
+        <name>$_scope</name>
+        <default>array()</default>
+        <docblock line="61">
+          <description>Additional permissions.</description>
+          <long-description></long-description>
+          <tag line="61" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="61" name="link" description="https://developers.facebook.com/docs/authentication/permissions/" link="https://developers.facebook.com/docs/authentication/permissions/"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="73" namespace="global" package="Default">
+        <name>$_userProfile</name>
+        <default>null</default>
+        <docblock line="69">
+          <description></description>
+          <long-description></long-description>
+          <tag line="69" name="var" description="" type="NULL|array">
+            <type by_reference="false">NULL</type>
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="84" package="Dz\Facebook">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="75">
+          <description>Identical to the parent constructor, except that
+we start a PHP session to store the user ID and
+access token if during the course of execution
+we discover them.</description>
+          <long-description></long-description>
+          <tag line="75" name="param" description="the application configuration." type="array" variable="$config">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="75" name="see" description="in facebook.php" refers="\BaseFacebook::__construct"/>
+        </docblock>
+        <argument line="84">
+          <name>$config</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="118" package="Dz\Facebook">
+        <name>_authenticate</name>
+        <full_name>_authenticate</full_name>
+        <docblock line="113">
+          <description>Redirect to authentication URL.</description>
+          <long-description></long-description>
+          <tag line="113" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="125" package="Dz\Facebook">
+        <name>_fql</name>
+        <full_name>_fql</full_name>
+        <argument line="125">
+          <name>$query</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="148" package="Dz\Facebook">
+        <name>_graph</name>
+        <full_name>_graph</full_name>
+        <docblock line="135">
+          <description>Invoke the Graph API.</description>
+          <long-description>&lt;p&gt;When querying connections, there are several useful parameters
+that enable you to filter and page through connection data.&lt;/p&gt;</long-description>
+          <tag line="135" name="param" description="The path (required)" type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="135" name="param" description="The http method (default 'GET')" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="135" name="param" description="The query/post data" type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="135" name="return" description="The decoded response object" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="135" name="throws" description="" type="\FacebookApiException">
+            <type by_reference="false">\FacebookApiException</type>
+          </tag>
+        </docblock>
+        <argument line="148">
+          <name>$path</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="148">
+          <name>$method</name>
+          <default>self::METHOD_GET</default>
+          <type/>
+        </argument>
+        <argument line="149">
+          <name>$limit</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="149">
+          <name>$since</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="149">
+          <name>$params</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="170" package="Dz\Facebook">
+        <name>_setUserProfile</name>
+        <full_name>_setUserProfile</full_name>
+        <docblock line="166">
+          <description></description>
+          <long-description></long-description>
+          <tag line="166" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="189" package="Dz\Facebook">
+        <name>appendAppData</name>
+        <full_name>appendAppData</full_name>
+        <docblock line="182">
+          <description>Get an URL with app_data parameter.</description>
+          <long-description></long-description>
+          <tag line="182" name="param" description="" type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="182" name="param" description="" type="array" variable="$appData">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="182" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="189">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="189">
+          <name>$appData</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="207" package="Dz\Facebook">
+        <name>checkAuthentication</name>
+        <full_name>checkAuthentication</full_name>
+        <docblock line="204">
+          <description></description>
+          <long-description></long-description>
+          <tag line="204" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="221" package="Dz\Facebook">
+        <name>getAlbums</name>
+        <full_name>getAlbums</full_name>
+        <argument line="221">
+          <name>$coverType</name>
+          <default>self::COVER_TYPE_ALBUM</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="246" package="Dz\Facebook">
+        <name>getAlbumPhotos</name>
+        <full_name>getAlbumPhotos</full_name>
+        <argument line="246">
+          <name>$albumId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="262" package="Dz\Facebook">
+        <name>getAppData</name>
+        <full_name>getAppData</full_name>
+        <docblock line="259">
+          <description></description>
+          <long-description></long-description>
+          <tag line="259" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="284" package="Dz\Facebook">
+        <name>getAppUrl</name>
+        <full_name>getAppUrl</full_name>
+        <docblock line="281">
+          <description></description>
+          <long-description></long-description>
+          <tag line="281" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="289" package="Dz\Facebook">
+        <name>getFriends</name>
+        <full_name>getFriends</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="301" package="Dz\Facebook">
+        <name>getInbox</name>
+        <full_name>getInbox</full_name>
+        <docblock line="296">
+          <description></description>
+          <long-description></long-description>
+          <tag line="296" name="param" description="" type="string" variable="$since">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="296" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="301">
+          <name>$limit</name>
+          <default>25</default>
+          <type/>
+        </argument>
+        <argument line="301">
+          <name>$since</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="313" package="Dz\Facebook">
+        <name>getLoginUrl</name>
+        <full_name>getLoginUrl</full_name>
+        <docblock line="308">
+          <description>Get authentication URL.</description>
+          <long-description></long-description>
+          <tag line="308" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="313">
+          <name>$appData</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="325" package="Dz\Facebook">
+        <name>getMostMutualFriendsFriend</name>
+        <full_name>getMostMutualFriendsFriend</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="336" package="Dz\Facebook">
+        <name>getMutualFriends</name>
+        <full_name>getMutualFriends</full_name>
+        <argument line="336">
+          <name>$userId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="350" package="Dz\Facebook">
+        <name>getNamesAndGenders</name>
+        <full_name>getNamesAndGenders</full_name>
+        <argument line="350">
+          <name>$uids</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="370" package="Dz\Facebook">
+        <name>getPhotos</name>
+        <full_name>getPhotos</full_name>
+        <argument line="370">
+          <name>$type</name>
+          <default>self::PHOTO_TYPE_UPLOADED</default>
+          <type/>
+        </argument>
+        <argument line="371">
+          <name>$limit</name>
+          <default>25</default>
+          <type/>
+        </argument>
+        <argument line="371">
+          <name>$since</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="390" package="Dz\Facebook">
+        <name>getPosts</name>
+        <full_name>getPosts</full_name>
+        <docblock line="385">
+          <description></description>
+          <long-description></long-description>
+          <tag line="385" name="param" description="" type="string" variable="$since">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="385" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="390">
+          <name>$limit</name>
+          <default>100</default>
+          <type/>
+        </argument>
+        <argument line="390">
+          <name>$since</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="410" package="Dz\Facebook">
+        <name>getRedirectUrl</name>
+        <full_name>getRedirectUrl</full_name>
+        <docblock line="407">
+          <description></description>
+          <long-description></long-description>
+          <tag line="407" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="419" package="Dz\Facebook">
+        <name>getScope</name>
+        <full_name>getScope</full_name>
+        <docblock line="415">
+          <description></description>
+          <long-description></long-description>
+          <tag line="415" name="return" description="" type="\"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="429" package="Dz\Facebook">
+        <name>getTaggedInPosts</name>
+        <full_name>getTaggedInPosts</full_name>
+        <docblock line="424">
+          <description></description>
+          <long-description></long-description>
+          <tag line="424" name="param" description="" type="string" variable="$since">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="424" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="429">
+          <name>$limit</name>
+          <default>25</default>
+          <type/>
+        </argument>
+        <argument line="429">
+          <name>$since</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="439" package="Dz\Facebook">
+        <name>getUserProfile</name>
+        <full_name>getUserProfile</full_name>
+        <docblock line="436">
+          <description></description>
+          <long-description></long-description>
+          <tag line="436" name="return" description="" type="NULL|array">
+            <type by_reference="false">NULL</type>
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="444" package="Dz\Facebook">
+        <name>hasLikedCurrentPage</name>
+        <full_name>hasLikedCurrentPage</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="453" package="Dz\Facebook">
+        <name>isAuthenticated</name>
+        <full_name>isAuthenticated</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="467" package="Dz\Facebook">
+        <name>notificate</name>
+        <full_name>notificate</full_name>
+        <docblock line="458">
+          <description>Sends free-form messages to users.</description>
+          <long-description></long-description>
+          <tag line="458" name="param" description="User who will receive the&#13;&#10;                           notification UID or username." type="integer|string" variable="$uid">
+            <type by_reference="false">integer</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="458" name="param" description="" type="string" variable="$template">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="458" name="param" description="" type="string" variable="$href">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="458" name="return" description="The decoded response object." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="467">
+          <name>$uid</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="467">
+          <name>$template</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="467">
+          <name>$href</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="489" package="Dz\Facebook">
+        <name>postToFeed</name>
+        <full_name>postToFeed</full_name>
+        <docblock line="479">
+          <description>Publish directly to a profile's timeline without interaction
+on the part of someone using the app.</description>
+          <long-description></long-description>
+          <tag line="479" name="param" description="" type="string" variable="$link">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="479" name="param" description="" type="string" variable="$picture">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="479" name="param" description="" type="string" variable="$title">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="479" name="param" description="" type="string" variable="$description">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="479" name="return" description="The decoded response object." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="489">
+          <name>$link</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="489">
+          <name>$picture</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="489">
+          <name>$title</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="489">
+          <name>$description</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="507" package="Dz\Facebook">
+        <name>publishImage</name>
+        <full_name>publishImage</full_name>
+        <docblock line="501">
+          <description></description>
+          <long-description></long-description>
+          <tag line="501" name="param" description="" type="string" variable="$image">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="501" name="param" description="" type="string" variable="$message">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="501" name="return" description="" type="array|null">
+            <type by_reference="false">array</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="507">
+          <name>$image</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="507">
+          <name>$message</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="524" package="Dz\Facebook">
+        <name>redirect</name>
+        <full_name>redirect</full_name>
+        <argument line="524">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="537" package="Dz\Facebook">
+        <name>setAppUrl</name>
+        <full_name>setAppUrl</full_name>
+        <docblock line="534">
+          <description></description>
+          <long-description></long-description>
+          <tag line="534" name="param" description="" type="\" variable="$appUrl"/>
+        </docblock>
+        <argument line="537">
+          <name>$appUrl</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="545" package="Dz\Facebook">
+        <name>setRedirectUrl</name>
+        <full_name>setRedirectUrl</full_name>
+        <docblock line="542">
+          <description></description>
+          <long-description></long-description>
+          <tag line="542" name="param" description="" type="\" variable="$redirectUrl"/>
+        </docblock>
+        <argument line="545">
+          <name>$redirectUrl</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="554" package="Dz\Facebook">
+        <name>setScope</name>
+        <full_name>setScope</full_name>
+        <docblock line="550">
+          <description></description>
+          <long-description></long-description>
+          <tag line="550" name="param" description="" type="\" variable="$scope"/>
+        </docblock>
+        <argument line="554">
+          <name>$scope</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="567" package="Dz\Facebook">
+        <name>tagImage</name>
+        <full_name>tagImage</full_name>
+        <docblock line="559">
+          <description></description>
+          <long-description></long-description>
+          <tag line="559" name="param" description="" type="\unknown_type" variable="$imageId">
+            <type by_reference="false">\unknown_type</type>
+          </tag>
+          <tag line="559" name="param" description="" type="\unknown_type" variable="$userToTag">
+            <type by_reference="false">\unknown_type</type>
+          </tag>
+          <tag line="559" name="param" description="The horizontal position of the tag, as a percentage from 0 to 100, from the left of the photo." type="int" variable="$x">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="559" name="param" description="The vertical position of the tag, as a percentage from 0 to 100, from the top of the photo." type="int" variable="$y">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="559" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="567">
+          <name>$imageId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="567">
+          <name>$userToTag</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="567">
+          <name>$x</name>
+          <default>50</default>
+          <type/>
+        </argument>
+        <argument line="567">
+          <name>$y</name>
+          <default>50</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="69" code="50019">No short description for property $_userProfile</critical>
+      <error line="125" code="50010">No DocBlock was found for method _fql()</error>
+      <error line="135" code="50014">Name of argument $limit does not match with the DocBlock's name $params in _graph()</error>
+      <error line="135" code="50015">Argument $since is missing from the Docblock of _graph()</error>
+      <error line="135" code="50015">Argument $params is missing from the Docblock of _graph()</error>
+      <error line="166" code="50012">No short description for method _setUserProfile()</error>
+      <error line="204" code="50012">No short description for method checkAuthentication()</error>
+      <error line="221" code="50010">No DocBlock was found for method getAlbums()</error>
+      <error line="246" code="50010">No DocBlock was found for method getAlbumPhotos()</error>
+      <error line="259" code="50012">No short description for method getAppData()</error>
+      <error line="281" code="50012">No short description for method getAppUrl()</error>
+      <error line="289" code="50010">No DocBlock was found for method getFriends()</error>
+      <error line="296" code="50012">No short description for method getInbox()</error>
+      <error line="296" code="50014">Name of argument $limit does not match with the DocBlock's name $since in getInbox()</error>
+      <error line="296" code="50015">Argument $since is missing from the Docblock of getInbox()</error>
+      <error line="308" code="50015">Argument $appData is missing from the Docblock of getLoginUrl()</error>
+      <error line="325" code="50010">No DocBlock was found for method getMostMutualFriendsFriend()</error>
+      <error line="336" code="50010">No DocBlock was found for method getMutualFriends()</error>
+      <error line="350" code="50010">No DocBlock was found for method getNamesAndGenders()</error>
+      <error line="370" code="50010">No DocBlock was found for method getPhotos()</error>
+      <error line="385" code="50012">No short description for method getPosts()</error>
+      <error line="385" code="50014">Name of argument $limit does not match with the DocBlock's name $since in getPosts()</error>
+      <error line="385" code="50015">Argument $since is missing from the Docblock of getPosts()</error>
+      <error line="407" code="50012">No short description for method getRedirectUrl()</error>
+      <error line="415" code="50012">No short description for method getScope()</error>
+      <error line="424" code="50012">No short description for method getTaggedInPosts()</error>
+      <error line="424" code="50014">Name of argument $limit does not match with the DocBlock's name $since in getTaggedInPosts()</error>
+      <error line="424" code="50015">Argument $since is missing from the Docblock of getTaggedInPosts()</error>
+      <error line="436" code="50012">No short description for method getUserProfile()</error>
+      <error line="444" code="50010">No DocBlock was found for method hasLikedCurrentPage()</error>
+      <error line="453" code="50010">No DocBlock was found for method isAuthenticated()</error>
+      <error line="501" code="50012">No short description for method publishImage()</error>
+      <error line="524" code="50010">No DocBlock was found for method redirect()</error>
+      <error line="534" code="50012">No short description for method setAppUrl()</error>
+      <error line="542" code="50012">No short description for method setRedirectUrl()</error>
+      <error line="550" code="50012">No short description for method setScope()</error>
+      <error line="559" code="50012">No short description for method tagImage()</error>
+    </parse_markers>
+  </file>
+  <file path="Filter\StringTruncate.php" hash="20bf277ca4633dc1d1d8d342e9301e0c" package="Dz\Filter">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Filter"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name>Zend/Filter/Interface.php</name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="see" description="\Zend_Filter_Interface" refers="\Zend_Filter_Interface"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="23" package="Dz\Filter">
+      <extends/>
+      <implements>\Zend_Filter_Interface</implements>
+      <name>Dz_Filter_StringTruncate</name>
+      <full_name>\Dz_Filter_StringTruncate</full_name>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+        <tag line="15" name="TODO" description="Document."/>
+        <tag line="15" name="category" description="Dz"/>
+        <tag line="15" name="package" description="Dz_Filter"/>
+        <tag line="15" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="15" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="28" namespace="global" package="Default">
+        <name>$_length</name>
+        <default>80</default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+          <tag line="25" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="33" namespace="global" package="Default">
+        <name>$_etc</name>
+        <default>'...'</default>
+        <docblock line="30">
+          <description></description>
+          <long-description></long-description>
+          <tag line="30" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="38" namespace="global" package="Default">
+        <name>$_breakWords</name>
+        <default>false</default>
+        <docblock line="35">
+          <description></description>
+          <long-description></long-description>
+          <tag line="35" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="43" namespace="global" package="Default">
+        <name>$_middle</name>
+        <default>false</default>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+          <tag line="40" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="50" package="Dz\Filter">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="45">
+          <description>Sets filter options</description>
+          <long-description></long-description>
+          <tag line="45" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="50">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="75" package="Dz\Filter">
+        <name>getLength</name>
+        <full_name>getLength</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="Dz\Filter">
+        <name>setLength</name>
+        <full_name>setLength</full_name>
+        <argument line="80">
+          <name>$length</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="85" package="Dz\Filter">
+        <name>getEtc</name>
+        <full_name>getEtc</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="Dz\Filter">
+        <name>setEtc</name>
+        <full_name>setEtc</full_name>
+        <argument line="90">
+          <name>$etc</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="95" package="Dz\Filter">
+        <name>getBreakWords</name>
+        <full_name>getBreakWords</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="100" package="Dz\Filter">
+        <name>setBreakWords</name>
+        <full_name>setBreakWords</full_name>
+        <argument line="100">
+          <name>$breakWords</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="105" package="Dz\Filter">
+        <name>getMiddle</name>
+        <full_name>getMiddle</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="110" package="Dz\Filter">
+        <name>setMiddle</name>
+        <full_name>setMiddle</full_name>
+        <argument line="110">
+          <name>$middle</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="121" package="Dz\Filter">
+        <name>filter</name>
+        <full_name>filter</full_name>
+        <docblock line="115">
+          <description>Defined by Zend_Filter_Interface</description>
+          <long-description></long-description>
+          <tag line="115" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="115" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="121">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="15" code="50005">No short description for class \Dz_Filter_StringTruncate</critical>
+      <critical line="25" code="50019">No short description for property $_length</critical>
+      <critical line="30" code="50019">No short description for property $_etc</critical>
+      <critical line="35" code="50019">No short description for property $_breakWords</critical>
+      <critical line="40" code="50019">No short description for property $_middle</critical>
+      <error line="45" code="50015">Argument $options is missing from the Docblock of __construct()</error>
+      <error line="75" code="50010">No DocBlock was found for method getLength()</error>
+      <error line="80" code="50010">No DocBlock was found for method setLength()</error>
+      <error line="85" code="50010">No DocBlock was found for method getEtc()</error>
+      <error line="90" code="50010">No DocBlock was found for method setEtc()</error>
+      <error line="95" code="50010">No DocBlock was found for method getBreakWords()</error>
+      <error line="100" code="50010">No DocBlock was found for method setBreakWords()</error>
+      <error line="105" code="50010">No DocBlock was found for method getMiddle()</error>
+      <error line="110" code="50010">No DocBlock was found for method setMiddle()</error>
+    </parse_markers>
+  </file>
+  <file path="Filter\StripSmartQuotes.php" hash="d6c311a9f3b72eb8496ecaada3cd716e" package="Dz\Filter">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Filter"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name>Zend/Filter/Interface.php</name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="see" description="\Zend_Filter_Interface" refers="\Zend_Filter_Interface"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="23" package="Dz\Filter">
+      <extends/>
+      <implements>\Zend_Filter_Interface</implements>
+      <name>Dz_Filter_StripSmartQuotes</name>
+      <full_name>\Dz_Filter_StripSmartQuotes</full_name>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+        <tag line="15" name="TODO" description="Document."/>
+        <tag line="15" name="category" description="Dz"/>
+        <tag line="15" name="package" description="Dz_Filter"/>
+        <tag line="15" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="15" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="32" package="Dz\Filter">
+        <name>filter</name>
+        <full_name>filter</full_name>
+        <docblock line="25">
+          <description>Defined by Zend_Filter_Interface
+Based in http://www.toao.net/48-replacing-smart-quotes-and-em-dashes-in-mysql.</description>
+          <long-description></long-description>
+          <tag line="25" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="25" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="32">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="15" code="50005">No short description for class \Dz_Filter_StripSmartQuotes</critical>
+    </parse_markers>
+  </file>
+  <file path="Geocode.php" hash="f78030d20a77b22eb84ee17599bb6f05" package="Dz\Geocode">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Geocode"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+      <tag line="2" name="version" description="$Id: Geocode.php 11 2013-04-30 20:56:49Z lf $"/>
+    </docblock>
+    <include line="52" type="Require Once" package="Default">
+      <name>Dz/Http/Client.php</name>
+      <docblock line="49">
+        <description></description>
+        <long-description></long-description>
+        <tag line="49" name="see" description="\Dz_Http_Client" refers="\Dz_Http_Client"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="35" package="Dz\Geocode">
+      <extends/>
+      <name>Dz_Geocode</name>
+      <full_name>\Dz_Geocode</full_name>
+      <docblock line="11">
+        <description>Address to coordinates conversion class.</description>
+        <long-description>&lt;p&gt;This class uses Google Maps API to convert addresses
+(like "1600 Amphitheatre Parkway, Mountain View, CA")
+into geographic coordinates (like latitude 37.423021 and
+longitude -122.083739), which you can use to
+place markers or position the map.&lt;/p&gt;
+
+&lt;p&gt;Usage:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$address = 'Rua Vinte e Quatro de Outubro, 353';
+$latLng = \Dz_Geocode::getLatLng($address);
+
+echo 'Latitude: ', $latLng-&gt;lat, PHP_EOL;
+echo 'Longitude: ', $latLng-&gt;lng, PHP_EOL;
+&lt;/code&gt;&lt;/pre&gt;</long-description>
+        <tag line="11" name="category" description="Dz"/>
+        <tag line="11" name="package" description="Dz_Geocode"/>
+        <tag line="11" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="11" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="43" package="Dz\Geocode">
+        <name>getLatLng</name>
+        <full_name>getLatLng</full_name>
+        <docblock line="37">
+          <description>Converts address in latitude/longitude coordinates.</description>
+          <long-description></long-description>
+          <tag line="37" name="param" description="The address, as complete as possible." type="string" variable="$address">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="return" description="Object containing &quot;lat&quot; and &quot;lng&quot; properties." type="\stdClass">
+            <type by_reference="false">\stdClass</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$address</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Http\Client.php" hash="8a91c8956ab8c0196679f6f2a44fbb11" package="Dz\Http">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Http"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+      <tag line="2" name="version" description="$Id: Client.php 9 2013-04-30 20:45:01Z lf $"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="19" package="Dz\Http">
+      <extends/>
+      <name>Dz_Http_Client</name>
+      <full_name>\Dz_Http_Client</full_name>
+      <docblock line="11">
+        <description>Provides common methods for receiving data from a URI.</description>
+        <long-description></long-description>
+        <tag line="11" name="category" description="Dz"/>
+        <tag line="11" name="package" description="Dz_Http"/>
+        <tag line="11" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="11" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="27" package="Dz\Http">
+        <name>getData</name>
+        <full_name>getData</full_name>
+        <docblock line="21">
+          <description>Downloads with the specified URI as a string.</description>
+          <long-description></long-description>
+          <tag line="21" name="param" description="" type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="21" name="return" description="| string" type="NULL">
+            <type by_reference="false">NULL</type>
+          </tag>
+        </docblock>
+        <argument line="27">
+          <name>$uri</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="21" code="50014">Name of argument $uri does not match with the DocBlock's name $url in getData()</error>
+      <notice line="21" code="50013">Parameter $url could not be found in getData()</notice>
+    </parse_markers>
+  </file>
+  <file path="Image\Imagick.php" hash="8dae2524d5d6a467a9e10af41c6a0717" package="Dz\Image">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Image"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+      <tag line="2" name="version" description="$Id: Imagick.php 9 2013-04-30 20:45:01Z lf $"/>
+    </docblock>
+    <include line="61" type="Require Once" package="Default">
+      <name>Dz/Http/Client.php</name>
+      <docblock line="58">
+        <description></description>
+        <long-description></long-description>
+        <tag line="58" name="see" description="\Dz_Http_Client" refers="\Dz_Http_Client"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="19" package="Dz\Image">
+      <extends>\Imagick</extends>
+      <name>Dz_Image_Imagick</name>
+      <full_name>\Dz_Image_Imagick</full_name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="TODO" description="Document."/>
+        <tag line="11" name="category" description="Dz"/>
+        <tag line="11" name="package" description="Dz_Image"/>
+        <tag line="11" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="11" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Dz\Image">
+        <name>colorize</name>
+        <full_name>colorize</full_name>
+        <argument line="21">
+          <name>$color</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="21">
+          <name>$alpha</name>
+          <default>1</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="Dz\Image">
+        <name>crop</name>
+        <full_name>crop</full_name>
+        <argument line="40">
+          <name>$width</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="40">
+          <name>$height</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="53" package="Dz\Image">
+        <name>load</name>
+        <full_name>load</full_name>
+        <argument line="53">
+          <name>$imageUri</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="69" package="Dz\Image">
+        <name>paste</name>
+        <full_name>paste</full_name>
+        <argument line="69">
+          <name>$image</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="69">
+          <name>$x</name>
+          <default>0</default>
+          <type/>
+        </argument>
+        <argument line="69">
+          <name>$y</name>
+          <default>0</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="79" package="Dz\Image">
+        <name>save</name>
+        <full_name>save</full_name>
+        <docblock line="74">
+          <description></description>
+          <long-description></long-description>
+          <tag line="74" name="param" description="" type="string" variable="$filename">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="74" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="79">
+          <name>$filename</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="Dz\Image">
+        <name>show</name>
+        <full_name>show</full_name>
+        <argument line="90">
+          <name>$contentType</name>
+          <default>'image/png'</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="11" code="50005">No short description for class \Dz_Image_Imagick</critical>
+      <error line="21" code="50010">No DocBlock was found for method colorize()</error>
+      <error line="40" code="50010">No DocBlock was found for method crop()</error>
+      <error line="53" code="50010">No DocBlock was found for method load()</error>
+      <error line="69" code="50010">No DocBlock was found for method paste()</error>
+      <error line="74" code="50012">No short description for method save()</error>
+      <error line="90" code="50010">No DocBlock was found for method show()</error>
+    </parse_markers>
+  </file>
+  <file path="Mail\Exception.php" hash="a0c04c68f966b7ce999ff0097a37b57e" package="Dz\Mail">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Mail"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name>Dz/Exception.php</name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="see" description="\Dz_Exception" refers="\Dz_Exception"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="23" package="Dz\Mail">
+      <extends>\Dz_Exception</extends>
+      <name>Dz_Mail_Exception</name>
+      <full_name>\Dz_Mail_Exception</full_name>
+      <docblock line="15">
+        <description>Mail exception.</description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Dz"/>
+        <tag line="15" name="package" description="Dz_Mail"/>
+        <tag line="15" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="15" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Mail.php" hash="c0bb23bf9d254a632235a321f044b8d2" package="Dz\Mail">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Mail"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+      <tag line="2" name="version" description="$Id: Mail.php 2 2013-04-19 14:50:46Z lf $"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/Mail.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_Mail" refers="\Zend_Mail"/>
+      </docblock>
+    </include>
+    <include line="57" type="Require Once" package="Default">
+      <name>Dz/Mail/Exception.php</name>
+      <docblock line="54">
+        <description></description>
+        <long-description></long-description>
+        <tag line="54" name="see" description="\Dz_Mail_Exception" refers="\Dz_Mail_Exception"/>
+      </docblock>
+    </include>
+    <include line="67" type="Require Once" package="Default">
+      <name>Zend/View.php</name>
+      <docblock line="64">
+        <description></description>
+        <long-description></long-description>
+        <tag line="64" name="see" description="\Zend_View" refers="\Zend_View"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="24" package="Dz\Mail">
+      <extends>\Zend_Mail</extends>
+      <name>Dz_Mail</name>
+      <full_name>\Dz_Mail</full_name>
+      <docblock line="16">
+        <description>Class for sending an email using a Zend_View template.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_Mail"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="31" namespace="global" package="Default">
+        <name>$_templateFile</name>
+        <default></default>
+        <docblock line="26">
+          <description>Template file path</description>
+          <long-description></long-description>
+          <tag line="26" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="38" namespace="global" package="Default">
+        <name>$_templateView</name>
+        <default></default>
+        <docblock line="33">
+          <description>Template view</description>
+          <long-description></long-description>
+          <tag line="33" name="var" description="" type="\Zend_View">
+            <type by_reference="false">\Zend_View</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="48" package="Dz\Mail">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="40">
+          <description>Public constructor</description>
+          <long-description></long-description>
+          <tag line="40" name="param" description="Template file path" type="string" variable="$templateFile">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="40" name="param" description="" type="string" variable="$charset">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="40" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="40" name="throws" description="if template file does not exist" type="\Dz_Mail_Exception">
+            <type by_reference="false">\Dz_Mail_Exception</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$templateFile</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$charset</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="83" package="Dz\Mail">
+        <name>__get</name>
+        <full_name>__get</full_name>
+        <docblock line="78">
+          <description>Magic method to read a template view property</description>
+          <long-description></long-description>
+          <tag line="78" name="param" description="" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="83">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="94" package="Dz\Mail">
+        <name>__set</name>
+        <full_name>__set</full_name>
+        <docblock line="88">
+          <description>Magic method to set a template view property</description>
+          <long-description></long-description>
+          <tag line="88" name="param" description="" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="88" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="94">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="94">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="104" package="Dz\Mail">
+        <name>getTemplateFile</name>
+        <full_name>getTemplateFile</full_name>
+        <docblock line="99">
+          <description>Returns template file path</description>
+          <long-description></long-description>
+          <tag line="99" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="114" package="Dz\Mail">
+        <name>getTemplateView</name>
+        <full_name>getTemplateView</full_name>
+        <docblock line="109">
+          <description>Returns template view</description>
+          <long-description></long-description>
+          <tag line="109" name="return" description="" type="\Zend_View">
+            <type by_reference="false">\Zend_View</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="125" package="Dz\Mail">
+        <name>getBodyHtml</name>
+        <full_name>getBodyHtml</full_name>
+        <docblock line="119">
+          <description>Return \Zend_Mime_Part representing body HTML</description>
+          <long-description></long-description>
+          <tag line="119" name="param" description="Whether to return the body HTML only, or the MIME part; defaults to false, the MIME part" type="bool" variable="$htmlOnly">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="119" name="return" description="" type="false|\Zend_Mime_Part|string">
+            <type by_reference="false">false</type>
+            <type by_reference="false">\Zend_Mime_Part</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="125">
+          <name>$htmlOnly</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Orm\Function\Md5.php" hash="18d714783c94cea433521eaf0774a6c0" package="Dz\Orm\Function">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Orm"/>
+      <tag line="2" name="subpackage" description="Function"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Doctrine/ORM/Query/AST/Functions/FunctionNode.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Doctrine\ORM\Query\AST\Functions\FunctionNode" refers="\Doctrine\ORM\Query\AST\Functions\FunctionNode"/>
+      </docblock>
+    </include>
+    <include line="19" type="Require Once" package="Default">
+      <name>Doctrine/ORM/Query/SqlWalker.php</name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="see" description="\Doctrine\ORM\Query\SqlWalker" refers="\Doctrine\ORM\Query\SqlWalker"/>
+      </docblock>
+    </include>
+    <include line="56" type="Require Once" package="Default">
+      <name>Doctrine/ORM/Query/Lexer.php</name>
+      <docblock line="53">
+        <description></description>
+        <long-description></long-description>
+        <tag line="53" name="see" description="\Doctrine\ORM\Query\Lexer" refers="\Doctrine\ORM\Query\Lexer"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="31" package="Dz\Orm">
+      <extends>\Doctrine\ORM\Query\AST\Functions\FunctionNode</extends>
+      <name>Dz_Orm_Function_Md5</name>
+      <full_name>\Dz_Orm_Function_Md5</full_name>
+      <docblock line="21">
+        <description>Based on https://github.com/beberlei/DoctrineExtensions/blob/master/lib/DoctrineExtensions/Query/Mysql/Md5.php.</description>
+        <long-description>&lt;p&gt;"MD5" "(" StringPrimary ")"&lt;/p&gt;</long-description>
+        <tag line="21" name="category" description="Dz"/>
+        <tag line="21" name="package" description="Dz_Orm"/>
+        <tag line="21" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="21" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="36" namespace="global" package="Default">
+        <name>$_stringPrimary</name>
+        <default></default>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+          <tag line="33" name="var" description="" type="\Doctrine\ORM\Query\AST\PathExpression">
+            <type by_reference="false">\Doctrine\ORM\Query\AST\PathExpression</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="Dz\Orm">
+        <name>getSql</name>
+        <full_name>getSql</full_name>
+        <docblock line="38">
+          <description></description>
+          <long-description></long-description>
+          <tag line="38" name="override" description=""/>
+        </docblock>
+        <argument line="41">
+          <name>$sqlWalker</name>
+          <default></default>
+          <type>\Doctrine\ORM\Query\SqlWalker</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="51" package="Dz\Orm">
+        <name>parse</name>
+        <full_name>parse</full_name>
+        <docblock line="48">
+          <description></description>
+          <long-description></long-description>
+          <tag line="48" name="override" description=""/>
+        </docblock>
+        <argument line="51">
+          <name>$parser</name>
+          <default></default>
+          <type>\Doctrine\ORM\Query\Parser</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="33" code="50019">No short description for property $_stringPrimary</critical>
+      <error line="38" code="50012">No short description for method getSql()</error>
+      <error line="38" code="50015">Argument $sqlWalker is missing from the Docblock of getSql()</error>
+      <error line="48" code="50012">No short description for method parse()</error>
+      <error line="48" code="50015">Argument $parser is missing from the Docblock of parse()</error>
+    </parse_markers>
+  </file>
+  <file path="Orm\Function\Rand.php" hash="581a05872f171aa015ce5aac4d8a3c1a" package="Dz\Orm\Function">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Orm"/>
+      <tag line="2" name="subpackage" description="Function"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Doctrine/ORM/Query/AST/Functions/FunctionNode.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Doctrine\ORM\Query\AST\Functions\FunctionNode" refers="\Doctrine\ORM\Query\AST\Functions\FunctionNode"/>
+      </docblock>
+    </include>
+    <include line="19" type="Require Once" package="Default">
+      <name>Doctrine/ORM/Query/SqlWalker.php</name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="see" description="\Doctrine\ORM\Query\SqlWalker" refers="\Doctrine\ORM\Query\SqlWalker"/>
+      </docblock>
+    </include>
+    <include line="41" type="Require Once" package="Default">
+      <name>Doctrine/ORM/Query/Lexer.php</name>
+      <docblock line="38">
+        <description></description>
+        <long-description></long-description>
+        <tag line="38" name="see" description="\Doctrine\ORM\Query\Lexer" refers="\Doctrine\ORM\Query\Lexer"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="29" package="Dz\Orm">
+      <extends>\Doctrine\ORM\Query\AST\Functions\FunctionNode</extends>
+      <name>Dz_Orm_Function_Rand</name>
+      <full_name>\Dz_Orm_Function_Rand</full_name>
+      <docblock line="21">
+        <description>Based on https://gist.github.com/919465.</description>
+        <long-description></long-description>
+        <tag line="21" name="category" description="Dz"/>
+        <tag line="21" name="package" description="Dz_Orm"/>
+        <tag line="21" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="21" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="Dz\Orm">
+        <name>getSql</name>
+        <full_name>getSql</full_name>
+        <argument line="31">
+          <name>$sqlWalker</name>
+          <default></default>
+          <type>\Doctrine\ORM\Query\SqlWalker</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Dz\Orm">
+        <name>parse</name>
+        <full_name>parse</full_name>
+        <argument line="36">
+          <name>$parser</name>
+          <default></default>
+          <type>\Doctrine\ORM\Query\Parser</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="31" code="50010">No DocBlock was found for method getSql()</error>
+      <error line="36" code="50010">No DocBlock was found for method parse()</error>
+    </parse_markers>
+  </file>
+  <file path="Paginator\Adapter\Doctrine.php" hash="3d41a71b03c5255c860ac45609f58b47" package="Dz\Paginator">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Paginator"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name>Zend/Paginator/Adapter/Interface.php</name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="see" description="\Zend_Paginator_Adapter_Interface" refers="\Zend_Paginator_Adapter_Interface"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="23" package="Dz\Paginator">
+      <extends/>
+      <implements>\Zend_Paginator_Adapter_Interface</implements>
+      <name>Dz_Paginator_Adapter_Doctrine</name>
+      <full_name>\Dz_Paginator_Adapter_Doctrine</full_name>
+      <docblock line="15">
+        <description>Pagination adapters for Doctrine 2 ORM.</description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Dz"/>
+        <tag line="15" name="package" description="Dz_Paginator"/>
+        <tag line="15" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="15" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="30" namespace="global" package="Default">
+        <name>$_queryBuilder</name>
+        <default></default>
+        <docblock line="25">
+          <description>Query builder to paginate on.</description>
+          <long-description></long-description>
+          <tag line="25" name="var" description="" type="\Doctrine\ORM\QueryBuilder">
+            <type by_reference="false">\Doctrine\ORM\QueryBuilder</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37" namespace="global" package="Default">
+        <name>$_queryBuilderClone</name>
+        <default></default>
+        <docblock line="32">
+          <description>Query builder clone.</description>
+          <long-description></long-description>
+          <tag line="32" name="var" description="" type="\Doctrine\ORM\QueryBuilder">
+            <type by_reference="false">\Doctrine\ORM\QueryBuilder</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="44" namespace="global" package="Default">
+        <name>$_hydrationMode</name>
+        <default>\Doctrine\ORM\Query::HYDRATE_OBJECT</default>
+        <docblock line="39">
+          <description>Processing mode to be used during the hydration process.</description>
+          <long-description></long-description>
+          <tag line="39" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="51" package="Dz\Paginator">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="46">
+          <description>Constructor.</description>
+          <long-description></long-description>
+          <tag line="46" name="param" description="" type="\Doctrine\ORM\QueryBuilder" variable="$queryBuilder">
+            <type by_reference="false">\Doctrine\ORM\QueryBuilder</type>
+          </tag>
+        </docblock>
+        <argument line="51">
+          <name>$queryBuilder</name>
+          <default></default>
+          <type>\Doctrine\ORM\QueryBuilder</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="61" package="Dz\Paginator">
+        <name>_getQueryBuilderClone</name>
+        <full_name>_getQueryBuilderClone</full_name>
+        <docblock line="56">
+          <description>Gets a cached query builder clone.</description>
+          <long-description></long-description>
+          <tag line="56" name="return" description="" type="\Doctrine\ORM\QueryBuilder">
+            <type by_reference="false">\Doctrine\ORM\QueryBuilder</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="76" package="Dz\Paginator">
+        <name>count</name>
+        <full_name>count</full_name>
+        <docblock line="70">
+          <description>Gets the overall number of rows in the result set.</description>
+          <long-description></long-description>
+          <tag line="70" name="see" description="\Countable::count()" refers="\Countable::count()"/>
+          <tag line="70" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="100" package="Dz\Paginator">
+        <name>getItems</name>
+        <full_name>getItems</full_name>
+        <docblock line="93">
+          <description>Returns an collection of items for a page.</description>
+          <long-description></long-description>
+          <tag line="93" name="param" description="Page offset" type="integer" variable="$offset">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="93" name="param" description="Number of items per page" type="integer" variable="$itemCountPerPage">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="93" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="100">
+          <name>$offset</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="100">
+          <name>$itemCountPerPage</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="115" package="Dz\Paginator">
+        <name>getHydrationMode</name>
+        <full_name>getHydrationMode</full_name>
+        <docblock line="110">
+          <description>Gets hydration mode.</description>
+          <long-description></long-description>
+          <tag line="110" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="126" package="Dz\Paginator">
+        <name>setHydrationMode</name>
+        <full_name>setHydrationMode</full_name>
+        <docblock line="120">
+          <description>Sets hydration mode.</description>
+          <long-description></long-description>
+          <tag line="120" name="param" description="" type="integer" variable="$hydrationMode">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="120" name="return" description="Fluent interface." type="\Dz_Paginator_Adapter_Doctrine">
+            <type by_reference="false">\Dz_Paginator_Adapter_Doctrine</type>
+          </tag>
+        </docblock>
+        <argument line="126">
+          <name>$hydrationMode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Security\Hash.php" hash="9a7b0040439faa6b3858326699f0f58d" package="Dz\Security">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Security"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="18" package="Dz\Security">
+      <extends/>
+      <name>Dz_Security_Hash</name>
+      <full_name>\Dz_Security_Hash</full_name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="TODO" description="Document."/>
+        <tag line="10" name="category" description="Dz"/>
+        <tag line="10" name="package" description="Dz_Security"/>
+        <tag line="10" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="10" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <constant namespace="global" line="20" package="Dz\Security">
+        <name>CRYPT_STD_DES</name>
+        <full_name>CRYPT_STD_DES</full_name>
+        <value>'CRYPT_STD_DES'</value>
+      </constant>
+      <constant namespace="global" line="21" package="Dz\Security">
+        <name>CRYPT_EXT_DES</name>
+        <full_name>CRYPT_EXT_DES</full_name>
+        <value>'CRYPT_EXT_DES'</value>
+      </constant>
+      <constant namespace="global" line="22" package="Dz\Security">
+        <name>CRYPT_MD5</name>
+        <full_name>CRYPT_MD5</full_name>
+        <value>'CRYPT_MD5'</value>
+      </constant>
+      <constant namespace="global" line="23" package="Dz\Security">
+        <name>CRYPT_BLOWFISH</name>
+        <full_name>CRYPT_BLOWFISH</full_name>
+        <value>'CRYPT_BLOWFISH'</value>
+      </constant>
+      <constant namespace="global" line="24" package="Dz\Security">
+        <name>CRYPT_SHA256</name>
+        <full_name>CRYPT_SHA256</full_name>
+        <value>'CRYPT_SHA256'</value>
+      </constant>
+      <constant namespace="global" line="25" package="Dz\Security">
+        <name>CRYPT_SHA512</name>
+        <full_name>CRYPT_SHA512</full_name>
+        <value>'CRYPT_SHA512'</value>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="27" namespace="global" package="Default">
+        <name>$_cost</name>
+        <default>10</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="28" namespace="global" package="Default">
+        <name>$_cryptType</name>
+        <default>CRYPT_STD_DES</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="29" namespace="global" package="Default">
+        <name>$_saltBase</name>
+        <default>'eeb95e4c295e0d9e77f523bab5ff81733fe222e74a5a10f8'</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" namespace="global" package="Default">
+        <name>$_saltLengths</name>
+        <default>array(self::CRYPT_STD_DES =&gt; 2, self::CRYPT_EXT_DES =&gt; 9, self::CRYPT_MD5 =&gt; 9, self::CRYPT_BLOWFISH =&gt; 22, self::CRYPT_SHA256 =&gt; 48, self::CRYPT_SHA512 =&gt; 48)</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="39" package="Dz\Security">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="39">
+          <name>$cryptType</name>
+          <default>self::CRYPT_STD_DES</default>
+          <type/>
+        </argument>
+        <argument line="40">
+          <name>$saltBase</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="40">
+          <name>$cost</name>
+          <default>10</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="47" package="Dz\Security">
+        <name>_generateSaltBase</name>
+        <full_name>_generateSaltBase</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="59" package="Dz\Security">
+        <name>_getSalt</name>
+        <full_name>_getSalt</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="95" package="Dz\Security">
+        <name>_padRight</name>
+        <full_name>_padRight</full_name>
+        <argument line="95">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="95">
+          <name>$length</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="103" package="Dz\Security">
+        <name>getCost</name>
+        <full_name>getCost</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="Dz\Security">
+        <name>setCost</name>
+        <full_name>setCost</full_name>
+        <argument line="108">
+          <name>$cost</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="117" package="Dz\Security">
+        <name>getCryptType</name>
+        <full_name>getCryptType</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="122" package="Dz\Security">
+        <name>setCryptType</name>
+        <full_name>setCryptType</full_name>
+        <argument line="122">
+          <name>$cryptType</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="139" package="Dz\Security">
+        <name>getSaltBase</name>
+        <full_name>getSaltBase</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="144" package="Dz\Security">
+        <name>setSaltBase</name>
+        <full_name>setSaltBase</full_name>
+        <argument line="144">
+          <name>$saltBase</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="155" package="Dz\Security">
+        <name>check</name>
+        <full_name>check</full_name>
+        <argument line="155">
+          <name>$hashValue</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="155">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="160" package="Dz\Security">
+        <name>crypt</name>
+        <full_name>crypt</full_name>
+        <argument line="160">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="10" code="50005">No short description for class \Dz_Security_Hash</critical>
+      <error line="27" code="50018">No DocBlock was found for property $_cost</error>
+      <error line="28" code="50018">No DocBlock was found for property $_cryptType</error>
+      <error line="29" code="50018">No DocBlock was found for property $_saltBase</error>
+      <error line="30" code="50018">No DocBlock was found for property $_saltLengths</error>
+      <error line="39" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="47" code="50010">No DocBlock was found for method _generateSaltBase()</error>
+      <error line="59" code="50010">No DocBlock was found for method _getSalt()</error>
+      <error line="95" code="50010">No DocBlock was found for method _padRight()</error>
+      <error line="103" code="50010">No DocBlock was found for method getCost()</error>
+      <error line="108" code="50010">No DocBlock was found for method setCost()</error>
+      <error line="117" code="50010">No DocBlock was found for method getCryptType()</error>
+      <error line="122" code="50010">No DocBlock was found for method setCryptType()</error>
+      <error line="139" code="50010">No DocBlock was found for method getSaltBase()</error>
+      <error line="144" code="50010">No DocBlock was found for method setSaltBase()</error>
+      <error line="155" code="50010">No DocBlock was found for method check()</error>
+      <error line="160" code="50010">No DocBlock was found for method crypt()</error>
+    </parse_markers>
+  </file>
+  <file path="Validate\Cnpj.php" hash="50af2a8018d5c67eea482ad0467717bc" package="Dz\Validate">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Validate"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name>Zend/Validate/Abstract.php</name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="see" description="\Zend_Validate_Abstract" refers="\Zend_Validate_Abstract"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="21" package="Dz\Validate">
+      <extends>\Zend_Validate_Abstract</extends>
+      <name>Dz_Validate_Cnpj</name>
+      <full_name>\Dz_Validate_Cnpj</full_name>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Dz"/>
+        <tag line="15" name="package" description="Dz_Validate"/>
+        <tag line="15" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="15" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <constant namespace="global" line="23" package="Dz\Validate">
+        <name>MSG_LENGTH</name>
+        <full_name>MSG_LENGTH</full_name>
+        <value>'msgLength'</value>
+      </constant>
+      <constant namespace="global" line="24" package="Dz\Validate">
+        <name>MSG_ZEROS</name>
+        <full_name>MSG_ZEROS</full_name>
+        <value>'msgZeros'</value>
+      </constant>
+      <constant namespace="global" line="25" package="Dz\Validate">
+        <name>MSG_FIRST_CHECK_DIGIT</name>
+        <full_name>MSG_FIRST_CHECK_DIGIT</full_name>
+        <value>'firstCheckDigit'</value>
+      </constant>
+      <constant namespace="global" line="26" package="Dz\Validate">
+        <name>MSG_SECOND_CHECK_DIGIT</name>
+        <full_name>MSG_SECOND_CHECK_DIGIT</full_name>
+        <value>'secondCheckDigit'</value>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="33" namespace="global" package="Default">
+        <name>$_messageTemplates</name>
+        <default>array(self::MSG_LENGTH =&gt; "'%value%' não tem 14 dígitos", self::MSG_ZEROS =&gt; "O CNPJ não pode ser composto apenas de zeros", self::MSG_FIRST_CHECK_DIGIT =&gt; "O primeiro dígito verificador está incorreto", self::MSG_SECOND_CHECK_DIGIT =&gt; "O segundo dígito verificador está incorreto")</default>
+        <docblock line="28">
+          <description>Validation failure message template definitions</description>
+          <long-description></long-description>
+          <tag line="28" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="48" package="Dz\Validate">
+        <name>isValid</name>
+        <full_name>isValid</full_name>
+        <docblock line="40">
+          <description>Defined by Zend_Validate_Interface</description>
+          <long-description>&lt;p&gt;Returns true if $value is a valid CNPJ&lt;/p&gt;</long-description>
+          <tag line="40" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="40" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="15" code="50005">No short description for class \Dz_Validate_Cnpj</critical>
+    </parse_markers>
+  </file>
+  <file path="Validate\Cpf.php" hash="f7f88d5f6ae57b94a32b1863718a6ec1" package="Dz\Validate">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Validate"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="13" type="Require Once" package="Default">
+      <name>Zend/Validate/Abstract.php</name>
+      <docblock line="10">
+        <description></description>
+        <long-description></long-description>
+        <tag line="10" name="see" description="\Zend_Validate_Abstract" refers="\Zend_Validate_Abstract"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="21" package="Dz\Validate">
+      <extends>\Zend_Validate_Abstract</extends>
+      <name>Dz_Validate_Cpf</name>
+      <full_name>\Dz_Validate_Cpf</full_name>
+      <docblock line="15">
+        <description></description>
+        <long-description></long-description>
+        <tag line="15" name="category" description="Dz"/>
+        <tag line="15" name="package" description="Dz_Validate"/>
+        <tag line="15" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="15" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <constant namespace="global" line="23" package="Dz\Validate">
+        <name>MSG_LENGTH</name>
+        <full_name>MSG_LENGTH</full_name>
+        <value>'msgLength'</value>
+      </constant>
+      <constant namespace="global" line="24" package="Dz\Validate">
+        <name>MSG_ZEROS</name>
+        <full_name>MSG_ZEROS</full_name>
+        <value>'msgZeros'</value>
+      </constant>
+      <constant namespace="global" line="25" package="Dz\Validate">
+        <name>MSG_FIRST_CHECK_DIGIT</name>
+        <full_name>MSG_FIRST_CHECK_DIGIT</full_name>
+        <value>'firstCheckDigit'</value>
+      </constant>
+      <constant namespace="global" line="26" package="Dz\Validate">
+        <name>MSG_SECOND_CHECK_DIGIT</name>
+        <full_name>MSG_SECOND_CHECK_DIGIT</full_name>
+        <value>'secondCheckDigit'</value>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="33" namespace="global" package="Default">
+        <name>$_messageTemplates</name>
+        <default>array(self::MSG_LENGTH =&gt; "'%value%' não tem 11 dígitos", self::MSG_ZEROS =&gt; "O CPF não pode ser composto apenas de zeros", self::MSG_FIRST_CHECK_DIGIT =&gt; "O primeiro dígito verificador está incorreto", self::MSG_SECOND_CHECK_DIGIT =&gt; "O segundo dígito verificador está incorreto")</default>
+        <docblock line="28">
+          <description>Validation failure message template definitions</description>
+          <long-description></long-description>
+          <tag line="28" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="48" package="Dz\Validate">
+        <name>isValid</name>
+        <full_name>isValid</full_name>
+        <docblock line="40">
+          <description>Defined by Zend_Validate_Interface</description>
+          <long-description>&lt;p&gt;Returns true if $value is a valid CPF&lt;/p&gt;</long-description>
+          <tag line="40" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="40" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="15" code="50005">No short description for class \Dz_Validate_Cpf</critical>
+    </parse_markers>
+  </file>
+  <file path="Version.php" hash="b0455fb827ad8d4af00ef26e01123490" package="Dz\Version">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_Version"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
+      <tag line="2" name="version" description="$Id: Version.php 2 2013-04-19 14:50:46Z lf $"/>
+    </docblock>
+    <class final="true" abstract="false" namespace="global" line="19" package="Dz\Version">
+      <extends/>
+      <name>Dz_Version</name>
+      <full_name>\Dz_Version</full_name>
+      <docblock line="11">
+        <description>Class to store and retrieve the version of DZ Framework.</description>
+        <long-description></long-description>
+        <tag line="11" name="category" description="Dz"/>
+        <tag line="11" name="package" description="Dz_Version"/>
+        <tag line="11" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="11" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <constant namespace="global" line="24" package="Dz\Version">
+        <name>VERSION</name>
+        <full_name>VERSION</full_name>
+        <value>'0.1'</value>
+        <docblock line="21">
+          <description>DZ Framework version identification - see compareVersion()</description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="35" package="Dz\Version">
+        <name>compareVersion</name>
+        <full_name>compareVersion</full_name>
+        <docblock line="26">
+          <description>Compare the specified DZ Framework version string $version
+with the current Dz_Version::VERSION of DZ Framework.</description>
+          <long-description></long-description>
+          <tag line="26" name="param" description="A version string (e.g. &quot;0.7.1&quot;)." type="string" variable="$version">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="26" name="return" description="-1 if the $version is older,&#13;&#10;                       0 if they are the same and&#13;&#10;                      +1 if $version is newer." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="35">
+          <name>$version</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="View\Helper\AbsoluteUrl.php" hash="762cb8a0785855232d7fb490ca933031" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Url.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Url" refers="\Zend_View_Helper_Url"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_Url</extends>
+      <name>Dz_View_Helper_AbsoluteUrl</name>
+      <full_name>\Dz_View_Helper_AbsoluteUrl</full_name>
+      <docblock line="16">
+        <description>Helper for making easy links and getting absolute urls that depend on the routes and router</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="Dz\View\Helper">
+        <name>absoluteUrl</name>
+        <full_name>absoluteUrl</full_name>
+        <docblock line="27">
+          <description>Generates an absolute url given the name of a route.</description>
+          <long-description></long-description>
+          <tag line="27" name="param" description="" type="array|string" variable="$urlOptions">
+            <type by_reference="false">array</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="27" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="27" name="param" description="" type="boolean" variable="$reset">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="27" name="param" description="" type="boolean" variable="$encode">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="35">
+          <name>$urlOptions</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="35">
+          <name>$name</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="36">
+          <name>$reset</name>
+          <default>false</default>
+          <type/>
+        </argument>
+        <argument line="36">
+          <name>$encode</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="View\Helper\FormatDate.php" hash="3eadd5ba49eaf788c65f0aa6fa205716" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Abstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Abstract" refers="\Zend_View_Helper_Abstract"/>
+      </docblock>
+    </include>
+    <include line="55" type="Require Once" package="Default">
+      <name>Zend/Date.php</name>
+      <docblock line="52">
+        <description></description>
+        <long-description></long-description>
+        <tag line="52" name="see" description="\Zend_Date" refers="\Zend_Date"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_Abstract</extends>
+      <name>Dz_View_Helper_FormatDate</name>
+      <full_name>\Dz_View_Helper_FormatDate</full_name>
+      <docblock line="16">
+        <description>Helper for formatting dates with escape support.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="42" package="Dz\View\Helper">
+        <name>formatDate</name>
+        <full_name>formatDate</full_name>
+        <docblock line="27">
+          <description>Formats a $date given a $format.</description>
+          <long-description>&lt;p&gt;In the view, you can use something like this
+(note that backslashed characters are preserved):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;?php echo $this-&gt;formatDate($article-&gt;getCreatedOn(), 'dd \d\e MMMM \d\e yyyy'); ?&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above example will output something like "07 de novembro de 2012".&lt;/p&gt;</long-description>
+          <tag line="27" name="param" description="Date value to format" type="string|integer|\Zend_Date|array|\DateTime" variable="$date">
+            <type by_reference="false">string</type>
+            <type by_reference="false">integer</type>
+            <type by_reference="false">\Zend_Date</type>
+            <type by_reference="false">array</type>
+            <type by_reference="false">\DateTime</type>
+          </tag>
+          <tag line="27" name="param" description="" type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="27" name="return" description="" type="NULL|string">
+            <type by_reference="false">NULL</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="42">
+          <name>$date</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="42">
+          <name>$format</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="View\Helper\HeadMeta.php" hash="f0bceef8fa3389b3827141071490eda0" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/HeadMeta.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_HeadMeta" refers="\Zend_View_Helper_HeadMeta"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_HeadMeta</extends>
+      <name>Dz_View_Helper_HeadMeta</name>
+      <full_name>\Dz_View_Helper_HeadMeta</full_name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="TODO" description="Document."/>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="33" package="Dz\View\Helper">
+        <name>_isValid</name>
+        <full_name>_isValid</full_name>
+        <docblock line="27">
+          <description>Determine if item is valid</description>
+          <long-description></long-description>
+          <tag line="27" name="param" description="" type="mixed" variable="$item">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="27" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="33">
+          <name>$item</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="16" code="50005">No short description for class \Dz_View_Helper_HeadMeta</critical>
+    </parse_markers>
+  </file>
+  <file path="View\Helper\MaskNumber.php" hash="691d54f3334a1b8620f6ec3c85099b31" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Abstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Abstract" refers="\Zend_View_Helper_Abstract"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_Abstract</extends>
+      <name>Dz_View_Helper_MaskNumber</name>
+      <full_name>\Dz_View_Helper_MaskNumber</full_name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="TODO" description="Document."/>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="Dz\View\Helper">
+        <name>maskNumber</name>
+        <full_name>maskNumber</full_name>
+        <docblock line="27">
+          <description></description>
+          <long-description></long-description>
+          <tag line="27" name="param" description="" type="string" variable="$number">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="27" name="param" description="" type="string" variable="$mask">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$number</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$mask</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="16" code="50005">No short description for class \Dz_View_Helper_MaskNumber</critical>
+      <error line="27" code="50012">No short description for method maskNumber()</error>
+    </parse_markers>
+  </file>
+  <file path="View\Helper\RandomPartial.php" hash="a8c4ddb16bda930fd5ef7d07ee881171" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Partial.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Partial" refers="\Zend_View_Helper_Partial"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_Partial</extends>
+      <name>Dz_View_Helper_RandomPartial</name>
+      <full_name>\Dz_View_Helper_RandomPartial</full_name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="TODO" description="Document."/>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="39" package="Dz\View\Helper">
+        <name>randomPartial</name>
+        <full_name>randomPartial</full_name>
+        <docblock line="27">
+          <description>Renders a template fragment within a variable scope distinct from the
+calling View object.</description>
+          <long-description></long-description>
+          <tag line="27" name="param" description="Names of view scripts to random through" type="array" variable="$names">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="27" name="param" description="If $model is empty, and $module is an array,&#13;&#10;                             these are the variables to populate in the&#13;&#10;                             view. Otherwise, the module in which the&#13;&#10;                             partial resides" type="string|array" variable="$module">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="27" name="param" description="Variables to populate in the view" type="array" variable="$model">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="27" name="return" description="" type="string|\Zend_View_Helper_Partial">
+            <type by_reference="false">string</type>
+            <type by_reference="false">\Zend_View_Helper_Partial</type>
+          </tag>
+        </docblock>
+        <argument line="39">
+          <name>$names</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="39">
+          <name>$module</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="39">
+          <name>$model</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="16" code="50005">No short description for class \Dz_View_Helper_RandomPartial</critical>
+    </parse_markers>
+  </file>
+  <file path="View\Helper\RequestInfo.php" hash="d8679eb8e1b3b60280184f5d82965f01" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Abstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Abstract" refers="\Zend_View_Helper_Abstract"/>
+      </docblock>
+    </include>
+    <include line="71" type="Require Once" package="Default">
+      <name>Zend/Controller/Front.php</name>
+      <docblock line="68">
+        <description></description>
+        <long-description></long-description>
+        <tag line="68" name="see" description="\Zend_Controller_Front" refers="\Zend_Controller_Front"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_Abstract</extends>
+      <name>Dz_View_Helper_RequestInfo</name>
+      <full_name>\Dz_View_Helper_RequestInfo</full_name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="TODO" description="Document."/>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="true" visibility="protected" line="30" namespace="global" package="Default">
+        <name>$_request</name>
+        <default>null</default>
+        <docblock line="27">
+          <description></description>
+          <long-description></long-description>
+          <tag line="27" name="var" description="" type="\Zend_Controller_Request_Abstract">
+            <type by_reference="false">\Zend_Controller_Request_Abstract</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="Dz\View\Helper">
+        <name>getActionName</name>
+        <full_name>getActionName</full_name>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+          <tag line="32" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="Dz\View\Helper">
+        <name>getControllerName</name>
+        <full_name>getControllerName</full_name>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+          <tag line="40" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="51" package="Dz\View\Helper">
+        <name>getModuleName</name>
+        <full_name>getModuleName</full_name>
+        <docblock line="48">
+          <description></description>
+          <long-description></long-description>
+          <tag line="48" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="65" package="Dz\View\Helper">
+        <name>requestInfo</name>
+        <full_name>requestInfo</full_name>
+        <docblock line="62">
+          <description></description>
+          <long-description></long-description>
+          <tag line="62" name="return" description="Fluent interface." type="\Zend_View_Helper_RequestInfo">
+            <type by_reference="false">\Zend_View_Helper_RequestInfo</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="16" code="50005">No short description for class \Dz_View_Helper_RequestInfo</critical>
+      <critical line="27" code="50019">No short description for property $_request</critical>
+      <error line="32" code="50012">No short description for method getActionName()</error>
+      <error line="40" code="50012">No short description for method getControllerName()</error>
+      <error line="48" code="50012">No short description for method getModuleName()</error>
+      <error line="62" code="50012">No short description for method requestInfo()</error>
+    </parse_markers>
+  </file>
+  <file path="View\Helper\ScriptContext.php" hash="04261811796c07bf2e5c0fefe88b1b16" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Abstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Abstract" refers="\Zend_View_Helper_Abstract"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_Abstract</extends>
+      <name>Dz_View_Helper_ScriptContext</name>
+      <full_name>\Dz_View_Helper_ScriptContext</full_name>
+      <docblock line="16">
+        <description>Helper for append Boilerplate.js context automatically in headScript.</description>
+        <long-description></long-description>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="30" namespace="global" package="Default">
+        <name>$_view</name>
+        <default></default>
+        <docblock line="27">
+          <description></description>
+          <long-description></long-description>
+          <tag line="27" name="var" description="" type="\Zend_View_Interface">
+            <type by_reference="false">\Zend_View_Interface</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="Dz\View\Helper">
+        <name>setView</name>
+        <full_name>setView</full_name>
+        <docblock line="32">
+          <description>Set the View object</description>
+          <long-description></long-description>
+          <tag line="32" name="param" description="" type="\Zend_View_Interface" variable="$view">
+            <type by_reference="false">\Zend_View_Interface</type>
+          </tag>
+          <tag line="32" name="return" description="" type="\Dz_View_Helper_ScriptContext">
+            <type by_reference="false">\Dz_View_Helper_ScriptContext</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$view</name>
+          <default></default>
+          <type>\Zend_View_Interface</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="45" package="Dz\View\Helper">
+        <name>scriptContext</name>
+        <full_name>scriptContext</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="27" code="50019">No short description for property $_view</critical>
+      <error line="45" code="50010">No DocBlock was found for method scriptContext()</error>
+    </parse_markers>
+  </file>
+  <file path="View\Helper\Slug.php" hash="7c5f12bc6ffc0b5901a8ca3874ae9f82" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Abstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Abstract" refers="\Zend_View_Helper_Abstract"/>
+      </docblock>
+    </include>
+    <include line="36" type="Require Once" package="Default">
+      <name>Gedmo/Sluggable/Util/Urlizer.php</name>
+      <docblock line="33">
+        <description></description>
+        <long-description></long-description>
+        <tag line="33" name="see" description="\Gedmo\Sluggable\Util\Urlizer" refers="\Gedmo\Sluggable\Util\Urlizer"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_Abstract</extends>
+      <name>Dz_View_Helper_Slug</name>
+      <full_name>\Dz_View_Helper_Slug</full_name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="TODO" description="Document."/>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="Dz\View\Helper">
+        <name>slug</name>
+        <full_name>slug</full_name>
+        <docblock line="27">
+          <description></description>
+          <long-description></long-description>
+          <tag line="27" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="27" name="param" description="" type="string" variable="$separator">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$separator</name>
+          <default>'-'</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="16" code="50005">No short description for class \Dz_View_Helper_Slug</critical>
+      <error line="27" code="50012">No short description for method slug()</error>
+    </parse_markers>
+  </file>
+  <file path="View\Helper\Truncate.php" hash="acadd74b1ac37483a7520e3b562742aa" package="Dz\View\Helper">
+    <docblock line="2">
+      <description>DZ Framework</description>
+      <long-description></long-description>
+      <tag line="2" name="category" description="Dz"/>
+      <tag line="2" name="package" description="Dz_View"/>
+      <tag line="2" name="subpackage" description="Helper"/>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+    </docblock>
+    <include line="14" type="Require Once" package="Default">
+      <name>Zend/View/Helper/Abstract.php</name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag line="11" name="see" description="\Zend_View_Helper_Abstract" refers="\Zend_View_Helper_Abstract"/>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="25" package="Dz\View\Helper">
+      <extends>\Zend_View_Helper_Abstract</extends>
+      <name>Dz_View_Helper_Truncate</name>
+      <full_name>\Dz_View_Helper_Truncate</full_name>
+      <docblock line="16">
+        <description></description>
+        <long-description></long-description>
+        <tag line="16" name="TODO" description="Document."/>
+        <tag line="16" name="category" description="Dz"/>
+        <tag line="16" name="package" description="Dz_View"/>
+        <tag line="16" name="subpackage" description="Helper"/>
+        <tag line="16" name="copyright" description="Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="16" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="32" package="Dz\View\Helper">
+        <name>truncate</name>
+        <full_name>truncate</full_name>
+        <docblock line="27">
+          <description></description>
+          <long-description></long-description>
+          <tag line="27" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="27" name="param" description="\Dz_Filter_StringTruncate options." type="array" variable="$options">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="27" name="return" description="The truncated value." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="32">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="32">
+          <name>$options</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="16" code="50005">No short description for class \Dz_View_Helper_Truncate</critical>
+      <error line="27" code="50012">No short description for method truncate()</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="Dz" full_name="Dz">
+    <package name="Application" full_name="Dz\Application">
+      <package name="Resource" full_name="Dz\Application\Resource"/>
+    </package>
+    <package name="Controller" full_name="Dz\Controller">
+      <package name="Plugin" full_name="Dz\Controller\Plugin"/>
+    </package>
+    <package name="Dbal" full_name="Dz\Dbal">
+      <package name="Logging" full_name="Dz\Dbal\Logging"/>
+    </package>
+    <package name="Entity" full_name="Dz\Entity"/>
+    <package name="Facebook" full_name="Dz\Facebook"/>
+    <package name="Filter" full_name="Dz\Filter"/>
+    <package name="Geocode" full_name="Dz\Geocode"/>
+    <package name="Http" full_name="Dz\Http"/>
+    <package name="Image" full_name="Dz\Image"/>
+    <package name="Mail" full_name="Dz\Mail"/>
+    <package name="Orm" full_name="Dz\Orm">
+      <package name="Function" full_name="Dz\Orm\Function"/>
+    </package>
+    <package name="Paginator" full_name="Dz\Paginator"/>
+    <package name="Security" full_name="Dz\Security"/>
+    <package name="Validate" full_name="Dz\Validate"/>
+    <package name="Version" full_name="Dz\Version"/>
+    <package name="View" full_name="Dz\View">
+      <package name="Helper" full_name="Dz\View\Helper"/>
+    </package>
+  </package>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

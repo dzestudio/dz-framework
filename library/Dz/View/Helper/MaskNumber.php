@@ -1,11 +1,28 @@
 <?php
+/**
+ * DZ Framework
+ *
+ * @category   Dz
+ * @package    Dz_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ */
 
 /**
- * Zend_View_Helper_Abstract
+ * @see \Zend_View_Helper_Abstract
  */
 require_once 'Zend/View/Helper/Abstract.php';
 
-class Dz_View_Helper_MaskNumber extends Zend_View_Helper_Abstract
+/**
+ * @TODO Document.
+ *
+ * @category   Dz
+ * @package    Dz_View
+ * @subpackage Helper
+ * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
+ */
+class Dz_View_Helper_MaskNumber extends \Zend_View_Helper_Abstract
 {
     /**
      * @param string $number

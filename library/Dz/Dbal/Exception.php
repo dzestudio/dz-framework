@@ -8,7 +8,7 @@
  */
 
 /**
- * @see Dz_Exception
+ * @see \Dz_Exception
  */
 require_once 'Dz/Exception.php';
 
@@ -18,6 +18,7 @@ require_once 'Dz/Exception.php';
  * @category   Dz
  * @package    Dz_Dbal
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Dbal_Exception extends Dz_Exception
 {

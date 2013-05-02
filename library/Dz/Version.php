@@ -14,6 +14,7 @@
  * @category   Dz
  * @package    Dz_Version
  * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 final class Dz_Version
 {

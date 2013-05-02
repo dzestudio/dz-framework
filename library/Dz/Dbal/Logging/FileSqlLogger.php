@@ -8,23 +8,22 @@
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
-use Doctrine\DBAL\Logging\SQLLogger;
-
 /**
- * @see Doctrine\DBAL\Logging\SQLLogger
+ * @see \Doctrine\DBAL\Logging\SQLLogger
  */
 require_once 'Doctrine/DBAL/Logging/SQLLogger.php';
 
 /**
  * A SQL logger that logs to files in the same directory of error_log.
  *
- * @see        Dz_Dbal_Logging_FileSqlLogger::LONG_QUERY_TIME
+ * @see        \Dz_Dbal_Logging_FileSqlLogger::LONG_QUERY_TIME
  * @category   Dz
  * @package    Dz_Dbal
  * @subpackage Logging
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Dbal_Logging_FileSqlLogger implements SQLLogger
+class Dz_Dbal_Logging_FileSqlLogger implements \Doctrine\DBAL\Logging\SQLLogger
 {
     /**
      * If the query takes longer than LONG_QUERY_TIME seconds,

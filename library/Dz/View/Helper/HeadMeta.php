@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DZ Framework
  *
@@ -10,7 +9,7 @@
  */
 
 /**
- * @see Zend_View_Helper_HeadMeta
+ * @see \Zend_View_Helper_HeadMeta
  */
 require_once 'Zend/View/Helper/HeadMeta.php';
 
@@ -21,8 +20,9 @@ require_once 'Zend/View/Helper/HeadMeta.php';
  * @package    Dz_View
  * @subpackage Helper
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_View_Helper_HeadMeta extends Zend_View_Helper_HeadMeta
+class Dz_View_Helper_HeadMeta extends \Zend_View_Helper_HeadMeta
 {
     /**
      * Determine if item is valid

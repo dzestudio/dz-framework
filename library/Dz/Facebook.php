@@ -17,7 +17,7 @@ if (!headers_sent()) {
 }
 
 /**
- * @see Facebook
+ * @see \Facebook
  */
 require_once 'facebook.php';
 
@@ -27,6 +27,7 @@ require_once 'facebook.php';
  * @category   Dz
  * @package    Dz_Facebook
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Facebook extends Facebook
 {
@@ -61,7 +62,7 @@ class Dz_Facebook extends Facebook
      * Additional permissions.
      *
      * @var array
-     * @see https://developers.facebook.com/docs/authentication/permissions/
+     * @link https://developers.facebook.com/docs/authentication/permissions/
      */
     protected $_scope = array();
 
@@ -78,7 +79,7 @@ class Dz_Facebook extends Facebook
      * we discover them.
      *
      * @param array $config the application configuration.
-     * @see BaseFacebook::__construct in facebook.php
+     * @see \BaseFacebook::__construct in facebook.php
      */
     public function __construct($config)
     {

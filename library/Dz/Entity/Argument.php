@@ -13,6 +13,7 @@
  * @category   Dz
  * @package    Dz_Entity
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
 class Dz_Entity_Argument
 {

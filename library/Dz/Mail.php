@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DZ Framework
  *
@@ -10,7 +9,7 @@
  */
 
 /**
- * @see Zend_Mail
+ * @see \Zend_Mail
  */
 require_once 'Zend/Mail.php';
 
@@ -20,8 +19,9 @@ require_once 'Zend/Mail.php';
  * @category   Dz
  * @package    Dz_Mail
  * @copyright  Copyright (c) 2012 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Mail extends Zend_Mail
+class Dz_Mail extends \Zend_Mail
 {
     /**
      * Template file path
@@ -33,7 +33,7 @@ class Dz_Mail extends Zend_Mail
     /**
      * Template view
      *
-     * @var Zend_View
+     * @var \Zend_View
      */
     protected $_templateView;
 
@@ -52,7 +52,7 @@ class Dz_Mail extends Zend_Mail
         if ($templateFile === false)
         {
             /**
-             * @see Dz_Mail_Exception
+             * @see \Dz_Mail_Exception
              */
             require_once 'Dz/Mail/Exception.php';
 
@@ -62,11 +62,11 @@ class Dz_Mail extends Zend_Mail
         $scriptPath = dirname($templateFile);
 
         /**
-         * @see Zend_View
+         * @see \Zend_View
          */
         require_once 'Zend/View.php';
 
-        $this->_templateView = new Zend_View();
+        $this->_templateView = new \Zend_View();
 
         $this->_templateView->setScriptPath($scriptPath);
 
@@ -109,7 +109,7 @@ class Dz_Mail extends Zend_Mail
     /**
      * Returns template view
      *
-     * @return Zend_View
+     * @return \Zend_View
      */
     public function getTemplateView()
     {
@@ -117,10 +117,10 @@ class Dz_Mail extends Zend_Mail
     }
 
     /**
-     * Return Zend_Mime_Part representing body HTML
+     * Return \Zend_Mime_Part representing body HTML
      *
      * @param  bool $htmlOnly Whether to return the body HTML only, or the MIME part; defaults to false, the MIME part
-     * @return false|Zend_Mime_Part|string
+     * @return false|\Zend_Mime_Part|string
      */
     public function getBodyHtml($htmlOnly = false)
     {
