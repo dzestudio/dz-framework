@@ -29,17 +29,17 @@ class Dz_Http_Client
         $data = null;
 
         if (($data = @file_get_contents($uri)) === false) {
-        	$curlHandler = curl_init();
-        	$timeout = 5;
+            $curlHandler = curl_init();
+            $timeout = 5;
 
             curl_setopt($curlHandler, CURLOPT_CONNECTTIMEOUT, $timeout);
             curl_setopt($curlHandler, CURLOPT_FOLLOWLOCATION, true);
-        	curl_setopt($curlHandler, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($curlHandler, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curlHandler, CURLOPT_URL, $uri);
 
-        	$data = curl_exec($curlHandler);
+            $data = curl_exec($curlHandler);
 
-        	curl_close($curlHandler);
+            curl_close($curlHandler);
         }
 
         return $data;

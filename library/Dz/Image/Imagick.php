@@ -35,9 +35,9 @@ class Dz_Image_Imagick extends \Imagick
             $draw->setFillAlpha($alpha);
         }
 
-        $geometry = $this->getImageGeometry();
-        $width = $geometry['width'];
-        $height = $geometry['height'];
+        $geo = $this->getImageGeometry();
+        $width = $geo['width'];
+        $height = $geo['height'];
 
         $draw->rectangle(0, 0, $width, $height);
 
@@ -53,23 +53,23 @@ class Dz_Image_Imagick extends \Imagick
      */
     public function crop($width, $height)
     {
-        $geometry = $this->getImageGeometry();
+        $geo = $this->getImageGeometry();
 
         // Vertical
-        if ($geometry['width'] / $width < $geometry['height'] / $height) {
+        if ($geo['width'] / $width < $geo['height'] / $height) {
             $this->cropImage(
-                $geometry['width'],
-                floor($height * $geometry['width'] / $width),
+                $geo['width'],
+                floor($height * $geo['width'] / $width),
                 0,
-                ($geometry['height'] - $height * $geometry['width'] / $width) / 2
+                ($geo['height'] - $height * $geo['width'] / $width) / 2
             );
 
         // Horizontal
         } else {
             $this->cropImage(
-                ceil($width * $geometry['height'] / $height),
-                $geometry['height'],
-                ($geometry['width'] - $width * $geometry['height'] / $height) / 2,
+                ceil($width * $geo['height'] / $height),
+                $geo['height'],
+                ($geo['width'] - $width * $geo['height'] / $height) / 2,
                 0
             );
         }

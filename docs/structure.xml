@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a12" title="DZ Framework">
-  <file path="Geocode.php" hash="c687b94bd9b73a0d1956e6bb6d5d56e5" package="Dz\Geocode">
+  <file path="Geocode.php" hash="ad26aa96c108485e2a2fc466648a6c10" package="Dz\Geocode">
     <docblock line="2">
       <description>DZ Framework</description>
       <long-description></long-description>
       <tag line="2" name="category" description="Dz"/>
       <tag line="2" name="package" description="Dz_Geocode"/>
       <tag line="2" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
-      <tag line="2" name="version" description="$Id: Geocode.php 12 2013-05-02 01:55:12Z lf $"/>
+      <tag line="2" name="version" description="$Id: Geocode.php 13 2013-05-02 17:17:10Z lf $"/>
     </docblock>
     <include line="53" type="Require Once" package="Default">
       <name>Dz/Http/Client.php</name>
@@ -63,16 +63,15 @@ echo 'Longitude: ', $latLng-&gt;lng, PHP_EOL;
         </argument>
       </method>
     </class>
-    <source>eJzNVNtu20YQfTfgfxgIRiUZEklRcdLKtmLHzg1QYKdI+5C2EFbkmFyb2mX2EkEO8mN57Y91dpcSZSEf0H0gl8OZs3NmzuzZy7qsDw/i4+PDAziG68/wRrElrqR6cAZvvMiYwUKqNQBcPwZTzbIHViB40/wtykzm2HjLeq14URqAq+22l/UhTUbpkB5jd8xrbf79kXMJvdKYehLHq9Uqyh9RG0vWKJPLaKH6AfErKs2lcIcdvc8n0BwXUeowSh3ueJicDJMUktHk5GQySj9DdQdHLjo+PGjpXea5Qq3BSMikVDkXxEzTXmyOyCqmdbSl/qnkOtjAavJ8K2VRIXxgtYbL2/cByAUbYAEbtQ/sVfwBoTN6niRwuaxLbkpkRiHcMvWwYusBfJBWGMYF/MlxNYCry05gywWBFigLxSgse5JoQK2Y4VQlhPGL6Fk6TtIRMJH74EqKIvwbjtI0Sn4dvxj/1h/AipBKWEsLGROOCmXuA+qKZQhLSooKAFJBLTU3rhKMrHVbiT80tXuy/TxzDZj67VHDHM6h+7tlxEcYBISPlghLoFxurLELJQcwPhl3T0MQkZiJgmL+bvUzmRRoZv5Hb4PaP92eiVkpoTtr2E+gO9jADKf0HsDtu9v565vZ6a73piB77qLYcz+Lt4z+H6Jn1pTUD7dmb+AVNwZFJi0p7ay6u9gPmjZaD1rdze4b/aEVRsCtY8rQS1ZvNEua24oqbiW0o7xoE7vFuPDzAL5974jM/KriKIxv4TUzrNdvXWtGdwqANopTy7d6+VTiJoMBMDeGy7pC0g7tSYaaLyqMWhSFxioBcnGPmYGb8KLpc0PkcDtEoeMmgXai6ECtZE0s+U72cdjUdlHRZGlDnDO4syLziv+J+IJ/U0J//1jFndCb/tGI6KjwlwKruXbN8LaYvuIitCC+11K8bBDPuy2WXxEotrKqcs3Ncf/kHbfuLxqFlurcKItuilqPtrdNqTTifmN2HeL2Q+EXyxXOpaBroHv9GLuQOIS4+/XpQUc5dbaZ2Z823ZXHT+wmwHGnAPea5xgoOpD+E9ymtd57OCX+tjL6r+Sf4ZRquESj1jSykiaS2tSgfz88+P4f8On7Qg==</source>
   </file>
-  <file path="Http\Client.php" hash="075ba87d68bef8497aa26c00feb213ba" package="Dz\Http">
+  <file path="Http\Client.php" hash="3f5e797828d66d03a74c8114b305dc91" package="Dz\Http">
     <docblock line="2">
       <description>DZ Framework</description>
       <long-description></long-description>
       <tag line="2" name="category" description="Dz"/>
       <tag line="2" name="package" description="Dz_Http"/>
       <tag line="2" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
-      <tag line="2" name="version" description="$Id: Client.php 12 2013-05-02 01:55:12Z lf $"/>
+      <tag line="2" name="version" description="$Id: Client.php 13 2013-05-02 17:17:10Z lf $"/>
     </docblock>
     <class final="false" abstract="false" namespace="global" line="19" package="Dz\Http">
       <extends/>
@@ -107,16 +106,15 @@ echo 'Longitude: ', $latLng-&gt;lng, PHP_EOL;
         </argument>
       </method>
     </class>
-    <source>eJzNUstu2kAUXQeJf7gLFjYC84jYkNCSOqAgURy5RpWysSbjMYwy9ljja0jS5se67Y91xsYJpIu2u85iHveec+5rLj9m26zZ6LXbzQa04foO5ookbC/VgzGUxiklyDZSPQHA9XNlygh9IBsGpSm8QcwOUJk9Kb7ZIoD7erWoDcP+YNjV27mJMcvx54+IS7C2mjnu9fb7vRM9sxwLbXWoTJx7ZVeKO6ZyLlMTqbWIxuAKzlJ0dNowGBrZ825/1O0PoT8Yj0bjwfAORAwtQ+41G2+l3Sq54xHLQasnWi9huJVRDrFUoBhlfMfTDUQECcRKJkBg7S+c/6QJpNDJKhMIlnP4xBFZSmWhEC5FPH1P+nAongqS53VqYdW4ZuOb9upV9cUsPXa5T4Ukuhu4ZbpBqZbHHGRcvluF4k6NfeXo6vVP0dcclemcQb05FcNCpbXze1oIUTt71SUr7gWnGkBQH3GRUjRj3jC81jOwjJxdIQ8Jlz+gnM8EjN6FmW7t4DFYVu2dxlywUCuFdSmVnA2TyQRiInJmH6uetWihxA1JI8GU5ptXyFOOln1xjEKeMFmgRoxOgptVcnKGMkPrWK4D7tpferdB6Hqr1cwNgsXnmbcOOlDLHcf4O6W5t1x6X5eeexUsvFUHUBXsJNM/S/izYO2vAv9q9WU+8zsw+Pcs9NEpp26fNOOsnkKpwB4ZPeG/A5cgKmTOfkPVmJdjwuFflTEOGO1/+QW/LFk8</source>
   </file>
-  <file path="Image\Imagick.php" hash="32069a3a8bd79ddd811890c964881f62" package="Dz\Image">
+  <file path="Image\Imagick.php" hash="0283cee44a46ba490101986356ca8ddf" package="Dz\Image">
     <docblock line="2">
       <description>DZ Framework</description>
       <long-description></long-description>
       <tag line="2" name="category" description="Dz"/>
       <tag line="2" name="package" description="Dz_Image"/>
       <tag line="2" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
-      <tag line="2" name="version" description="$Id: Imagick.php 12 2013-05-02 01:55:12Z lf $"/>
+      <tag line="2" name="version" description="$Id: Imagick.php 13 2013-05-02 17:17:10Z lf $"/>
     </docblock>
     <include line="94" type="Require Once" package="Default">
       <name>Dz/Http/Client.php</name>
@@ -272,362 +270,361 @@ echo 'Longitude: ', $latLng-&gt;lng, PHP_EOL;
         </argument>
       </method>
     </class>
-    <source>eJzNV1tv2zYUfg+Q/3DWGbAc+JYUeXGatmvStAEGpOjSPXQdAlo6stjQokpSVZwhf2yv+2M7pC6WLLn23iYUhUyd68fvXPLiVRIlhweTo6PDAziCy89wpdgSM6nu7YE7fO0zgwupVgBw+ZgfJcy/ZwsEd3R3vaT3QlYmK8UXkQG4qF49fwAn0+OTEf333Dp5q80/fwdcghcZk8wmkyzLxsEjapPS6diXy/FcDXKL31FpLmPrqncdzMA64/79mAKH4xNr9/loejqansD0eHZ6Ojs++QwihJ7VnhwerJMrFAEfDMbOpJGg+TIRPFyBlksEcrykc58Jocf/FwBYaiKprCf49QrecEPh+zJVBl6I8PWm0ssib18wravY7hrJBxq+FAeHB3+RAj05SvY5gjfCyZgIIeRCECyCAsi4iQCZH0HCH1AAj50Et/bHpW5lgxAiJoE2iscL6OUmbpsWAwx5zA1dxRBwvBgP4dnPYej70+mz8aahUEhmoMdEEjG4Ifi5WcF3JlIcw/F4ClxDmAqxApmwbykCi4PKxB7PtG7CKBZrcouxqeKY5C9JOhfcJ7nYt3HnifBH9PIMh2WE53A8yDUKfB1/A8Uy+hRjVrLxkk68wZnlaUNq9FKjuSKoLqzZwnpTjofgcX3ngPFyt4NB3V3b2C9WqJQ9W0s+NfwvkGrBEN3PoWcirkcvF2gcjd4VX7y6ci/jATHjfK34R98d9f+sS0XoSqEhlp85uVb+Cn3D4oVAbzoE+pe7GZaGNjDL47SaLlDPGSmjrNKrk/ztA12zbzQwULiwdynDNaEhVHLpfvrEAlS2V9hfGCxQb2U7J9EFCReQWLrnb4VpX8mkxexKqUDIahWv3WpGBhLg2hYoUVYhs5yNEQMMXlHTSUUAGUKqEb6m2pRMm81MlC7nMePCQfRqF7PJqbcJepvSe5JlrTGZwO+oDKcm2+Rymz4wKZF80cUa+7mIq0X7PBSbQ86H5udG5JW7YVuIistWX3EdRx1KVYyDDvVpx5nXlckI9vNBbydNky1w39t+JGNTh/cJUBAd/jtIPnJRkKAZWccddOTaobADkTLjEezp1SLShXwbpQqMjsbRLI0W7X/URz4io1lZaxo04DCmJQpown36eN3RLKg0NcAXGs7vafrfXQhOPWY2o8K5ZIZ5g21D1Dn5pHg5R+tubIOiSRDUItk1u6y4Vxlt17YtSuvlDh+4Nromuq3eqBcFBYKV7NkuGq7BLB9KXCNuArQpNGkeKPyWcoV3MvYR+pePE6s6yVXtsthvFIoL2sVoIafmtfU2Gpn8OOs3Qs69tdUN0m1l0AemDRGCxcXd0UCQNJXyBWTHflXucUUycDP/SnMTsojTnhZJUaxxtBsmUnOzua61ZtCD4xZtG+nSDsSQFodqCpU2gl1GVs6Iktm+FrYQNLHAFIAObWznbhGws2baMYqKdlY6qRNxWOCznk4XTgy9gTVsjf6wyH9j37Escnc5ti62XkpVsGWNrgUUmlTFMJdSIF34raJVlepMk33aXFExl3jENOjU92mmDyFktmgkAagyrneCZk15leeuJZTb1Uq6kU3vVqom31oxf2q0gEq53QOW9/SxLrGt5xYYFPeVqfVd1aPYehc3qUlSU7sNS633t7cfyLBOZKz3+WuEqBqb21WCtDC595GxPwqilob2o6mOZOY1bJ5D32lOknjRb19BRA0Dldevu55BH8aNyJpXgX4kc8gaxwFHr4bW078SXV7t</source>
   </file>
-  <file path="Security\Hash.php" hash="100fffe621432dd0fb4acf44067e227f" package="Dz\Security">
+  <file path="Security\Hash.php" hash="682dc1bb35329afbf5cda743964df6b8" package="Dz\Security">
     <docblock line="2">
       <description>DZ Framework</description>
       <long-description></long-description>
       <tag line="2" name="category" description="Dz"/>
       <tag line="2" name="package" description="Dz_Security"/>
       <tag line="2" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
+      <tag line="2" name="version" description="$Id: Hash.php 14 2013-05-02 17:26:31Z lf $"/>
     </docblock>
-    <class final="false" abstract="false" namespace="global" line="20" package="Dz\Security">
+    <class final="false" abstract="false" namespace="global" line="21" package="Dz\Security">
       <extends/>
       <name>Dz_Security_Hash</name>
       <full_name>\Dz_Security_Hash</full_name>
-      <docblock line="10">
+      <docblock line="11">
         <description>Hash generator class.</description>
-        <long-description>&lt;p&gt;Highly based on {@link http://net.tutsplus.com/tutorials/php/understanding-hash-functions-and-keeping-passwords-safe/}.&lt;/p&gt;</long-description>
-        <tag line="10" name="category" description="Dz"/>
-        <tag line="10" name="package" description="Dz_Security"/>
-        <tag line="10" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
-        <tag line="10" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
+        <long-description>&lt;p&gt;Highly based on {@link http://goo.gl/ck7YV}.&lt;/p&gt;</long-description>
+        <tag line="11" name="category" description="Dz"/>
+        <tag line="11" name="package" description="Dz_Security"/>
+        <tag line="11" name="copyright" description="Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)"/>
+        <tag line="11" name="author" description="LF Bittencourt &lt;lf@dzestudio.com.br&gt;"/>
       </docblock>
-      <constant namespace="global" line="27" package="Dz\Security">
+      <constant namespace="global" line="28" package="Dz\Security">
         <name>CRYPT_STD_DES</name>
         <full_name>CRYPT_STD_DES</full_name>
         <value>'CRYPT_STD_DES'</value>
-        <docblock line="22">
+        <docblock line="23">
           <description>Standard DES-based hash constant representation.</description>
           <long-description></long-description>
-          <tag line="22" name="var" description="" type="string">
+          <tag line="23" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="global" line="34" package="Dz\Security">
+      <constant namespace="global" line="35" package="Dz\Security">
         <name>CRYPT_EXT_DES</name>
         <full_name>CRYPT_EXT_DES</full_name>
         <value>'CRYPT_EXT_DES'</value>
-        <docblock line="29">
+        <docblock line="30">
           <description>Extended DES-based hash constant representation.</description>
           <long-description></long-description>
-          <tag line="29" name="var" description="" type="string">
+          <tag line="30" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="global" line="41" package="Dz\Security">
+      <constant namespace="global" line="42" package="Dz\Security">
         <name>CRYPT_MD5</name>
         <full_name>CRYPT_MD5</full_name>
         <value>'CRYPT_MD5'</value>
-        <docblock line="36">
+        <docblock line="37">
           <description>MD5 hashing constant representation.</description>
           <long-description></long-description>
-          <tag line="36" name="var" description="" type="string">
+          <tag line="37" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="global" line="48" package="Dz\Security">
+      <constant namespace="global" line="49" package="Dz\Security">
         <name>CRYPT_BLOWFISH</name>
         <full_name>CRYPT_BLOWFISH</full_name>
         <value>'CRYPT_BLOWFISH'</value>
-        <docblock line="43">
+        <docblock line="44">
           <description>Blowfish hashing constant representation.</description>
           <long-description></long-description>
-          <tag line="43" name="var" description="" type="string">
+          <tag line="44" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="global" line="55" package="Dz\Security">
+      <constant namespace="global" line="56" package="Dz\Security">
         <name>CRYPT_SHA256</name>
         <full_name>CRYPT_SHA256</full_name>
         <value>'CRYPT_SHA256'</value>
-        <docblock line="50">
+        <docblock line="51">
           <description>SHA-256 hash constant representation.</description>
           <long-description></long-description>
-          <tag line="50" name="var" description="" type="string">
+          <tag line="51" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="global" line="62" package="Dz\Security">
+      <constant namespace="global" line="63" package="Dz\Security">
         <name>CRYPT_SHA512</name>
         <full_name>CRYPT_SHA512</full_name>
         <value>'CRYPT_SHA512'</value>
-        <docblock line="57">
+        <docblock line="58">
           <description>SHA-512 constant representation.</description>
           <long-description></long-description>
-          <tag line="57" name="var" description="" type="string">
+          <tag line="58" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="protected" line="71" namespace="global" package="Default">
+      <property final="false" static="false" visibility="protected" line="72" namespace="global" package="Default">
         <name>$_cost</name>
         <default>10</default>
-        <docblock line="64">
+        <docblock line="65">
           <description>Base-2 logarithm of how many iterations it will run
 (10 =&gt; 2^10 = 1024 iterations) for CRYPT_BLOWFISH hashes.</description>
           <long-description>&lt;p&gt;This number can range between 04 and 31.&lt;/p&gt;</long-description>
-          <tag line="64" name="var" description="" type="integer">
+          <tag line="65" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="78" namespace="global" package="Default">
+      <property final="false" static="false" visibility="protected" line="79" namespace="global" package="Default">
         <name>$_cryptType</name>
         <default>self::CRYPT_STD_DES</default>
-        <docblock line="73">
+        <docblock line="74">
           <description>Current hash type.</description>
           <long-description></long-description>
-          <tag line="73" name="var" description="" type="string">
+          <tag line="74" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="85" namespace="global" package="Default">
+      <property final="false" static="false" visibility="protected" line="86" namespace="global" package="Default">
         <name>$_saltBase</name>
         <default>'eeb95e4c295e0d9e77f523bab5ff81733fe222e74a5a10f8'</default>
-        <docblock line="80">
+        <docblock line="81">
           <description>Bunch of random characters to prevent exploits.</description>
           <long-description></long-description>
-          <tag line="80" name="var" description="" type="string">
+          <tag line="81" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="92" namespace="global" package="Default">
+      <property final="false" static="false" visibility="protected" line="93" namespace="global" package="Default">
         <name>$_saltLengths</name>
         <default>array(self::CRYPT_STD_DES =&gt; 2, self::CRYPT_EXT_DES =&gt; 9, self::CRYPT_MD5 =&gt; 9, self::CRYPT_BLOWFISH =&gt; 22, self::CRYPT_SHA256 =&gt; 48, self::CRYPT_SHA512 =&gt; 48)</default>
-        <docblock line="87">
+        <docblock line="88">
           <description>Salt lengths by hash type.</description>
           <long-description></long-description>
-          <tag line="87" name="var" description="" type="array">
+          <tag line="88" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="109" package="Dz\Security">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="101">
+        <docblock line="102">
           <description>Public constructor.</description>
           <long-description></long-description>
-          <tag line="101" name="param" description="" type="string" variable="$cryptType">
+          <tag line="102" name="param" description="" type="string" variable="$cryptType">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="101" name="param" description="" type="string" variable="$saltBase">
+          <tag line="102" name="param" description="" type="string" variable="$saltBase">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="101" name="param" description="" type="integer" variable="$cost">
+          <tag line="102" name="param" description="" type="integer" variable="$cost">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
-        <argument line="108">
+        <argument line="109">
           <name>$cryptType</name>
           <default>self::CRYPT_STD_DES</default>
           <type/>
         </argument>
-        <argument line="109">
+        <argument line="110">
           <name>$saltBase</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="109">
+        <argument line="110">
           <name>$cost</name>
           <default>10</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="119" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="120" package="Dz\Security">
         <name>_generateSaltBase</name>
         <full_name>_generateSaltBase</full_name>
-        <docblock line="116">
+        <docblock line="117">
           <description>Generates random salt base based on choosen hash type.</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="136" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="137" package="Dz\Security">
         <name>_getSalt</name>
         <full_name>_getSalt</full_name>
-        <docblock line="131">
+        <docblock line="132">
           <description>Gets a salt string to base the hashing on.</description>
           <long-description></long-description>
-          <tag line="131" name="return" description="" type="string">
+          <tag line="132" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="179" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="180" package="Dz\Security">
         <name>_padRight</name>
         <full_name>_padRight</full_name>
-        <docblock line="172">
+        <docblock line="173">
           <description>Cuts a value properly to use as salt base.</description>
           <long-description></long-description>
-          <tag line="172" name="param" description="" type="string" variable="$value">
+          <tag line="173" name="param" description="" type="string" variable="$value">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="172" name="param" description="" type="integer" variable="$length">
+          <tag line="173" name="param" description="" type="integer" variable="$length">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="172" name="return" description="The formatted value." type="string">
+          <tag line="173" name="return" description="The formatted value." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="179">
+        <argument line="180">
           <name>$value</name>
           <default></default>
           <type/>
         </argument>
-        <argument line="179">
+        <argument line="180">
           <name>$length</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="192" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="193" package="Dz\Security">
         <name>getCost</name>
         <full_name>getCost</full_name>
-        <docblock line="187">
+        <docblock line="188">
           <description>Gets cost.</description>
           <long-description></long-description>
-          <tag line="187" name="return" description="" type="integer">
+          <tag line="188" name="return" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="203" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="204" package="Dz\Security">
         <name>setCost</name>
         <full_name>setCost</full_name>
-        <docblock line="197">
+        <docblock line="198">
           <description>Sets cost.</description>
           <long-description></long-description>
-          <tag line="197" name="param" description="" type="integer" variable="$cost">
+          <tag line="198" name="param" description="" type="integer" variable="$cost">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="197" name="return" description="Provides fluent interface." type="\Dz_Security_Hash">
+          <tag line="198" name="return" description="Provides fluent interface." type="\Dz_Security_Hash">
             <type by_reference="false">\Dz_Security_Hash</type>
           </tag>
         </docblock>
-        <argument line="203">
+        <argument line="204">
           <name>$cost</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="217" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="218" package="Dz\Security">
         <name>getCryptType</name>
         <full_name>getCryptType</full_name>
-        <docblock line="212">
+        <docblock line="213">
           <description>Gets current hash type.</description>
           <long-description></long-description>
-          <tag line="212" name="return" description="" type="string">
+          <tag line="213" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="228" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="229" package="Dz\Security">
         <name>setCryptType</name>
         <full_name>setCryptType</full_name>
-        <docblock line="222">
+        <docblock line="223">
           <description>Sets hash type.</description>
           <long-description></long-description>
-          <tag line="222" name="param" description="" type="string" variable="$cryptType">
+          <tag line="223" name="param" description="" type="string" variable="$cryptType">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="222" name="return" description="Provides fluent interface." type="\Dz_Security_Hash">
+          <tag line="223" name="return" description="Provides fluent interface." type="\Dz_Security_Hash">
             <type by_reference="false">\Dz_Security_Hash</type>
           </tag>
         </docblock>
-        <argument line="228">
+        <argument line="229">
           <name>$cryptType</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="250" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="251" package="Dz\Security">
         <name>getSaltBase</name>
         <full_name>getSaltBase</full_name>
-        <docblock line="245">
+        <docblock line="246">
           <description>Gets salt base.</description>
           <long-description></long-description>
-          <tag line="245" name="return" description="" type="string">
+          <tag line="246" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="261" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="262" package="Dz\Security">
         <name>setSaltBase</name>
         <full_name>setSaltBase</full_name>
-        <docblock line="255">
+        <docblock line="256">
           <description>Sets salt base.</description>
           <long-description></long-description>
-          <tag line="255" name="param" description="If null, it will be automatically generated." type="string|null" variable="$saltBase">
+          <tag line="256" name="param" description="If null, it will be automatically generated." type="string|null" variable="$saltBase">
             <type by_reference="false">string</type>
             <type by_reference="false">null</type>
           </tag>
-          <tag line="255" name="return" description="Provides fluent interface." type="\Dz_Security_Hash">
+          <tag line="256" name="return" description="Provides fluent interface." type="\Dz_Security_Hash">
             <type by_reference="false">\Dz_Security_Hash</type>
           </tag>
         </docblock>
-        <argument line="261">
+        <argument line="262">
           <name>$saltBase</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="279" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="280" package="Dz\Security">
         <name>check</name>
         <full_name>check</full_name>
-        <docblock line="272">
+        <docblock line="273">
           <description>Compares a value against its hash.</description>
           <long-description></long-description>
-          <tag line="272" name="param" description="" type="string" variable="$hashValue">
+          <tag line="273" name="param" description="" type="string" variable="$hashValue">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="272" name="param" description="" type="string" variable="$value">
+          <tag line="273" name="param" description="" type="string" variable="$value">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="272" name="return" description="True of value equals hash, false otherwise." type="boolean">
+          <tag line="273" name="return" description="True of value equals hash, false otherwise." type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="279">
+        <argument line="280">
           <name>$hashValue</name>
           <default></default>
           <type/>
         </argument>
-        <argument line="279">
+        <argument line="280">
           <name>$value</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="290" package="Dz\Security">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="291" package="Dz\Security">
         <name>crypt</name>
         <full_name>crypt</full_name>
-        <docblock line="284">
+        <docblock line="285">
           <description>Crypts a value.</description>
           <long-description></long-description>
-          <tag line="284" name="param" description="" type="string" variable="$value">
+          <tag line="285" name="param" description="" type="string" variable="$value">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="284" name="return" description="The hashed string." type="string">
+          <tag line="285" name="return" description="The hashed string." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="290">
+        <argument line="291">
           <name>$value</name>
           <default></default>
           <type/>
         </argument>
       </method>
     </class>
-    <source>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</source>
   </file>
   <package name="Default" full_name="Default"/>
   <package name="Dz" full_name="Dz">

@@ -11,7 +11,7 @@
 /**
  * Hash generator class.
  *
- * Highly based on {@link http://net.tutsplus.com/tutorials/php/understanding-hash-functions-and-keeping-passwords-safe/}.
+ * Highly based on {@link http://goo.gl/ck7YV}.
  *
  * @category   Dz
  * @package    Dz_Security
