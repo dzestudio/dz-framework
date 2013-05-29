@@ -1,7 +1,7 @@
 DZ Framework
 ============
 
-DZ Framework is a ultra little classes package provided by [DZ Estúdio](http://www.dzestudio.com.br).
+DZ Framework is an ultra little classes package provided by [DZ Estúdio](http://www.dzestudio.com.br).
 
 Components
 ----------
