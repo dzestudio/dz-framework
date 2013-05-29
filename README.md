@@ -24,6 +24,7 @@ $contents = \Dz\Http\Client::getData($uri);
 Imagick extension to simplify some common calls. As an example, take these images:
 
 ![Credits to Jose Maria Cuellar](http://farm1.staticflickr.com/16/20983487_1d88ca94e7.jpg)
+
 ![A transparent PNG :-)](http://static.dzestudio.com.br/github/white-logo.png)
 
 If you execute code below...
