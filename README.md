@@ -57,7 +57,28 @@ $image->show();
 
 ### Dz\Security\Hash
 
-TBD.
+Hash generator class.
+
+``` php
+<?php
+
+use \Dz\Security\Hash;
+
+$hash = new Hash();
+$password = 'mYs3cR3tP4S5W0Rd!';
+$saltBase = $hash->getSaltBase();
+$passwordHash = $hash->crypt($password);
+
+// Save salt base and hash somewhere. Let's check.
+
+$hash = new Hash(Hash::CRYPT_STD_DES, $saltBase);
+
+if ($hash->check($passwordHash, $password)) {
+    // Hashes match :-)
+} else {
+    // Something wrong...
+}
+```
 
 ### Dz\Geocode
 
