@@ -16,7 +16,7 @@ Provides common methods for receiving data from a URI.
 $uri = 'http://www.dzestudio.com.br';
 
 // Downloads the contents of the $uri.
-$contents = \Dz\_Http\_Client::getData($uri);
+$contents = \Dz_Http_Client::getData($uri);
 ```
 
 ### Dz\_Image\_Imagick
@@ -26,7 +26,7 @@ Imagick extension to simplify some common calls.
 ``` php
 <?php
 
-$imagick = new \Dz\_Image\_Imagick('example.png');
+$imagick = new \Dz_Image_Imagick('example.png');
 
 // Blends the fill color with each pixel in the image.
 $imagick->colorize('#ffcc00', 0.35);
