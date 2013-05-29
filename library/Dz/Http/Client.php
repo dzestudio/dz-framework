@@ -36,7 +36,6 @@ class Dz_Http_Client
             curl_setopt($handler, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($handler, CURLOPT_URL, $uri);
-            curl_setopt($handler, CURLOPT_VERBOSE, true);
 
             $data = curl_exec($handler);
 
