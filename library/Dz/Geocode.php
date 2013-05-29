@@ -2,11 +2,10 @@
 /**
  * DZ Framework
  *
- * @category   Dz
- * @package    Dz_Geocode
  * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
- * @version    $Id$
  */
+
+namespace Dz;
 
 /**
  * Address to coordinates conversion class.
@@ -27,17 +26,15 @@
  * echo 'Longitude: ', $latLng->lng, PHP_EOL;
  * </code>
  *
- * @category   Dz
- * @package    Dz_Geocode
  * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Geocode
+class Geocode
 {
     /**
      * Converts address in latitude/longitude coordinates.
      *
-     * @uses   \Dz_Http_Client::getData()
+     * @uses   \Dz\Http\Client::getData()
      * @param  string $address The address, as complete as possible.
      * @return object Object containing "lat" and "lng" properties.
      */
@@ -47,12 +44,7 @@ class Dz_Geocode
              . rawurlencode($address)
              . '&sensor=true';
 
-        /**
-         * @see \Dz_Http_Client
-         */
-        require_once 'Dz/Http/Client.php';
-
-        $data = \Dz_Http_Client::getData($uri);
+        $data = \Dz\Http\Client::getData($uri);
         $json = json_decode($data);
 
         return $json->results[0]->geometry->location;

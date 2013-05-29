@@ -6,7 +6,7 @@ DZ Framework is an ultra little classes package provided by [DZ Estúdio](http:/
 Components
 ----------
 
-### Dz\_Http\_Client
+### Dz\Http\Client
 
 Provides common methods for receiving data from a URI.
 
@@ -16,30 +16,49 @@ Provides common methods for receiving data from a URI.
 $uri = 'http://www.dzestudio.com.br';
 
 // Downloads the contents of the $uri.
-$contents = \Dz_Http_Client::getData($uri);
+$contents = \Dz\Http\Client::getData($uri);
 ```
 
-### Dz\_Image\_Imagick
+### Dz\Image\Imagick
 
-Imagick extension to simplify some common calls.
+Imagick extension to simplify some common calls. As an example, take these images:
+
+![Credits to Jose Maria Cuellar](http://farm1.staticflickr.com/16/20983487_1d88ca94e7.jpg)
+![A transparent PNG :-)](http://static.dzestudio.com.br/github/white-logo.png)
+
+If you execute code below...
 
 ``` php
 <?php
 
-$imagick = new \Dz_Image_Imagick('example.png');
+$file = 'http://farm1.staticflickr.com/16/20983487_1d88ca94e7.jpg';
+$image = new \Dz\Image\Imagick($file);
 
 // Blends the fill color with each pixel in the image.
-$imagick->colorize('#ffcc00', 0.35);
+$image->colorize('#54a80f', 0.5);
+
+// Loads the watermark.
+$watermarkFile = 'http://static.dzestudio.com.br/github/white-logo.png';
+$watermark = new \Dz\Image\Imagick($watermarkFile);
+
+// Pastes the watermark into the image.
+$image->paste($watermark, 120, 250);
+
+// Extracts a 300x300 px region of the image from the center to the edges.
+$image->crop(300, 300);
 
 // Outputs image to the HTTP response.
-$imagick->show();
+$image->show();
 ```
+... the result will be:
 
-### Dz\_Security\_Hash
+![](http://static.dzestudio.com.br/github/result.png)
+
+### Dz\Security\Hash
 
 TBD.
 
-### Dz_Geocode
+### Dz\Geocode
 
 This class uses Google Maps API to convert addresses (like "1600 Amphitheatre Parkway, Mountain View, CA") into geographic coordinates (like latitude 37.423021 and longitude -122.083739), which you can use to place markers or position a map.
 
@@ -49,7 +68,7 @@ An example:
 <?php
 
 $address = 'Rua Vinte e Quatro de Outubro, 353';
-$latLng = \Dz_Geocode::getLatLng($address);
+$latLng = \Dz\Geocode::getLatLng($address);
 
 echo 'Latitude: ', $latLng->lat, PHP_EOL;
 echo 'Longitude: ', $latLng->lng, PHP_EOL;

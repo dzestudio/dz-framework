@@ -2,21 +2,18 @@
 /**
  * DZ Framework
  *
- * @category   Dz
- * @package    Dz_Http
  * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
- * @version    $Id$
  */
+
+namespace Dz\Http;
 
 /**
  * Provides common methods for receiving data from a URI.
  *
- * @category   Dz
- * @package    Dz_Http
  * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Http_Client
+class Client
 {
     /**
      * Downloads the contents of the $uri.

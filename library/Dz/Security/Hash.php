@@ -2,23 +2,20 @@
 /**
  * DZ Framework
  *
- * @category   Dz
- * @package    Dz_Security
  * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
- * @version    $Id$
  */
+
+namespace Dz\Security;
 
 /**
  * Hash generator class.
  *
  * Highly based on {@link http://goo.gl/ck7YV}.
  *
- * @category   Dz
- * @package    Dz_Security
  * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @author     LF Bittencourt <lf@dzestudio.com.br>
  */
-class Dz_Security_Hash
+class Hash
 {
     /**
      * Standard DES-based hash constant representation.
