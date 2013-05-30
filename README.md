@@ -64,16 +64,28 @@ Hash generator class.
 
 use \Dz\Security\Hash;
 
-$hash = new Hash();
+// Let's say that user has filled these two variables.
+$email = 'example@example.com';
 $password = 'mYs3cR3tP4S5W0Rd!';
-$saltBase = $hash->getSaltBase();
+
+// Think about some reproducible salt schema...
+$saltBase = md5('Kynodontas#' . $email);
+
+// Now, let's hash!
+$hash = new Hash(array('saltBase' => $saltBase));
+
+// Save hash somewhere.
 $passwordHash = $hash->crypt($password);
 
-// Save salt base and hash somewhere. Let's check.
+// Now, let's check. One more time, pretend that there's an user here!
+$emailInput = 'example@example.com';
+$passwordInput = 'wR0NgP4S5W0Rd!';
 
-$hash = new Hash(Hash::CRYPT_STD_DES, $saltBase);
+// Here is our reproducible salt schema.
+$saltBase = md5('Kynodontas#' . $emailInput);
+$hash = new Hash(array('saltBase' => $saltBase));
 
-if ($hash->check($passwordHash, $password)) {
+if ($hash->check($passwordHash, $passwordInput)) {
     // Hashes match :-)
 } else {
     // Something wrong...

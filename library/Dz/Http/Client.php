@@ -2,7 +2,7 @@
 /**
  * DZ Framework
  *
- * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
 namespace Dz\Http;
@@ -10,16 +10,16 @@ namespace Dz\Http;
 /**
  * Provides common methods for receiving data from a URI.
  *
- * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
- * @author     LF Bittencourt <lf@dzestudio.com.br>
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author    LF Bittencourt <lf@dzestudio.com.br>
  */
 class Client
 {
     /**
      * Downloads the contents of the $uri.
      *
-     * @param   string $uri
-     * @return  string|null
+     * @param  string $uri
+     * @return string|null
      */
     public static function getData($uri)
     {

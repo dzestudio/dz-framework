@@ -1,0 +1,18 @@
+{
+    "name": "dzestudio/dz-framework",
+    "type": "library",
+    "description": "DZ Estúdio framework.",
+    "keywords": ["geocode", "hash", "http", "imagick"],
+    "homepage": "http://github.com/dzestudio/dz-framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LF Bittencourt",
+            "email": "lf@dzestudio.com.br",
+            "homepage": "http://www.lfbittencourt.com/"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Dz": "library/" }
+    }
+}

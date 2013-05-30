@@ -2,7 +2,7 @@
 /**
  * DZ Framework
  *
- * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
 namespace Dz\Image;
@@ -10,8 +10,8 @@ namespace Dz\Image;
 /**
  * Imagick extension to simplify some common calls.
  *
- * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
- * @author     LF Bittencourt <lf@dzestudio.com.br>
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author    LF Bittencourt <lf@dzestudio.com.br>
  */
 class Imagick extends \Imagick
 {
@@ -47,7 +47,7 @@ class Imagick extends \Imagick
     /**
      * Extracts a region of the image from the center to the edges.
      *
-     * @todo  Is this really needed? Could we use just Imagick::thumbnailImage?
+     * @todo   Is this really needed? Could we use just Imagick::thumbnailImage?
      *
      * @param  integer $width The width of the crop.
      * @param  integer $height The height of the crop.

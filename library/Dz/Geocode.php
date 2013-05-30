@@ -2,7 +2,7 @@
 /**
  * DZ Framework
  *
- * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
 namespace Dz;
@@ -20,14 +20,14 @@ namespace Dz;
  *
  * <code>
  * $address = 'Rua Vinte e Quatro de Outubro, 353';
- * $latLng = \Dz_Geocode::getLatLng($address);
+ * $latLng = \Dz\Geocode::getLatLng($address);
  *
  * echo 'Latitude: ', $latLng->lat, PHP_EOL;
  * echo 'Longitude: ', $latLng->lng, PHP_EOL;
  * </code>
  *
- * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
- * @author     LF Bittencourt <lf@dzestudio.com.br>
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author    LF Bittencourt <lf@dzestudio.com.br>
  */
 class Geocode
 {

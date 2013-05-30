@@ -2,7 +2,7 @@
 /**
  * DZ Framework
  *
- * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
 namespace Dz\Security;
@@ -12,8 +12,8 @@ namespace Dz\Security;
  *
  * Highly based on {@link http://goo.gl/ck7YV}.
  *
- * @copyright  Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
- * @author     LF Bittencourt <lf@dzestudio.com.br>
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @author    LF Bittencourt <lf@dzestudio.com.br>
  */
 class Hash
 {
@@ -73,14 +73,14 @@ class Hash
      *
      * @var string
      */
-    protected $_cryptType = self::CRYPT_STD_DES;
+    protected $_cryptType = self::CRYPT_SHA512;
 
     /**
      * Bunch of random characters to prevent exploits.
      *
      * @var string
      */
-    protected $_saltBase = 'eeb95e4c295e0d9e77f523bab5ff81733fe222e74a5a10f8';
+    protected $_saltBase;
 
     /**
      * Salt lengths by hash type.
@@ -99,20 +99,28 @@ class Hash
     /**
      * Public constructor.
      *
-     * @param string $cryptType
-     * @param string $saltBase
-     * @param integer $cost
+     * @param array $options $cryptType Can contain cryptType, saltBase
+     *                                  and cost options.
      */
-    public function __construct($cryptType = self::CRYPT_STD_DES,
-        $saltBase = null, $cost = 10)
+    public function __construct(array $options = array())
     {
-        $this->setCryptType($cryptType)
-             ->setSaltBase($saltBase)
-             ->setCost($cost);
+        if (isset($options['cost'])) {
+            $this->setCost($options['cost']);
+        }
+
+        if (isset($options['cryptType'])) {
+            $this->setCryptType($options['cryptType']);
+        }
+
+        if (isset($options['saltBase'])) {
+            $this->setSaltBase($options['saltBase']);
+        }
     }
 
     /**
      * Generates random salt base based on choosen hash type.
+     *
+     * @return string
      */
     protected function _generateSaltBase()
     {
@@ -123,7 +131,7 @@ class Hash
             $salt .= sha1(mt_rand());
         }
 
-        $this->_saltBase = substr($salt, 0, $saltLength);
+        return substr($salt, 0, $saltLength);
     }
 
     /**
@@ -170,8 +178,8 @@ class Hash
     /**
      * Cuts a value properly to use as salt base.
      *
-     * @param string $value
-     * @param integer $length
+     * @param  string $value
+     * @param  integer $length
      * @return string The formatted value.
      */
     protected function _padRight($value, $length)
@@ -180,91 +188,6 @@ class Hash
         $format = sprintf('%%-%d.%ds', $length, $length);
 
         return sprintf($format, $value);
-    }
-
-    /**
-     * Gets cost.
-     *
-     * @return integer
-     */
-    public function getCost()
-    {
-        return $this->_cost;
-    }
-
-    /**
-     * Sets cost.
-     *
-     * @param  integer $cost
-     * @return \Dz_Security_Hash Provides fluent interface.
-     */
-    public function setCost($cost)
-    {
-        if ($cost >= 4 && $cost <= 31) {
-            $this->_cost = $cost;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Gets current hash type.
-     *
-     * @return string
-     */
-    public function getCryptType()
-    {
-        return $this->_cryptType;
-    }
-
-    /**
-     * Sets hash type.
-     *
-     * @param  string $cryptType
-     * @return \Dz_Security_Hash Provides fluent interface.
-     */
-    public function setCryptType($cryptType)
-    {
-        if (($cryptType === self::CRYPT_STD_DES
-            || $cryptType === self::CRYPT_EXT_DES
-            || $cryptType === self::CRYPT_MD5
-            || $cryptType === self::CRYPT_BLOWFISH
-            || $cryptType === self::CRYPT_SHA256
-            || $cryptType === self::CRYPT_SHA512)
-            && defined($cryptType)
-            && constant($cryptType) === 1
-        ) {
-            $this->_cryptType = $cryptType;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Gets salt base.
-     *
-     * @return string
-     */
-    public function getSaltBase()
-    {
-        return $this->_saltBase;
-    }
-
-    /**
-     * Sets salt base.
-     *
-     * @param string|null $saltBase If null, it will be automatically generated.
-     * @return \Dz_Security_Hash Provides fluent interface.
-     */
-    public function setSaltBase($saltBase = null)
-    {
-        if (!empty($saltBase) && strlen($saltBase) >= 2) {
-            $this->_saltBase = $saltBase;
-        } else {
-            $this->_generateSaltBase();
-        }
-
-        return $this;
     }
 
     /**
@@ -288,5 +211,98 @@ class Hash
     public function crypt($value)
     {
         return crypt($value, $this->_getSalt());
+    }
+
+    /**
+     * Gets cost.
+     *
+     * @return integer
+     */
+    public function getCost()
+    {
+        return $this->_cost;
+    }
+
+    /**
+     * Gets current hash type.
+     *
+     * @return string
+     */
+    public function getCryptType()
+    {
+        return $this->_cryptType;
+    }
+
+    /**
+     * Gets salt base.
+     *
+     * @return string
+     */
+    public function getSaltBase()
+    {
+        return $this->_saltBase;
+    }
+
+    /**
+     * Sets cost.
+     *
+     * @param  integer $cost
+     * @return Hash Provides fluent interface.
+     * @throws \Exception If cost is not in 4-31 range.
+     */
+    public function setCost($cost)
+    {
+        $cost = (int) $cost;
+
+        if ($cost < 4 || $cost > 31) {
+            throw new \Exception('Cost must be an integer between 4 and 31.');
+        }
+
+        $this->_cost = $cost;
+
+        return $this;
+    }
+
+    /**
+     * Sets hash type.
+     *
+     * @param  string $cryptType
+     * @return Hash Provides fluent interface.
+     * @throws \Exception If crypt type is not valid.
+     */
+    public function setCryptType($cryptType)
+    {
+        if (!array_key_exists($cryptType, $this->_saltLengths)
+            || !defined($cryptType)
+            || constant($cryptType) !== 1
+        ) {
+            $message = sprintf('"%s" is not a valid crypt type.', $cryptType);
+
+            throw new \Exception($message);
+        }
+
+        $this->_cryptType = $cryptType;
+
+        return $this;
+    }
+
+    /**
+     * Sets salt base.
+     *
+     * @param  string|null $saltBase If null, it will be automatically generated.
+     * @return Hash Provides fluent interface.
+     * @throws \Exception If salt base is too short.
+     */
+    public function setSaltBase($saltBase = null)
+    {
+        if ($saltBase === null) {
+            $saltBase = $this->_generateSaltBase();
+        } else if (strlen($saltBase) < 2) {
+            throw new \Exception('Minimum salt base length is 2.');
+        }
+
+        $this->_saltBase = $saltBase;
+
+        return $this;
     }
 }
