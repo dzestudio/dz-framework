@@ -19,9 +19,10 @@ class Client
      * Downloads the contents of the $uri.
      *
      * @param  string $uri
+     * @param   array $extraOptions cURL extra options.
      * @return string|null
      */
-    public static function getData($uri)
+    public static function getData($uri, array $extraOptions = array())
     {
         $data = null;
 
@@ -33,6 +34,10 @@ class Client
             curl_setopt($handler, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($handler, CURLOPT_URL, $uri);
+
+            foreach ($extraOptions as $option => $value) {
+                curl_setopt($handler, $option, $value);
+            }
 
             $data = curl_exec($handler);
 
