@@ -1,7 +1,7 @@
 DZ Framework
 ============
 
-DZ Framework is an ultra little classes package provided by [DZ Estúdio](http://www.dzestudio.com.br).
+DZ Framework is an ultra little classes PHP package provided by [DZ Estúdio](http://www.dzestudio.com.br). Its main features are an HTTP client, an Imagick extension, a hash generator and a geocode class.
 
 Components
 ----------
