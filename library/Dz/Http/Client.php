@@ -19,28 +19,22 @@ class Client
      * Downloads the contents of the $uri.
      *
      * @param  string $uri
-     * @param  array $extraOptions cURL extra options.
+     * @param  array $options cURL options.
      * @return string|null
      */
-    public static function getData($uri, array $extraOptions = array())
+    public static function getData($uri, array $options = array())
     {
         $data = null;
 
-        // If is just a GET, tries no-cURL calls.
-        if (count($extraOptions) > 0 ||
-            ($data = @file_get_contents($uri)) === false
-        ) {
+        if (count($options) > 0 || ($data = @file_get_contents($uri)) === false)
+        {
             $handler = curl_init();
-            $timeout = 5;
 
-            curl_setopt($handler, CURLOPT_CONNECTTIMEOUT, $timeout);
+            curl_setopt($handler, CURLOPT_CONNECTTIMEOUT, 5);
             curl_setopt($handler, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($handler, CURLOPT_URL, $uri);
-
-            foreach ($extraOptions as $option => $value) {
-                curl_setopt($handler, $option, $value);
-            }
+            curl_setopt_array($handler, $options);
 
             $data = curl_exec($handler);
 
