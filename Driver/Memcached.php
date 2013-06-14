@@ -1,7 +1,18 @@
 <?php
+/**
+ * Bookscraper
+ *
+ * @copyright Copyright (c) 2013 LF Bittencourt (http://www.lfbittencourt.com)
+ */
 
 namespace Bookscraper\Cache\Driver;
 
+/**
+ * Memcached cache driver.
+ *
+ * @copyright Copyright (c) 2013 LF Bittencourt (http://www.lfbittencourt.com)
+ * @author    LF Bittencourt <lf@lfbittencourt.com>
+ */
 class Memcached implements DriverInterface
 {
     /**
@@ -9,14 +20,14 @@ class Memcached implements DriverInterface
      *
      * @var integer
      */
-    protected $_expiration = 3600;
+    protected $expiration = 3600;
 
     /**
      * Memcached instance.
      *
      * @var \Memcached
      */
-    protected $_memcached;
+    protected $memcached;
 
     /**
      * Public constructor.
@@ -25,9 +36,9 @@ class Memcached implements DriverInterface
      */
     public function __construct(array $options = array())
     {
-        $this->_memcached = new \Memcached();
+        $this->memcached = new \Memcached();
 
-        $this->_memcached->addServer('localhost', 11211);
+        $this->memcached->addServer('localhost', 11211);
 
         if (isset($options['expiration'])) {
             $this->setExpiration($options['expiration']);
@@ -41,7 +52,7 @@ class Memcached implements DriverInterface
      */
     public function clear()
     {
-        return $this->_memcached->flush();
+        return $this->memcached->flush();
     }
 
     /**
@@ -53,7 +64,7 @@ class Memcached implements DriverInterface
      */
     public function get($key, $callback)
     {
-        if (($value = $this->_memcached->get($key)) === false) {
+        if (($value = $this->memcached->get($key)) === false) {
             $value = $callback();
 
             $this->set($key, $value);
@@ -69,7 +80,7 @@ class Memcached implements DriverInterface
      */
     public function getExpiration()
     {
-        return $this->_expiration;
+        return $this->expiration;
     }
 
     /**
@@ -80,7 +91,7 @@ class Memcached implements DriverInterface
      */
     public function remove($key)
     {
-        return $this->_memcached->delete($key);
+        return $this->memcached->delete($key);
     }
 
     /**
@@ -92,7 +103,7 @@ class Memcached implements DriverInterface
      */
     public function set($key, $value)
     {
-        return $this->_memcached->set($key, $value, $this->_expiration);
+        return $this->memcached->set($key, $value, $this->expiration);
     }
 
     /**
@@ -103,7 +114,7 @@ class Memcached implements DriverInterface
      */
     public function setExpiration($expiration)
     {
-        $this->_expiration = (int) $expiration;
+        $this->expiration = (int) $expiration;
 
         return $this;
     }

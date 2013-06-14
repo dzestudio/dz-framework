@@ -1,7 +1,18 @@
 <?php
+/**
+ * Bookscraper
+ *
+ * @copyright Copyright (c) 2013 LF Bittencourt (http://www.lfbittencourt.com)
+ */
 
 namespace Bookscraper\Cache\Driver;
 
+/**
+ * File based cache driver.
+ *
+ * @copyright Copyright (c) 2013 LF Bittencourt (http://www.lfbittencourt.com)
+ * @author    LF Bittencourt <lf@lfbittencourt.com>
+ */
 class File implements DriverInterface
 {
     /**
@@ -9,12 +20,12 @@ class File implements DriverInterface
      *
      * @var string
      */
-    protected $_outputDirectory = 'cache/';
+    protected $outputDirectory = 'cache/';
 
     /**
      * Public constructor.
      *
-     * @param array $options
+     * @param string|null $outputDirectory
      */
     public function __construct($outputDirectory = null)
     {
@@ -28,8 +39,8 @@ class File implements DriverInterface
      */
     public function clear()
     {
-        if (rmdir($this->_outputDirectory)) {
-            return mkdir($this->_outputDirectory);
+        if (rmdir($this->outputDirectory)) {
+            return mkdir($this->outputDirectory);
         }
 
         return false;
@@ -44,7 +55,7 @@ class File implements DriverInterface
      */
     public function get($key, $callback)
     {
-        $filename = $this->_outputDirectory . md5($key);
+        $filename = $this->outputDirectory . md5($key);
 
         if (!file_exists($filename)) {
             $this->set($key, $callback());
@@ -60,7 +71,7 @@ class File implements DriverInterface
      */
     public function getOutputDirectory()
     {
-        return $this->_outputDirectory;
+        return $this->outputDirectory;
     }
 
     /**
@@ -71,7 +82,7 @@ class File implements DriverInterface
      */
     public function remove($key)
     {
-        $filename = $this->_outputDirectory . md5($key);
+        $filename = $this->outputDirectory . md5($key);
 
         return unlink($filename);
     }
@@ -85,7 +96,7 @@ class File implements DriverInterface
      */
     public function set($key, $value)
     {
-        $filename = $this->_outputDirectory . md5($key);
+        $filename = $this->outputDirectory . md5($key);
 
         return file_put_contents($filename, serialize($value)) !== false;
     }
@@ -99,7 +110,7 @@ class File implements DriverInterface
     public function setOutputDirectory($outputDirectory)
     {
         if (!empty($outputDirectory)) {
-            $this->_outputDirectory = $outputDirectory;
+            $this->outputDirectory = $outputDirectory;
         }
 
         return $this;

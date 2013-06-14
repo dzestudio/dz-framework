@@ -1,7 +1,18 @@
 <?php
+/**
+ * Bookscraper
+ *
+ * @copyright Copyright (c) 2013 LF Bittencourt (http://www.lfbittencourt.com)
+ */
 
 namespace Bookscraper\Cache\Driver;
 
+/**
+ * Simple array cache driver.
+ *
+ * @copyright Copyright (c) 2013 LF Bittencourt (http://www.lfbittencourt.com)
+ * @author    LF Bittencourt <lf@lfbittencourt.com>
+ */
 class SimpleArray implements DriverInterface
 {
     /**
@@ -9,7 +20,7 @@ class SimpleArray implements DriverInterface
      *
      * @var array
      */
-    protected $_items = array();
+    protected $items = array();
 
     /**
      * Clears all items.
@@ -18,7 +29,7 @@ class SimpleArray implements DriverInterface
      */
     public function clear()
     {
-        $this->_items = array();
+        $this->items = array();
 
         return true;
     }
@@ -32,11 +43,11 @@ class SimpleArray implements DriverInterface
      */
     public function get($key, $callback)
     {
-        if (!isset($this->_items[$key])) {
+        if (!isset($this->items[$key])) {
             $this->set($key, $callback());
         }
 
-        return $this->_items[$key];
+        return $this->items[$key];
     }
 
     /**
@@ -47,7 +58,7 @@ class SimpleArray implements DriverInterface
      */
     public function remove($key)
     {
-        unset($this->_items[$key]);
+        unset($this->items[$key]);
 
         return true;
     }
@@ -61,7 +72,7 @@ class SimpleArray implements DriverInterface
      */
     public function set($key, $value)
     {
-        $this->_items[$key] = $value;
+        $this->items[$key] = $value;
 
         return true;
     }
