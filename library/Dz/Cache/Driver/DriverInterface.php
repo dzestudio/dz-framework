@@ -1,16 +1,16 @@
 <?php
 /**
- * Bookscraper
+ * DZ Framework
  *
- * @copyright Copyright (c) 2013 LF Bittencourt (http://www.lfbittencourt.com)
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  */
 
-namespace Bookscraper\Cache\Driver;
+namespace Dz\Cache\Driver;
 
 /**
  * Cache driver interface.
  *
- * @copyright Copyright (c) 2013 LF Bittencourt (http://www.lfbittencourt.com)
+ * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @author    LF Bittencourt <lf@lfbittencourt.com>
  */
 interface DriverInterface
