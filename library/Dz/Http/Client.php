@@ -7,6 +7,8 @@
 
 namespace Dz\Http;
 
+use Dz\Cache\Driver\DriverInterface;
+
 /**
  * Provides common methods for receiving data from a URI.
  *
@@ -16,30 +18,91 @@ namespace Dz\Http;
 class Client
 {
     /**
-     * Downloads the contents of the $uri.
+     * Cache driver.
+     *
+     * @var DriverInterface
+     */
+    protected $cacheDriver;
+
+    /**
+     * Default cURL options.
+     *
+     * @var array
+     */
+    protected $defaultOptions = array(
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_RETURNTRANSFER => true,
+    );
+
+    /**
+     * Public constructor.
+     *
+     * @param DriverInterface|null $cacheDriver
+     */
+    public function __construct(DriverInterface $cacheDriver = null)
+    {
+        $this->cacheDriver = $cacheDriver;
+    }
+
+    /**
+     * Gets cache driver.
+     *
+     * @return DriverInterface
+     */
+    public function getCacheDriver()
+    {
+        return $this->cacheDriver;
+    }
+
+    /**
+     * Retrieves content of an URI.
      *
      * @param  string $uri
      * @param  array $options cURL options.
      * @return string|null
      */
-    public static function getData($uri, array $options = array())
+    public function request($uri, array $options = array())
     {
-        $data = null;
+        $callback = function () use ($uri, $options) {
+            $contents = null;
 
-        if (count($options) > 0 || ($data = @file_get_contents($uri)) === false) {
-            $handler = curl_init();
+            if (count($options) > 0
+                || ($contents = @file_get_contents($uri)) === false
+            ) {
+                $handler = curl_init();
 
-            curl_setopt($handler, CURLOPT_CONNECTTIMEOUT, 5);
-            curl_setopt($handler, CURLOPT_FOLLOWLOCATION, true);
-            curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($handler, CURLOPT_URL, $uri);
-            curl_setopt_array($handler, $options);
+                curl_setopt($handler, CURLOPT_URL, $uri);
+                curl_setopt_array($handler, $this->defaultOptions);
+                curl_setopt_array($handler, $options);
 
-            $data = curl_exec($handler);
+                $contents = curl_exec($handler);
 
-            curl_close($handler);
+                curl_close($handler);
+            }
+
+            return $contents;
+        };
+
+        if ($this->cacheDriver instanceof DriverInterface) {
+            $key = base64_encode($uri . serialize($options));
+
+            return $this->cacheDriver->get($key, $callback);
         }
 
-        return $data;
+        return $callback();
+    }
+
+    /**
+     * Sets cache driver.
+     *
+     * @param  DriverInterface $cacheDriver
+     * @return Crawler
+     */
+    public function setCacheDriver(DriverInterface $cacheDriver)
+    {
+        $this->cacheDriver = $cacheDriver;
+
+        return $this;
     }
 }

@@ -13,10 +13,23 @@ Provides common methods for receiving data from a URI.
 ``` php
 <?php
 
-$uri = 'http://www.dzestudio.com.br';
+$client = new \Dz\Http\Client();
+$contents = $client->request('http://www.dzestudio.com.br');
+```
 
-// Downloads the contents of the $uri.
-$contents = \Dz\Http\Client::getData($uri);
+To increase performance, you can attach a cache driver to the HTTP client.
+
+``` php
+<?php
+
+$cacheDriver = new \Dz\Cache\Driver\File('/path/to/cache/files');
+$client = new \Dz\Http\Client($cacheDriver);
+
+// The first call creates the cache.
+$contents = $client->request('http://www.dzestudio.com.br');
+
+// All other calls retrieve contents from cache.
+$contentsAgain = $client->request('http://www.dzestudio.com.br');
 ```
 
 ### Dz\Image\Imagick
