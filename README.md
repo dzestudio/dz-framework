@@ -6,6 +6,10 @@ DZ Framework is an ultra little classes PHP package provided by [DZ Estúdio](ht
 Components
 ----------
 
+### Dz\Cache drivers
+
+You can use them as standalone components or attached to HTTP client (example below).
+
 ### Dz\Http\Client
 
 Provides common methods for receiving data from a URI.
