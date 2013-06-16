@@ -2,7 +2,7 @@
 /**
  * DZ Framework
  *
- * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright Copyright (c) 2012-2013 DZ EstÃºdio (http://www.dzestudio.com.br)
  */
 
 namespace Dz\Cache\Driver;
@@ -10,7 +10,7 @@ namespace Dz\Cache\Driver;
 /**
  * File based cache driver.
  *
- * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
+ * @copyright Copyright (c) 2012-2013 DZ EstÃºdio (http://www.dzestudio.com.br)
  * @author    LF Bittencourt <lf@lfbittencourt.com>
  */
 class File implements DriverInterface
