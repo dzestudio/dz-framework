@@ -66,28 +66,28 @@ class Hash
      *
      * @var integer
      */
-    protected $_cost = 10;
+    protected $cost = 10;
 
     /**
      * Current hash type.
      *
      * @var string
      */
-    protected $_cryptType = self::CRYPT_SHA512;
+    protected $cryptType = self::CRYPT_SHA512;
 
     /**
      * Bunch of random characters to prevent exploits.
      *
      * @var string
      */
-    protected $_saltBase;
+    protected $saltBase;
 
     /**
      * Salt lengths by hash type.
      *
      * @var array
      */
-    protected $_saltLengths = array(
+    protected $saltLengths = array(
         self::CRYPT_STD_DES  => 2,
         self::CRYPT_EXT_DES  => 9,
         self::CRYPT_MD5      => 9,
@@ -118,79 +118,6 @@ class Hash
     }
 
     /**
-     * Generates random salt base based on choosen hash type.
-     *
-     * @return string
-     */
-    protected function _generateSaltBase()
-    {
-        $saltLength = $this->_saltLengths[$this->_cryptType];
-        $salt = '';
-
-        while (strlen($salt) < $saltLength) {
-            $salt .= sha1(mt_rand());
-        }
-
-        return substr($salt, 0, $saltLength);
-    }
-
-    /**
-     * Gets a salt string to base the hashing on.
-     *
-     * @return string
-     */
-    protected function _getSalt()
-    {
-        switch ($this->_cryptType) {
-            case self::CRYPT_EXT_DES:
-
-                return str_pad($this->_saltBase, 9);
-
-            case self::CRYPT_MD5:
-
-                $format = '$1$%-9.9s';
-
-                return sprintf($format, $this->_saltBase);
-
-            case self::CRYPT_BLOWFISH:
-
-                $format = "$2a$%02.2s%-'z22.22s";
-
-                return sprintf($format, $this->_cost, $this->_saltBase);
-
-            case self::CRYPT_SHA256:
-            case self::CRYPT_SHA512:
-
-                $cost = pow(2, $this->_cost);
-                $length = 60 - 10 - strlen($cost) - 1;
-                $saltBase = $this->_padRight($this->_saltBase, $length);
-                $prefix = $this->_cryptType === self::CRYPT_SHA256 ? 5 : 6;
-                $format = '$%d$rounds=%d$%s';
-
-                return sprintf($format, $prefix, $cost, $saltBase);
-
-            default:
-
-                return str_pad($this->_saltBase, 2);
-        }
-    }
-
-    /**
-     * Cuts a value properly to use as salt base.
-     *
-     * @param  string $value
-     * @param  integer $length
-     * @return string The formatted value.
-     */
-    protected function _padRight($value, $length)
-    {
-        $length = abs(intval($length));
-        $format = sprintf('%%-%d.%ds', $length, $length);
-
-        return sprintf($format, $value);
-    }
-
-    /**
      * Compares a value against its hash.
      *
      * @param  string $hashValue
@@ -210,7 +137,24 @@ class Hash
      */
     public function crypt($value)
     {
-        return crypt($value, $this->_getSalt());
+        return crypt($value, $this->getSalt());
+    }
+
+    /**
+     * Generates random salt base based on choosen hash type.
+     *
+     * @return string
+     */
+    protected function generateSaltBase()
+    {
+        $saltLength = $this->saltLengths[$this->cryptType];
+        $salt = '';
+
+        while (strlen($salt) < $saltLength) {
+            $salt .= sha1(mt_rand());
+        }
+
+        return substr($salt, 0, $saltLength);
     }
 
     /**
@@ -220,7 +164,7 @@ class Hash
      */
     public function getCost()
     {
-        return $this->_cost;
+        return $this->cost;
     }
 
     /**
@@ -230,7 +174,39 @@ class Hash
      */
     public function getCryptType()
     {
-        return $this->_cryptType;
+        return $this->cryptType;
+    }
+
+    /**
+     * Gets a salt string to base the hashing on.
+     *
+     * @return string
+     */
+    protected function getSalt()
+    {
+        switch ($this->cryptType) {
+            case self::CRYPT_EXT_DES:
+                return str_pad($this->saltBase, 9);
+            case self::CRYPT_MD5:
+                $format = '$1$%-9.9s';
+
+                return sprintf($format, $this->saltBase);
+            case self::CRYPT_BLOWFISH:
+                $format = "$2a$%02.2s%-'z22.22s";
+
+                return sprintf($format, $this->cost, $this->saltBase);
+            case self::CRYPT_SHA256:
+            case self::CRYPT_SHA512:
+                $cost = pow(2, $this->cost);
+                $length = 60 - 10 - strlen($cost) - 1;
+                $saltBase = $this->padRight($this->saltBase, $length);
+                $prefix = $this->cryptType === self::CRYPT_SHA256 ? 5 : 6;
+                $format = '$%d$rounds=%d$%s';
+
+                return sprintf($format, $prefix, $cost, $saltBase);
+            default:
+                return str_pad($this->saltBase, 2);
+        }
     }
 
     /**
@@ -240,7 +216,22 @@ class Hash
      */
     public function getSaltBase()
     {
-        return $this->_saltBase;
+        return $this->saltBase;
+    }
+
+    /**
+     * Cuts a value properly to use as salt base.
+     *
+     * @param  string $value
+     * @param  integer $length
+     * @return string The formatted value.
+     */
+    protected function padRight($value, $length)
+    {
+        $length = abs(intval($length));
+        $format = sprintf('%%-%d.%ds', $length, $length);
+
+        return sprintf($format, $value);
     }
 
     /**
@@ -258,7 +249,7 @@ class Hash
             throw new \Exception('Cost must be an integer between 4 and 31.');
         }
 
-        $this->_cost = $cost;
+        $this->cost = $cost;
 
         return $this;
     }
@@ -272,7 +263,7 @@ class Hash
      */
     public function setCryptType($cryptType)
     {
-        if (!array_key_exists($cryptType, $this->_saltLengths)
+        if (!array_key_exists($cryptType, $this->saltLengths)
             || !defined($cryptType)
             || constant($cryptType) !== 1
         ) {
@@ -281,7 +272,7 @@ class Hash
             throw new \Exception($message);
         }
 
-        $this->_cryptType = $cryptType;
+        $this->cryptType = $cryptType;
 
         return $this;
     }
@@ -296,12 +287,12 @@ class Hash
     public function setSaltBase($saltBase = null)
     {
         if ($saltBase === null) {
-            $saltBase = $this->_generateSaltBase();
-        } else if (strlen($saltBase) < 2) {
+            $saltBase = $this->generateSaltBase();
+        } elseif (strlen($saltBase) < 2) {
             throw new \Exception('Minimum salt base length is 2.');
         }
 
-        $this->_saltBase = $saltBase;
+        $this->saltBase = $saltBase;
 
         return $this;
     }

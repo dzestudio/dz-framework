@@ -26,8 +26,7 @@ class Client
     {
         $data = null;
 
-        if (count($options) > 0 || ($data = @file_get_contents($uri)) === false)
-        {
+        if (count($options) > 0 || ($data = @file_get_contents($uri)) === false) {
             $handler = curl_init();
 
             curl_setopt($handler, CURLOPT_CONNECTTIMEOUT, 5);

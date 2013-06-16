@@ -57,17 +57,14 @@ class Imagick extends \Imagick
     {
         $geo = $this->getImageGeometry();
 
-        // Vertical
-        if ($geo['width'] / $width < $geo['height'] / $height) {
+        if ($geo['width'] / $width < $geo['height'] / $height) { // Vertical
             $this->cropImage(
                 $geo['width'],
                 floor($height * $geo['width'] / $width),
                 0,
                 ($geo['height'] - $height * $geo['width'] / $width) / 2
             );
-
-        // Horizontal
-        } else {
+        } else { // Horizontal
             $this->cropImage(
                 ceil($width * $geo['height'] / $height),
                 $geo['height'],
