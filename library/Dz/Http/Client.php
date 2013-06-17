@@ -33,6 +33,7 @@ class Client
         CURLOPT_CONNECTTIMEOUT => 5,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_SSL_VERIFYPEER => false,
     );
 
     /**
@@ -64,7 +65,8 @@ class Client
      */
     public function request($uri, array $options = array())
     {
-        $callback = function () use ($uri, $options) {
+        $defaultOptions = $this->defaultOptions;
+        $callback = function () use ($uri, $defaultOptions, $options) {
             $contents = null;
 
             if (count($options) > 0
@@ -73,7 +75,7 @@ class Client
                 $handler = curl_init();
 
                 curl_setopt($handler, CURLOPT_URL, $uri);
-                curl_setopt_array($handler, $this->defaultOptions);
+                curl_setopt_array($handler, $defaultOptions);
                 curl_setopt_array($handler, $options);
 
                 $contents = curl_exec($handler);

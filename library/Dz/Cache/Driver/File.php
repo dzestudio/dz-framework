@@ -97,6 +97,11 @@ class File implements DriverInterface
     public function set($key, $value)
     {
         $filename = $this->outputDirectory . md5($key);
+        $directory = dirname($filename);
+
+        if (!is_dir($directory)) {
+            mkdir($directory);
+        }
 
         return file_put_contents($filename, serialize($value)) !== false;
     }
