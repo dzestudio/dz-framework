@@ -12,6 +12,7 @@ namespace Dz\Cache\Driver;
  *
  * @copyright Copyright (c) 2012-2013 DZ Estúdio (http://www.dzestudio.com.br)
  * @author    LF Bittencourt <lf@lfbittencourt.com>
+ * @author    Adão Santos <djadao@gmail.com>
  */
 class File implements DriverInterface
 {
@@ -39,11 +40,21 @@ class File implements DriverInterface
      */
     public function clear()
     {
-        if (rmdir($this->outputDirectory)) {
-            return mkdir($this->outputDirectory);
+        if (file_exists($this->outputDirectory)) {
+            $files = scandir($this->outputDirectory);
+
+            if (count($files) > 0) {
+                foreach ($files as $file) {
+                    $path = $this->outputDirectory . DIRECTORY_SEPARATOR . $file;
+                    
+                    if (!is_dir($path) && $file !== '.' && $file !== '..') {
+                        unlink($path);
+                    }
+                }
+            }
         }
 
-        return false;
+        return true;
     }
 
     /**
@@ -100,7 +111,7 @@ class File implements DriverInterface
         $directory = dirname($filename);
 
         if (!is_dir($directory)) {
-            mkdir($directory);
+            mkdir($directory, 0777, true);
         }
 
         return file_put_contents($filename, serialize($value)) !== false;
