@@ -7,6 +7,7 @@
 
 namespace Dz;
 
+use Dz\Http\Client;
 /**
  * Address to coordinates conversion class.
  *
@@ -34,17 +35,21 @@ class Geocode
     /**
      * Converts address in latitude/longitude coordinates.
      *
-     * @uses   \Dz\Http\Client::getData()
+     * @uses   \Dz\Http\Client::request()
      * @param  string $address The address, as complete as possible.
      * @return object Object containing "lat" and "lng" properties.
      */
     public static function getLatLng($address)
     {
+        if (preg_match('/\S/', $address) !== 1) {
+            throw  new \InvalidArgumentException();
+        }
+
         $uri = 'http://maps.googleapis.com/maps/api/geocode/json?address='
              . rawurlencode($address)
              . '&sensor=true';
-
-        $data = \Dz\Http\Client::getData($uri);
+        $client = new \Dz\Http\Client();
+        $data = $client->request($uri);
         $json = json_decode($data);
 
         return $json->results[0]->geometry->location;
