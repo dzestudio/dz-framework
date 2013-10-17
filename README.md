@@ -1,76 +1,10 @@
 DZ Framework
 ============
 
-DZ Framework is an ultra little classes PHP package provided by [DZ Estúdio](http://www.dzestudio.com.br). Its main features are an HTTP client, an Imagick extension, a hash generator and a geocode class.
+DZ Framework is an ultra little classes PHP package provided by [DZ Estúdio](http://www.dzestudio.com.br). Its features are a hash generator and a geocode class.
 
 Components
 ----------
-
-### Dz\Cache drivers
-
-You can use them as standalone components or attached to HTTP client (example below).
-
-### Dz\Http\Client
-
-Provides common methods for receiving data from a URI.
-
-``` php
-<?php
-
-$client = new \Dz\Http\Client();
-$contents = $client->request('http://www.dzestudio.com.br');
-```
-
-To increase performance, you can attach a cache driver to the HTTP client.
-
-``` php
-<?php
-
-$cacheDriver = new \Dz\Cache\Driver\File('/path/to/cache/files');
-$client = new \Dz\Http\Client($cacheDriver);
-
-// The first call creates the cache.
-$contents = $client->request('http://www.dzestudio.com.br');
-
-// All other calls retrieve contents from cache.
-$contentsAgain = $client->request('http://www.dzestudio.com.br');
-```
-
-### Dz\Image\Imagick
-
-Imagick extension to simplify some common calls. As an example, take these images:
-
-![Credits to Jose Maria Cuellar](http://farm1.staticflickr.com/16/20983487_1d88ca94e7.jpg)
-
-![A transparent PNG :-)](http://static.dzestudio.com.br/github/white-logo.png)
-
-If you execute code below...
-
-``` php
-<?php
-
-$file = 'http://farm1.staticflickr.com/16/20983487_1d88ca94e7.jpg';
-$image = new \Dz\Image\Imagick($file);
-
-// Blends the fill color with each pixel in the image.
-$image->colorize('#54a80f', 0.5);
-
-// Loads the watermark.
-$watermarkFile = 'http://static.dzestudio.com.br/github/white-logo.png';
-$watermark = new \Dz\Image\Imagick($watermarkFile);
-
-// Pastes the watermark into the image.
-$image->paste($watermark, 120, 250);
-
-// Extracts a 300x300 px region of the image from the center to the edges.
-$image->crop(300, 300);
-
-// Outputs image to the HTTP response.
-$image->show();
-```
-... the result will be:
-
-![](http://static.dzestudio.com.br/github/result.png)
 
 ### Dz\Security\Hash
 
