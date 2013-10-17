@@ -184,38 +184,45 @@ class Hash
      */
     protected function getSalt()
     {
+        $saltBase = $this->getSaltBase();
+
         switch ($this->cryptType) {
             case self::CRYPT_EXT_DES:
-                return str_pad($this->saltBase, 9);
+                return str_pad($saltBase, 9);
             case self::CRYPT_MD5:
                 $format = '$1$%-9.9s';
 
-                return sprintf($format, $this->saltBase);
+                return sprintf($format, $saltBase);
             case self::CRYPT_BLOWFISH:
                 $format = "$2a$%02.2s%-'z22.22s";
 
-                return sprintf($format, $this->cost, $this->saltBase);
+                return sprintf($format, $this->cost, $saltBase);
             case self::CRYPT_SHA256:
             case self::CRYPT_SHA512:
                 $cost = pow(2, $this->cost);
                 $length = 60 - 10 - strlen($cost) - 1;
-                $saltBase = $this->padRight($this->saltBase, $length);
+                $saltBase = $this->padRight($saltBase, $length);
                 $prefix = $this->cryptType === self::CRYPT_SHA256 ? 5 : 6;
                 $format = '$%d$rounds=%d$%s';
 
                 return sprintf($format, $prefix, $cost, $saltBase);
             default:
-                return str_pad($this->saltBase, 2);
+                return str_pad($saltBase, 2);
         }
     }
 
     /**
      * Gets salt base.
+     * If salt base is still null, it will be automatically generated.
      *
      * @return string
      */
     public function getSaltBase()
     {
+        if ($this->saltBase === null) {
+            $this->saltBase = $this->generateSaltBase();
+        }
+
         return $this->saltBase;
     }
 
@@ -239,14 +246,16 @@ class Hash
      *
      * @param  integer $cost
      * @return Hash Provides fluent interface.
-     * @throws \Exception If cost is not in 4-31 range.
+     * @throws \InvalidArgumentException If cost is not in 4-31 range.
      */
     public function setCost($cost)
     {
         $cost = (int) $cost;
 
         if ($cost < 4 || $cost > 31) {
-            throw new \Exception('Cost must be an integer between 4 and 31.');
+            throw new \InvalidArgumentException(
+                'Cost must be an integer between 4 and 31.'
+            );
         }
 
         $this->cost = $cost;
@@ -259,7 +268,7 @@ class Hash
      *
      * @param  string $cryptType
      * @return Hash Provides fluent interface.
-     * @throws \Exception If crypt type is not valid.
+     * @throws \InvalidArgumentException If crypt type is not valid.
      */
     public function setCryptType($cryptType)
     {
@@ -269,7 +278,7 @@ class Hash
         ) {
             $message = sprintf('"%s" is not a valid crypt type.', $cryptType);
 
-            throw new \Exception($message);
+            throw new \InvalidArgumentException($message);
         }
 
         $this->cryptType = $cryptType;
@@ -280,16 +289,14 @@ class Hash
     /**
      * Sets salt base.
      *
-     * @param  string|null $saltBase If null, it will be automatically generated.
+     * @param  string $saltBase
      * @return Hash Provides fluent interface.
-     * @throws \Exception If salt base is too short.
+     * @throws \InvalidArgumentException If salt base is too short.
      */
-    public function setSaltBase($saltBase = null)
+    public function setSaltBase($saltBase)
     {
-        if ($saltBase === null) {
-            $saltBase = $this->generateSaltBase();
-        } elseif (strlen($saltBase) < 2) {
-            throw new \Exception('Minimum salt base length is 2.');
+        if (strlen($saltBase) < 2) {
+            throw new \InvalidArgumentException('Minimum salt base length is 2.');
         }
 
         $this->saltBase = $saltBase;

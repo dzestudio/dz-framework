@@ -1,150 +1,247 @@
 <?php
-namespace Test\Dz;
 
-include_once(__DIR__ . '/../../../vendor/autoload.php');
+namespace Dz\Test\Security;
 
-use Dz\Security;
-use PHPUnit_Framework_TestCase;
 use Dz\Security\Hash;
+use PHPUnit_Framework_TestCase as TestCase;
 
-class HashTest extends PHPUnit_Framework_TestCase
+class HashTest extends TestCase
 {
-    public function testCryptSaltBaseShouldBeEquals()
+    /**
+     * @var Hash
+     */
+    protected $object;
+
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
     {
-        $email = 'example@example.com';
-        $password = 'mYs3cR3tP4S5W0Rd!';
-
-        $saltBase = md5('Kynodontas#' . $email);
-
-        $hash = new Hash(array('saltBase' => $saltBase));
-
-        $passwordHash = $hash->crypt($password);
-
-        $this->assertEquals('$6$rounds=1024$e70f3198ffd1a251$xwqXIj.23nQqP9W7soD3rPeM7.l4vdlz4S3kgLQNI7A0N1EAz6CGqnFtSh4a/zIEukN8Fq/925a44d5rBN7aC0', $passwordHash);
-    }
-
-    public function testCryptMissingArgumentsShouldBeEquals()
-    {
-        $email = 'example@example.com';
-        $password = 'mYs3cR3tP4S5W0Rd!';
-
-        $hash = new Hash();
-
-        $passwordHash = $hash->crypt($password);
-
-        $this->assertEquals('$6$rounds=1024$                $2S6IJfrNGbrVoRYVKYOHMAtY8mZyxSKklK/jFKM9KfVMQYl7KYEavOG0AH2N/3Fowwwq/mEuZjQf.PHg/IUq5.', $passwordHash);
+        $this->object = new Hash;
     }
 
     /**
-     * @expectedException Exception
+     * @covers Hash::check
      */
-    public function testCryptNullArgumentsShouldBeException()
+    public function testCheck()
     {
-        $email = 'example@example.com';
         $password = 'mYs3cR3tP4S5W0Rd!';
+        $passwordHash = $this->object->crypt($password);
 
-        $hash = new Hash(null);
-
-        $passwordHash = $hash->crypt($password);
+        $this->assertTrue($this->object->check($passwordHash, $password));
     }
 
-    public function testCryptCryptTypeMD5ShouldBeEquals()
+    /**
+     * @covers Hash::check
+     */
+    public function testCheckWithWrongPassword()
     {
-        $email = 'example@example.com';
-        $password = 'mYs3cR3tP4S5W0Rd!';
-
-        $hash = new Hash(array('cryptType' => Hash::CRYPT_MD5));
-
-        $passwordHash = $hash->crypt($password);
-
-        $this->assertEquals('$1$        $gxDpno6N7vhrpX11TmTgG1', $passwordHash);
-    }
-
-    public function testCheckSaltBaseShouldBeTrue()
-    {
-        $email = 'example@example.com';
-        $password = 'mYs3cR3tP4S5W0Rd!';
-
-        $saltBase = md5('Kynodontas#' . $email);
-
-        $hash = new Hash(array('saltBase' => $saltBase));
-
-        $passwordHash = $hash->crypt($password);
-
-        $this->assertTrue($hash->check($passwordHash, $password));
-    }
-
-    public function testCheckSaltBaseShouldBeFalse()
-    {
-        $email = 'example@example.com';
         $password = 'mYs3cR3tP4S5W0Rd!';
         $wrongPassword = 'wR0NgP4S5W0Rd!';
+        $passwordHash = $this->object->crypt($password);
 
-        $saltBase = md5('Kynodontas#' . $email);
-
-        $hash = new Hash(array('saltBase' => $saltBase));
-
-        $passwordHash = $hash->crypt($password);
-
-        $this->assertFalse($hash->check($passwordHash, $wrongPassword));
+        $this->assertFalse($this->object->check($passwordHash, $wrongPassword));
     }
 
-    public function testCheckMissingArgumentsShouldBeTrue()
+    /**
+     * @covers Hash::check
+     */
+    public function testCheckWithMd5CryptType()
+    {
+        $this->object->setCryptType(Hash::CRYPT_MD5);
+
+        $password = 'mYs3cR3tP4S5W0Rd!';
+        $passwordHash = $this->object->crypt($password);
+
+        $this->assertTrue($this->object->check($passwordHash, $password));
+    }
+
+    /**
+     * @covers Hash::crypt
+     */
+    public function testCrypt()
     {
         $email = 'example@example.com';
         $password = 'mYs3cR3tP4S5W0Rd!';
-
         $saltBase = md5('Kynodontas#' . $email);
 
-        $hash = new Hash();
+        $this->object->setSaltBase($saltBase);
 
-        $passwordHash = $hash->crypt($password);
+        $expectedHash = '$6$rounds=1024$e70f3198ffd1a251$xwqXIj.23nQqP9W7soD3rP'
+                      . 'eM7.l4vdlz4S3kgLQNI7A0N1EAz6CGqnFtSh4a/zIEukN8Fq/925a4'
+                      . '4d5rBN7aC0';
 
-        $this->assertTrue($hash->check($passwordHash, $password));
+        $passwordHash = $this->object->crypt($password);
+
+        $this->assertEquals($expectedHash, $passwordHash);
     }
 
-    public function testCheckMissingArgumentsShouldBeFalse()
+    /**
+     * @covers Hash::crypt
+     */
+    public function testCryptWithMd5CryptType()
     {
         $email = 'example@example.com';
         $password = 'mYs3cR3tP4S5W0Rd!';
-        $wrongPassword = 'wR0NgP4S5W0Rd!';
-
         $saltBase = md5('Kynodontas#' . $email);
 
-        $hash = new Hash();
+        $this->object->setSaltBase($saltBase)
+                     ->setCryptType(Hash::CRYPT_MD5);
 
-        $passwordHash = $hash->crypt($password);
+        $expectedHash = '$1$e70f3198$nzOR4gCS4GV31U5a1ejis1';
+        $passwordHash = $this->object->crypt($password);
 
-        $this->assertFalse($hash->check($passwordHash, $wrongPassword));
+        $this->assertEquals($expectedHash, $passwordHash);
     }
 
-    public function testCheckCryptTypeMD5ShouldBeTrue()
+    /**
+     * @covers Hash::getCost
+     */
+    public function testGetCost()
     {
-        $email = 'example@example.com';
-        $password = 'mYs3cR3tP4S5W0Rd!';
+        $this->object->setCost(10);
 
-        $saltBase = md5('Kynodontas#' . $email);
-
-        $hash = new Hash(array('cryptType' => Hash::CRYPT_MD5));
-
-        $passwordHash = $hash->crypt($password);
-
-        $this->assertTrue($hash->check($passwordHash, $password));
+        $this->assertEquals(10, $this->object->getCost());
     }
 
-    public function testCheckCryptTypeMD5ShouldBeFalse()
+    /**
+     * @covers Hash::getCryptType
+     */
+    public function testGetCryptType()
     {
-        $email = 'example@example.com';
-        $password = 'mYs3cR3tP4S5W0Rd!';
-        $wrongPassword = 'wR0NgP4S5W0Rd!';
+        $this->object->setCryptType(Hash::CRYPT_BLOWFISH);
 
-        $saltBase = md5('Kynodontas#' . $email);
+        $this->assertEquals(Hash::CRYPT_BLOWFISH, $this->object->getCryptType());
+    }
 
-        $hash = new Hash();
+    /**
+     * @covers Hash::getSaltBase
+     */
+    public function testGetSaltBase()
+    {
+        $this->object->setSaltBase('saltbase1');
 
-        $passwordHash = $hash->crypt($password);
+        $this->assertEquals('saltbase1', $this->object->getSaltBase());
+    }
 
-        $this->assertFalse($hash->check($passwordHash, $wrongPassword));
+    /**
+     * @covers Hash::setCost
+     */
+    public function testSetCost()
+    {
+        $this->object->setCost(5);
+
+        $this->assertEquals(5, $this->object->getCost());
+    }
+
+    /**
+     * @covers Hash::setCost
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCostWithNullCost()
+    {
+        $this->object->setCost(null);
+    }
+
+    /**
+     * @covers Hash::setCost
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCostWithEmptyCost()
+    {
+        $this->object->setCost('');
+    }
+
+    /**
+     * @covers Hash::setCost
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCostWithSpaceCost()
+    {
+        $this->object->setCost(' ');
+    }
+
+    /**
+     * @covers Hash::setCost
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCostWithTooShortCost()
+    {
+        $this->object->setCost(1);
+    }
+
+    /**
+     * @covers Hash::setCost
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCostWithTooLargeCost()
+    {
+        $this->object->setCost(35);
+    }
+
+    /**
+     * @covers Hash::setCryptType
+     */
+    public function testSetCryptType()
+    {
+        $this->object->setCryptType(Hash::CRYPT_EXT_DES);
+
+        $this->assertEquals(Hash::CRYPT_EXT_DES, $this->object->getCryptType());
+    }
+
+    /**
+     * @covers Hash::setCryptType
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCryptTypeWithNullCryptType()
+    {
+        $this->object->setCryptType(null);
+    }
+
+    /**
+     * @covers Hash::setCryptType
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCryptTypeWithEmptyCryptType()
+    {
+        $this->object->setCryptType('');
+    }
+
+    /**
+     * @covers Hash::setCryptType
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCryptTypeWithSpaceCryptType()
+    {
+        $this->object->setCryptType(' ');
+    }
+
+    /**
+     * @covers Hash::setCryptType
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCryptTypeWithInvalidCryptType()
+    {
+        $this->object->setCryptType('CRYPT_MD6');
+    }
+
+    /**
+     * @covers Hash::setSaltBase
+     */
+    public function testSetSaltBase()
+    {
+        $this->object->setSaltBase('saltbase2');
+
+        $this->assertEquals('saltbase2', $this->object->getSaltBase());
+    }
+
+    /**
+     * @covers Hash::setSaltBase
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetSaltBaseWithTooShortSaltBase()
+    {
+        $this->object->setSaltBase('s');
     }
 }
-

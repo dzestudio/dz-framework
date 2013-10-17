@@ -1,55 +1,63 @@
 <?php
-namespace Test\Dz;
 
-include_once(__DIR__ . '/../../vendor/autoload.php');
+namespace Dz\Test;
 
 use Dz\Geocode;
-use PHPUnit_Framework_TestCase;
+use PHPUnit_Framework_TestCase as TestCase;
 
-class GeocodeTest extends PHPUnit_Framework_TestCase
+class GeocodeTest extends TestCase
 {
-    public function testGetLatLngDzAddressShouldBeOK()
+    /**
+     * @covers Geocode::getLatLng
+     */
+    public function testGetLatLng()
     {
         $address = 'Rua Vinte e Quatro de Outubro, 353';
-        $latLng = \Dz\Geocode::getLatLng($address);
+        $latLng = Geocode::getLatLng($address);
 
         $this->assertEquals(-30.0272452, $latLng->lat);
         $this->assertEquals(-51.2041206, $latLng->lng);
     }
 
-    public function testGetLatLngIntegerShouldBeOK()
+    /**
+     * @covers Geocode::getLatLng
+     */
+    public function testGetLatLngWithIntegerAddress()
     {
-        $address = 1;
-        $latLng = \Dz\Geocode::getLatLng($address);
+        $address = 123;
+        $latLng = Geocode::getLatLng($address);
 
-        $this->assertStringMatchesFormat('%f', (string)$latLng->lat);
-        $this->assertStringMatchesFormat('%f', (string)$latLng->lng);
+        $this->assertInternalType('float', $latLng->lat);
+        $this->assertInternalType('float', $latLng->lng);
     }
 
     /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testGetLatLngEmptyShouldBeInvalidArgumentException()
+     * Generated from @assert (null) throws \InvalidArgumentException.
+     *
+     * @covers Geocode::getLatLng
+     * @expectedException \InvalidArgumentException     */
+    public function testGetLatLngWithNullAddress()
     {
-        $address = '';
-        $latLng = \Dz\Geocode::getLatLng($address);
+        Geocode::getLatLng(null);
     }
 
     /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testGetLatLngSpaceShouldBeInvalidArgumentException()
+     * Generated from @assert ('') throws \InvalidArgumentException.
+     *
+     * @covers Geocode::getLatLng
+     * @expectedException \InvalidArgumentException     */
+    public function testGetLatLngWithEmptyAddress()
     {
-        $address = ' ';
-        $latLng = \Dz\Geocode::getLatLng($address);
+        Geocode::getLatLng('');
     }
 
     /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testGetLatLngNullShouldBeInvalidArgumentException()
+     * Generated from @assert (' ') throws \InvalidArgumentException.
+     *
+     * @covers Geocode::getLatLng
+     * @expectedException \InvalidArgumentException     */
+    public function testGetLatLngWithSpaceAddress()
     {
-        $latLng = \Dz\Geocode::getLatLng(null);
+        Geocode::getLatLng(' ');
     }
-
 }

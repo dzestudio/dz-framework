@@ -7,7 +7,6 @@
 
 namespace Dz;
 
-use Dz\Http\Client;
 /**
  * Address to coordinates conversion class.
  *
@@ -33,23 +32,55 @@ use Dz\Http\Client;
 class Geocode
 {
     /**
+     * Grabs contents from a URI.
+     *
+     * @param  string $uri
+     * @return string|null
+     */
+    protected static function getContentsFromUri($uri)
+    {
+        $contents = null;
+
+        if (($contents = @file_get_contents($uri)) === false) {
+            $handler = curl_init();
+            $defaultOptions = array(
+                CURLOPT_CONNECTTIMEOUT => 5,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_SSL_VERIFYPEER => false,
+            );
+
+            curl_setopt($handler, CURLOPT_URL, $uri);
+            curl_setopt_array($handler, $defaultOptions);
+
+            $contents = curl_exec($handler);
+
+            curl_close($handler);
+        }
+
+        return $contents;
+    }
+
+    /**
      * Converts address in latitude/longitude coordinates.
      *
-     * @uses   \Dz\Http\Client::request()
      * @param  string $address The address, as complete as possible.
      * @return object Object containing "lat" and "lng" properties.
+     * @assert (null) throws \InvalidArgumentException
+     * @assert ('') throws \InvalidArgumentException
+     * @assert (' ') throws \InvalidArgumentException
      */
     public static function getLatLng($address)
     {
-        if (preg_match('/\S/', $address) !== 1) {
+        if (preg_match('/\S/', $address) === 0) {
             throw  new \InvalidArgumentException();
         }
 
         $uri = 'http://maps.googleapis.com/maps/api/geocode/json?address='
              . rawurlencode($address)
              . '&sensor=true';
-        $client = new \Dz\Http\Client();
-        $data = $client->request($uri);
+
+        $data = self::getContentsFromUri($uri);
         $json = json_decode($data);
 
         return $json->results[0]->geometry->location;

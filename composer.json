@@ -2,17 +2,26 @@
     "name": "dzestudio/dz-framework",
     "type": "library",
     "description": "DZ Estúdio framework.",
-    "keywords": ["geocode", "hash", "http", "imagick"],
+    "keywords": ["geocode", "hash"],
     "homepage": "http://github.com/dzestudio/dz-framework",
     "license": "MIT",
-    "authors": [
+    "authors" : [
         {
-            "name": "LF Bittencourt",
-            "email": "lf@dzestudio.com.br",
-            "homepage": "http://www.lfbittencourt.com/"
+            "name" : "LF Bittencourt",
+            "email" : "lf@dzestudio.com.br",
+            "homepage" : "http://www.lfbittencourt.com/"
+        },
+        {
+            "name" : "Adão Santos",
+            "email" : "adao@dzestudio.com.br"
         }
     ],
-    "autoload": {
-        "psr-0": { "Dz": "library/" }
+    "require-dev" : {
+        "phpunit/phpunit" : "3.7.*"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Dz" : "library/"
+        }
     }
 }
