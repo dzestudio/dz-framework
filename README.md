@@ -1,7 +1,7 @@
 DZ Framework
 ============
 
-DZ Framework is an ultra little PHP classes package provided by [DZ Estúdio](http://www.dzestudio.com.br). Its features are a hash generator and a geocode class.
+DZ Framework is an ultra little PHP classes package provided by [DZ Estúdio](http://www.dzestudio.com.br). Its features are a hash generator and a geographic conversions class.
 
 Components
 ----------
@@ -43,7 +43,7 @@ if ($hash->check($passwordHash, $passwordInput)) {
 }
 ```
 
-### Dz\Geocode
+### Dz\Maps\Converter
 
 This class uses Google Maps API to convert addresses (like "1600 Amphitheatre Parkway, Mountain View, CA") into geographic coordinates (like latitude 37.423021 and longitude -122.083739), which you can use to place markers or position a map.
 
@@ -53,8 +53,20 @@ An example:
 <?php
 
 $address = 'Rua Vinte e Quatro de Outubro, 353';
-$latLng = \Dz\Geocode::getLatLng($address);
+$latLng = \Dz\Maps\Converter::fromAddressToLatLng($address);
 
 echo 'Latitude: ', $latLng->lat, PHP_EOL;
 echo 'Longitude: ', $latLng->lng, PHP_EOL;
+```
+
+You can use it to convert DMSs to decimals too:
+
+``` php
+<?php
+
+// Cachoeira do Sul DMS latitude
+$dmsLat = "30° 2' 54.0276'' S";
+$decimalLat = \Dz\Maps\Converter::fromDmsToDecimal($dmsLat);
+
+echo 'Latitude: ', $decimalLat, PHP_EOL;
 ```
