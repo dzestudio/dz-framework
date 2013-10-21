@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="DZ Framework" default="build">
+
+    <property file="${project.basedir}/build/properties/default.properties" />
+
+    <if>
+        <isset property="build.env" />
+        <then>
+            <echo message="Overwriting default.properties with ${build.env}.properties" />
+            <property file="${build.dir}/properties/${build.env}.properties" override="true" />
+        </then>
+    </if>
+
+    <target name="build" depends="phpunit,phpdoc">
+        <echo msg="That's all, folks!" />
+    </target>
+
+    <target name="phpunit">
+        <echo msg="Running unit tests..." />
+        <phpunit bootstrap="${project.basedir}/tests/bootstrap.php" haltonerror="true" haltonfailure="true" printsummary="true">
+            <batchtest>
+                <fileset dir="tests" />
+            </batchtest>
+        </phpunit>
+    </target>
+
+    <target name="phpdoc">
+        <echo msg="${docs.target}" />
+        <echo msg="Generating API docs..." />
+        <delete dir="${docs.target}" verbose="true" includeemptydirs="true" />
+        <mkdir dir="${docs.target}" />
+        <includepath classpath="${project.basedir}/vendor/phpdocumentor" />
+        <phpdoc2 title="${docs.title}" destdir="${docs.target}">
+            <fileset dir="${docs.source}" />
+        </phpdoc2>
+    </target>
+
+</project>

@@ -16,8 +16,16 @@
             "email" : "adao@dzestudio.com.br"
         }
     ],
+    "require": {
+        "php": ">=5.3"
+    },
     "require-dev" : {
-        "phpunit/phpunit" : "3.7.*"
+        # dev-master shall be replaced by last stable version
+        # as soon as https://github.com/phingofficial/phing/commit/c2cd91be5150c240d576f1215de7e0be5a972868
+        # is merged on a proper tag.
+        "phing/phing": "dev-master",
+        "phpunit/phpunit" : "3.7.*",
+        "phpdocumentor/phpdocumentor": "2.1.*"
     },
     "autoload" : {
         "psr-0" : {
