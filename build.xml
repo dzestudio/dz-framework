@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="DZ Framework" default="build">
 
-    <property file="${project.basedir}/build/properties/default.properties" />
+    <property name="build.dir" value="${project.basedir}/build" />
+    <property name="source.dir" value="${project.basedir}/library" />
+    <property name="docs.target" value="${build.dir}/docs" />
+    <property name="docs.title" value="DZ Framework API Docs" />
 
-    <if>
-        <isset property="build.env" />
-        <then>
-            <echo message="Overwriting default.properties with ${build.env}.properties" />
-            <property file="${build.dir}/properties/${build.env}.properties" override="true" />
-        </then>
-    </if>
-
-    <target name="build" depends="phpunit,phpdoc">
+    <target name="build" depends="tests,standards,docs">
         <echo msg="That's all, folks!" />
     </target>
 
-    <target name="phpunit">
+    <target name="tests">
         <echo msg="Running unit tests..." />
         <phpunit bootstrap="${project.basedir}/tests/bootstrap.php" haltonerror="true" haltonfailure="true" printsummary="true">
             <batchtest>
@@ -24,14 +19,18 @@
         </phpunit>
     </target>
 
-    <target name="phpdoc">
+    <target name="standards">
+        <phpcodesniffer standard="PSR2" file="${source.dir}" encoding="utf-8" allowedFileExtensions="php" haltonerror="true" haltonwarning="true" />
+    </target>
+
+    <target name="docs">
         <echo msg="${docs.target}" />
         <echo msg="Generating API docs..." />
         <delete dir="${docs.target}" verbose="true" includeemptydirs="true" />
         <mkdir dir="${docs.target}" />
         <includepath classpath="${project.basedir}/vendor/phpdocumentor" />
         <phpdoc2 title="${docs.title}" destdir="${docs.target}">
-            <fileset dir="${docs.source}" />
+            <fileset dir="${source.dir}" />
         </phpdoc2>
     </target>
 

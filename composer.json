@@ -22,7 +22,8 @@
     "require-dev" : {
         "phing/phing": "dev-master",
         "phpunit/phpunit" : "3.7.*",
-        "phpdocumentor/phpdocumentor": "2.1.*"
+        "phpdocumentor/phpdocumentor": "2.1.*",
+        "squizlabs/php_codesniffer": "1.*"
     },
     "autoload" : {
         "psr-0" : {
