@@ -1,6 +1,8 @@
 DZ Framework
 ============
 
+[![Build Status](https://travis-ci.org/dzestudio/dz-framework.png?branch=master)](https://travis-ci.org/dzestudio/dz-framework)
+
 DZ Framework is an ultra little PHP classes package provided by [DZ Estúdio](http://www.dzestudio.com.br). Its features are a hash generator and a geographic conversions class.
 
 Components
